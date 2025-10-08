@@ -32,20 +32,16 @@
      <string>HEHHEHEHEHEgewfewfewfewfewf</string>
     </property>
    </widget>
-   <widget class="QFrame" name="plot_container_2">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>310</y>
-      <width>781</width>
+      <x>70</x>
+      <y>300</y>
+      <width>731</width>
       <height>331</height>
      </rect>
     </property>
-    <layout class="QHBoxLayout" name="plot_container">
-     <item>
-      <widget class="QWidget" name="student_score_distribution_canvas" native="true"/>
-     </item>
-    </layout>
+    <layout class="QVBoxLayout" name="plot_layout"/>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menubar">

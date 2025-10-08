@@ -4,10 +4,21 @@ import seaborn as sns
 from PyQt6.QtWidgets import QMainWindow, QApplication, QVBoxLayout, QWidget, QFrame
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
+import matplotlib.pyplot as plt
+
 
 # Assuming your Qt Designer file is named main_window.ui
 # You would generate main_window_ui.py from it using 'pyuic6 main_window.ui -o main_window_ui.py'
 from ui.home_page import Ui_MainWindow 
+
+# Database
+from database.student.student import get_student_score_per_course 
+
+# Logger
+from utils.logger import get_class_logger
+
+# Plot
+from utils.plot.student_score import create_score_distribution_plot
 
 # ====================================================================
 # 1. Matplotlib Canvas Class
@@ -38,6 +49,7 @@ class CourseManagementEx(QMainWindow):
         # Load the UI from the generated Python file
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        self.logger = get_class_logger(__name__, __class__.__name__)
 
         # The canvas instance
         self.plot_canvas = None 
@@ -45,30 +57,17 @@ class CourseManagementEx(QMainWindow):
         # Initialize the canvas and plot the data
         self.init_plot_widget()
         self.load_and_plot_data()
-        self.ui.pushButton.clicked.connect(self.update_plot_on_button_click)
+        self.ui.pushButton.clicked.connect(self.load_student_score_distribution)
 
     def init_plot_widget(self):
         """
         Creates a dedicated QVBoxLayout within the placeholder widget 
         and adds the MplCanvas to it.
         """
-        # CRITICAL STEP: Access the placeholder widget created in Qt Designer
-        # Assume the placeholder QFrame/QWidget is named 'plot_container' in your .ui file
-        plot_container: QFrame = self.ui.plot_container_2 
-        
-        # Create a layout manager specifically for the container
-        plot_layout = QVBoxLayout(plot_container)
-        
-        # Remove margins/spacing so the plot fills the container perfectly
-        plot_layout.setContentsMargins(0, 0, 0, 0)
-        plot_layout.setSpacing(0)
-
-        # Create the canvas object
-        # We don't set width/height here; the QVBoxLayout will manage its size.
-        self.plot_canvas = MplCanvas(plot_container)
-        
+        # Create canvas
+        self.plot_canvas = MplCanvas(parent=self.ui.plot_layout)
         # Add the canvas to the layout, making it the sole occupant
-        plot_layout.addWidget(self.plot_canvas)
+        self.ui.plot_layout.addWidget(self.plot_canvas)
 
     def load_and_plot_data(self):
         """Fetches data and draws the plot on the canvas."""
@@ -103,7 +102,19 @@ class CourseManagementEx(QMainWindow):
         sns.histplot(data=df_new, x='scores', kde=True, ax=self.plot_canvas.axes, color='orange')
         self.plot_canvas.axes.set_title('Updated Distribution')
         self.plot_canvas.draw()
-
+        
+    
+    def load_student_score_distribution(self):
+        sample_data = get_student_score_per_course()
+        create_score_distribution_plot(
+            sample_data, 
+            ax=self.plot_canvas.axes, # Pass the target axes
+            title="Final Score Distribution - 2013J Module AAA"
+        )
+        
+        # Tell the MplCanvas widget to redraw itself with the new content
+        self.plot_canvas.draw()
+        
 
 # ====================================================================
 # 3. Application Execution

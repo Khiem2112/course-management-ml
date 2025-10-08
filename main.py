@@ -1,6 +1,6 @@
 import sys
 from PyQt6.QtWidgets import QMainWindow, QApplication
-from ui.home_page_ex import CourseManagementEx
+from application.home_page_ex import CourseManagementEx
 from ui.home_page import Ui_MainWindow
 
 if __name__ == "__main__":

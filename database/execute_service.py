@@ -1,5 +1,5 @@
 # database/crud.py
-from connection_manager import DBConnectionManager
+from database.connection_manager import DBConnectionManager
 from utils.logger import get_class_logger
 
 logger = get_class_logger(__name__, "DBExecuteService")

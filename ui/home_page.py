@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'main_window.ui'
+# Form implementation generated from reading ui file 'home_page.ui'
 #
 # Created by: PyQt6 UI code generator 6.8.1
 #
@@ -21,14 +21,12 @@ class Ui_MainWindow(object):
         font.setPointSize(19)
         self.pushButton.setFont(font)
         self.pushButton.setObjectName("pushButton")
-        self.plot_container_2 = QtWidgets.QFrame(parent=self.centralwidget)
-        self.plot_container_2.setGeometry(QtCore.QRect(40, 310, 781, 331))
-        self.plot_container_2.setObjectName("plot_container_2")
-        self.plot_container = QtWidgets.QHBoxLayout(self.plot_container_2)
-        self.plot_container.setObjectName("plot_container")
-        self.student_score_distribution_canvas = QtWidgets.QWidget(parent=self.plot_container_2)
-        self.student_score_distribution_canvas.setObjectName("student_score_distribution_canvas")
-        self.plot_container.addWidget(self.student_score_distribution_canvas)
+        self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.centralwidget)
+        self.verticalLayoutWidget.setGeometry(QtCore.QRect(70, 300, 731, 331))
+        self.verticalLayoutWidget.setObjectName("verticalLayoutWidget")
+        self.plot_layout = QtWidgets.QVBoxLayout(self.verticalLayoutWidget)
+        self.plot_layout.setContentsMargins(0, 0, 0, 0)
+        self.plot_layout.setObjectName("plot_layout")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(parent=MainWindow)
         self.menubar.setGeometry(QtCore.QRect(0, 0, 879, 26))
