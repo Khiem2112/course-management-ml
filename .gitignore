@@ -1,2 +1,10 @@
+<<<<<<< HEAD
 test*
 **/__pycache__/
+=======
+# Object file
+*.o
+
+# Ada Library Information
+*.ali
+>>>>>>> 04639613030663e96009103815c3611c7897fb1a
