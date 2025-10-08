@@ -1,0 +1,19 @@
+# CORE PYTHON PACKAGES (Installed via Conda, but listed here for minimum version compatibility)
+numpy==1.26.4
+python==3.12.11
+pip==25.2
+setuptools==80.9.0
+wheel==0.45.1
+
+# PIP-INSTALLED PACKAGES
+colorlog==6.9.0
+cycler==0.12.1
+fonttools==4.60.1
+kiwisolver==1.4.9
+mysql==0.0.3
+mysql-connector-python==9.4.0
+mysqlclient==2.2.7
+pyparsing==3.2.5
+pytz==2025.2
+seaborn==0.13.2
+tzdata==2025.2
