@@ -1,7 +1,8 @@
+from email.policy import Policy
 import sys
 import pandas as pd
 import seaborn as sns
-from PyQt6.QtWidgets import QMainWindow, QApplication, QVBoxLayout, QWidget, QFrame
+from PyQt6.QtWidgets import QMainWindow, QApplication, QVBoxLayout, QWidget, QFrame, QSizePolicy
 from matplotlib.backends.backend_qtagg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.figure import Figure
 import matplotlib.pyplot as plt
@@ -12,7 +13,7 @@ import matplotlib.pyplot as plt
 from ui.home_page import Ui_MainWindow 
 
 # Database
-from database.student.student import get_student_score_per_course 
+from database.student.student import get_student_score_per_course, get_top_5_highest_score_student
 
 # Logger
 from utils.logger import get_class_logger
@@ -56,9 +57,10 @@ class CourseManagementEx(QMainWindow):
         
         # Initialize the canvas and plot the data
         self.init_plot_widget()
-        self.load_and_plot_data()
-        self.ui.pushButton.clicked.connect(self.load_student_score_distribution)
-
+        self.make_window_expanded()
+        self.load_student_score_distribution()
+        self.set_initial_page()
+    
     def init_plot_widget(self):
         """
         Creates a dedicated QVBoxLayout within the placeholder widget 
@@ -66,8 +68,10 @@ class CourseManagementEx(QMainWindow):
         """
         # Create canvas
         self.plot_canvas = MplCanvas(parent=self.ui.plot_layout)
+        self.plot_canvas.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+
         # Add the canvas to the layout, making it the sole occupant
-        self.ui.plot_layout.addWidget(self.plot_canvas)
+        self.ui.plot_layout.addWidget(self.plot_canvas)    
 
     def load_and_plot_data(self):
         """Fetches data and draws the plot on the canvas."""
@@ -92,6 +96,10 @@ class CourseManagementEx(QMainWindow):
         self.plot_canvas.draw()
         
     # Example method to show how to update the plot (e.g., connected to a button)
+    
+    def set_initial_page(self):
+        self.ui.page_widget.setCurrentWidget(self.ui.course_page)
+    
     def update_plot_on_button_click(self):
         print("Updating plot...")
         # Imagine fetching new data here...
@@ -114,7 +122,14 @@ class CourseManagementEx(QMainWindow):
         
         # Tell the MplCanvas widget to redraw itself with the new content
         self.plot_canvas.draw()
-        
+    def make_window_expanded(self):
+        self.ui.centralwidget.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+        self.ui.page_widget.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Expanding)
+    
+    def load_top5_student(self):
+        pass
+    def load_statistic_data(self):
+        pass
 
 # ====================================================================
 # 3. Application Execution
