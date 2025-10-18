@@ -8,3 +8,5 @@ test*
 # Ada Library Information
 *.ali
 >>>>>>> 04639613030663e96009103815c3611c7897fb1a
+.idea
+.vscode
