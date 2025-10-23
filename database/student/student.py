@@ -22,4 +22,3 @@ def get_top_5_highest_score_student():
   limit 5""")
   return data
 
-print(get_top_5_highest_score_student())
