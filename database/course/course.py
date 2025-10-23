@@ -21,3 +21,13 @@ ORDER BY avg_student_score DESC
 limit %s
 """, params=(code_module,code_presentation,n))
   return data
+def get_dropout_percenrage(code_module: str, code_presentation: str):
+  data= db.fetch_all(query="""
+                     SELECT
+                    SUM(CASE WHEN date_unregistration IS NULL THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DropoutPercentage
+                FROM
+                    studentRegistration;
+                    where code_module =%s and code_presentation = %s
+
+                     """,params=(code_module,code_presentation))
+  return data
