@@ -1,61 +1,70 @@
+from plot_manager import PlotManager
+import seaborn as sns
+import matplotlib.pyplot as plt
 import pandas as pd
-from matplotlib.axes import Axes
-from matplotlib import pyplot as plt
-import scienceplots # Ensure this is installed
 
-def create_score_distribution_plot(score_data: list[dict], ax: Axes, title: str = "Student Score Distribution"):
-    """
-    Plots the student score distribution directly onto the provided Matplotlib Axes object.
+class StudentScoreVisualizer():
+    @staticmethod
+    def create_score_distribution(score_data: list[dict]) -> PlotManager:
+        """
+        Creates a PlotManager instance containing a score distribution plot.
 
-    Args:
-        score_data (list[dict]): List of dictionaries containing score data.
-        ax (Axes): The Matplotlib Axes object to draw the plot on (i.e., self.plot_canvas.axes).
-        title (str): The title for the plot.
-    """
-    
-    # --- 1. Preparation ---
-    df = pd.DataFrame(score_data)
-    SCORE_COL = 'avg_score'
+        Args:
+            score_data: List of dictionaries with 'avg_score'.
 
-    if SCORE_COL not in df.columns:
-        ax.set_title("Data Error")
-        ax.text(0.5, 0.5, f"Score column '{SCORE_COL}' not found.", transform=ax.transAxes, ha='center')
-        return
+        Returns:
+            A PlotManager instance ready for further configuration or display.
+        """
+        PlotManager.logger.info("Creating score distribution plot content...")
+        fig, ax = plt.subplots() # Create new Figure and Axes for this plot
+        SCORE_COL = 'avg_score'
 
-    # Clear any previous plot on the axes
-    ax.clear() 
+        try:
+            if not score_data:
+                PlotManager.logger.warning("No data provided for score distribution.")
+                # Return an empty plot manager, caller can check has_plot
+                return PlotManager.create_empty().set_title("No Data Available")
 
-    # --- 2. Styling ---
-    # Apply the style only when plotting starts
-    # try:
-    #     plt.style.use(['science', 'grid']) 
-    # except ValueError:
-    #     pass # Use default if not found
+            df = pd.DataFrame(score_data)
 
-    # --- 3. Plotting: Histogram and KDE ---
-    
-    # Histogram
-    df[SCORE_COL].plot(
-        kind='hist', ax=ax, bins=20, density=True, alpha=0.7, 
-        label='Score Frequency'
-    )
-    
-    # KDE Plot
-    df[SCORE_COL].plot(
-        kind='kde', ax=ax, linewidth=2, color='#0078d4', 
-        label='Score Density Estimate'
-    )
+            if SCORE_COL not in df.columns or df[SCORE_COL].isnull().all() or df[SCORE_COL].empty:
+                PlotManager.logger.warning(f"Invalid or empty data in '{SCORE_COL}'.")
+                return PlotManager.create_empty().set_title(f"Invalid Data in '{SCORE_COL}'")
 
-    # --- 4. Annotation ---
-    mean_score = df[SCORE_COL].mean()
-    median_score = df[SCORE_COL].median()
+            # Apply style before plotting
+            try:
+                plt.style.use('science')
+                PlotManager.logger.debug("Applied 'science' style for score distribution.")
+            except Exception as style_err:
+                 PlotManager.logger.warning(f"Could not apply 'science' style: {style_err}")
 
-    ax.axvline(mean_score, color='red', linestyle='--', linewidth=1.5, label=f'Mean ({mean_score:.1f})')
-    ax.axvline(median_score, color='green', linestyle=':', linewidth=1.5, label=f'Median ({median_score:.1f})')
-    
-    ax.set_title(title)
-    ax.set_xlabel("Student Score")
-    ax.set_ylabel("Density / Frequency")
-    ax.legend()
-    
-    # Note: We do NOT call plt.show() here.
+            # Plot histogram and KDE
+            sns.histplot(data=df, x=SCORE_COL, kde=True, ax=ax, bins=20, stat='density',
+                         color='skyblue', edgecolor='black')
+
+            # Add mean/median lines
+            mean_score = df[SCORE_COL].mean()
+            median_score = df[SCORE_COL].median()
+            line_styles = {'linewidth': 1.5}
+            if pd.notna(mean_score):
+                 ax.axvline(mean_score, color='red', linestyle='--',
+                            label=f'Mean ({mean_score:.1f})', **line_styles)
+            if pd.notna(median_score):
+                ax.axvline(median_score, color='green', linestyle=':',
+                           label=f'Median ({median_score:.1f})', **line_styles)
+
+            # Set default labels/title (can be overridden later)
+            ax.set_title("Student Score Distribution")
+            ax.set_xlabel("Average Score")
+            ax.set_ylabel("Density / Frequency")
+            if pd.notna(mean_score) or pd.notna(median_score):
+                ax.legend()
+            ax.grid(True, linestyle='--', alpha=0.6)
+
+            PlotManager.logger.info("Score distribution plot content created successfully.")
+            return PlotManager(fig, ax)
+
+        except Exception as e:
+            PlotManager.logger.error(f"Error creating score distribution plot content: {e}", exc_info=True)
+            # Return an empty plot with an error title
+            return PlotManager.create_empty().set_title(f"Error: {type(e).__name__}")
