@@ -19,7 +19,7 @@ class DBConnectionManager:
         self.config = GLOBAL_CONFIG
         self.logger = logger
         self.database = self.config.DB_NAME
-        self.logger.info(f"Initialize Connection manager with cursor: {self.cursor}")
+        logger.info(f"info of database connection is: ")
 
     def __enter__(self):
         """Opens the connection and creates a cursor."""
@@ -34,6 +34,7 @@ class DBConnectionManager:
                 database=self.database, 
                 connection_timeout=self.config.DEFAULT_TIMEOUT_SEC
             )
+            logger.info('Connected to MySQL successfully')
             # 2. Create the cursor
             self.cursor = self._conn.cursor(dictionary=True) # dictionary=True returns rows as dicts
             logger.debug("Database connection established and cursor opened.")
