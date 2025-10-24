@@ -13,18 +13,19 @@ def get_all_course():
 def get_n_highest_score_student(code_module: str, code_presentation: str, n:int):
   data = db.fetch_all(query="""
                       select id_student, courses.code_module, courses.code_presentation, AVG(score) as avg_student_score  from courses 
-join assessments on courses.code_module = assessments.code_module and courses.code_presentation = assessments.code_presentation
-join studentAssessment stu_assessment on stu_assessment.id_assessment = assessments.id_assessment
-WHERE assessments.code_module = %s and courses.code_presentation = %s
-group by stu_assessment.id_student
-ORDER BY avg_student_score DESC
-limit %s
+                      join assessments on courses.code_module = assessments.code_module and courses.code_presentation = assessments.code_presentation
+                      join studentAssessment stu_assessment on stu_assessment.id_assessment = assessments.id_assessment
+                      WHERE assessments.code_module = %s and courses.code_presentation = %s
+                      group by stu_assessment.id_student
+                      ORDER BY avg_student_score DESC
+                      limit %s
 """, params=(code_module,code_presentation,n))
   return data
-def get_dropout_percenrage(code_module: str, code_presentation: str):
-  data= db.fetch_all(query="""
+def get_dropout_percentage(code_module: str, code_presentation: str):
+  data= db.fetch_one(query="""
                      SELECT
-                    SUM(CASE WHEN date_unregistration IS NULL THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS DropoutPercentage
+                    SUM(CASE WHEN date_unregistration IS NULL THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS Dropout,
+                    SUM(CASE WHEN date_unregistration IS NULL THEN 0 ELSE 1 END) * 100.0 / COUNT(*) AS Retentention
                 FROM
                     studentRegistration;
                     where code_module =%s and code_presentation = %s

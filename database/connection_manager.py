@@ -53,26 +53,29 @@ class DBConnectionManager:
                 logger.debug("Database cursor closed.")
 
             if self._conn:
-                if exc_type is None and self._commit_on_success:
-                    # No exception occurred, commit changes if enabled
-                    self._conn.commit()
-                    logger.debug("Transaction committed successfully.")
-                else:
-                    # Exception occurred or commit disabled, rollback
-                    self._conn.rollback()
-                    if exc_type:
-                        logger.warning(f"Transaction rolled back due to exception: {exc_val}")
+                if exc_type is None:
+                    # No exception occurred
+                    if self._commit_on_success:
+                        # Commit only when requested
+                        self._conn.commit()
+                        logger.debug("Transaction committed successfully.")
                     else:
-                        logger.debug("Transaction rolled back (commit disabled).")
-                
+                        # Read-only: no commit/rollback needed
+                        logger.debug("No commit requested; closing connection without rollback.")
+                else:
+                    # Exception occurred — rollback
+                    try:
+                        self._conn.rollback()
+                        logger.warning(f"Transaction rolled back due to exception: {exc_val}")
+                    except Exception as rb_err:
+                        logger.error(f"Rollback failed: {rb_err}", exc_info=True)
+
                 self._conn.close()
                 logger.debug("Database connection closed.")
-        
+
         except Exception as e:
-            logger.error(f"Error during database cleanup: {e}")
-        
-        # Returning False (or letting the function finish without return) re-raises 
-        # any exception caught in the 'with' block, which is standard context manager behavior.
+            logger.error(f"Error during database cleanup: {e}", exc_info=True)
+
         return False
     
     def fetch_one(self,
