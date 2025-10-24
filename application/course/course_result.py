@@ -1,7 +1,7 @@
 from ui.course_result import Ui_MainWindow
 from PyQt6.QtWidgets import QMainWindow, QLabel, QHBoxLayout, QVBoxLayout, QWidget
 from utils.logger import get_class_logger
-from database.course.course import get_n_highest_score_student, get_dropout_percentage
+from database.course.course import get_n_highest_score_student, get_dropout_percentage, get_student_score_statistic
 from database.student.student import get_student_score_per_course
 from utils.plot.plot_manager import PlotManager
 from utils.plot.student_score import StudentScoreVisualizer
@@ -22,6 +22,7 @@ class CourseResultEx(QMainWindow):
     self.visualize_student_score_distibution()
     self.show_top_5_students()
     self.visualize_drop_out_rate()
+    self.show_course_statistic_info()
   
   def connect_all(self):
     
@@ -118,7 +119,11 @@ class CourseResultEx(QMainWindow):
       self.logger.error(f"Failed to load top-5 students: {e}", exc_info=True)
     
   def show_course_statistic_info(self):
-    pass
+    stu_statistic_score = get_student_score_statistic(code_module='AAA',code_presentation='2013J')
+    self.ui.mean_stu_score.setText(str(stu_statistic_score.get('mean_score')))
+    self.ui.max_stu_score.setText(str(stu_statistic_score.get('max_score')))
+    self.ui.min_stu_score.setText(str(stu_statistic_score.get('min_score')))
+    self.ui.mode_stu_score.setText(str(stu_statistic_score.get('mode_score')))
   
   def visualize_drop_out_rate(self):
     data = get_dropout_percentage(code_module='AAA',code_presentation='2013J')

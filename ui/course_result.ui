@@ -716,12 +716,12 @@ color: black</string>
 color: black</string>
                         </property>
                         <property name="text">
-                         <string>Mod</string>
+                         <string>Mode</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="pie_chart_mod">
+                       <widget class="QLabel" name="mode_stu_score">
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -773,7 +773,7 @@ color: black</string>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="pie_chart_min">
+                       <widget class="QLabel" name="min_stu_score">
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -825,7 +825,7 @@ color: black</string>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="pie_chart_mean">
+                       <widget class="QLabel" name="mean_stu_score">
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -878,7 +878,7 @@ color: black
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="pie_chart_max">
+                       <widget class="QLabel" name="max_stu_score">
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>

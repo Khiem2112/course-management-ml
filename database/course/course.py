@@ -25,10 +25,35 @@ def get_dropout_percentage(code_module: str, code_presentation: str):
   data= db.fetch_one(query="""
                      SELECT
                     SUM(CASE WHEN date_unregistration IS NULL THEN 1 ELSE 0 END) * 100.0 / COUNT(*) AS Dropout,
-                    SUM(CASE WHEN date_unregistration IS NULL THEN 0 ELSE 1 END) * 100.0 / COUNT(*) AS Retentention
+                    SUM(CASE WHEN date_unregistration IS NULL THEN 0 ELSE 1 END) * 100.0 / COUNT(*) AS Retention
                 FROM
                     studentRegistration;
                     where code_module =%s and code_presentation = %s
 
                      """,params=(code_module,code_presentation))
+  return data
+
+def get_student_score_statistic(code_module: str, code_presentation: str)-> dict:
+  data = db.fetch_one(query="""
+                      WITH student_score AS (
+    SELECT AVG(score) as avg_score
+    FROM studentAssessment stu_assess 
+    JOIN assessments ON stu_assess.id_assessment = assessments.id_assessment
+    WHERE code_module =%s AND code_presentation = %s
+    GROUP BY id_student
+)
+SELECT 
+    MIN(avg_score) as min_score,
+    MAX(avg_score) as max_score,
+    AVG(avg_score) as mean_score,
+    (
+        SELECT avg_score
+        FROM student_score
+        GROUP BY avg_score
+        ORDER BY COUNT(*) DESC, avg_score ASC -- Order by frequency, then value to break ties
+        LIMIT 1
+    ) as mode_score
+FROM 
+    student_score;
+                      """, params=(code_module,code_presentation))
   return data
