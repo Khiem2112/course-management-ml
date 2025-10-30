@@ -1,29 +1,24 @@
-import sys
 import mysql.connector
-
-from PyQt6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QPushButton, QLabel)
 from PyQt6.QtGui import QIcon, QPixmap
-from Course.course import Ui_MainWindow
-import resource_from_qt  # ⚡ file được sinh ra từ .qrc
+from media.resource_from_qt import *  # load Qt resources
+from PyQt6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QPushButton, QLabel)
+from database.connection_manager import DBConnectionManager
+from database.execute_service import DBExecuteService
 
-class MainApp(QMainWindow):
-    def __init__(self):
-        super().__init__()
-        self.ui = Ui_MainWindow()
-        self.ui.setupUi(self)
-
+class CourseManagementEx:
+    def __init__(self, ui):
+        self.ui = ui
         self.current_page = 1
         self.per_page = 6
         self.courses = []
 
-        # Gắn sự kiện
-        self.ui.btn_next.clicked.connect(self.next_page)
-        self.ui.btn_previous.clicked.connect(self.previous_page)
-
-        # Lấy dữ liệu ban đầu
+        self.setup_icons()
+        self.connect_signals()
         self.load_courses_from_db()
+        self.display_courses()
 
-        #import icon/images
+    # ---------------- ICON SETUP ----------------
+    def setup_icons(self):
         self.ui.brand.setPixmap(QPixmap(":/Images/images/Logo DUKI.png"))
         self.ui.menu_course.setIcon(QIcon(":/Icons/images/icons/Course/Course.png"))
         self.ui.menu_student.setIcon(QIcon(":/Icons/images/icons/Course/Student1.png"))
@@ -34,43 +29,25 @@ class MainApp(QMainWindow):
         self.ui.btn_create.setIcon(QIcon(":/Icons/images/icons/Course/Create1.png"))
         self.ui.btn_next.setIcon(QIcon(":/Icons/images/icons/Course/ri-Photoroom.png"))
         self.ui.btn_previous.setIcon(QIcon(":/Icons/images/icons/Course/le-Photoroom.png"))
-        self.ui.image_course_1.setPixmap(QPixmap(":/Images/images/course_image.png"))
-        self.ui.image_course_2.setPixmap(QPixmap(":/Images/images/course_image.png"))
-        self.ui.image_course_3.setPixmap(QPixmap(":/Images/images/course_image.png"))
-        self.ui.image_course_4.setPixmap(QPixmap(":/Images/images/course_image.png"))
-        self.ui.image_course_5.setPixmap(QPixmap(":/Images/images/course_image.png"))
-        self.ui.image_course_6.setPixmap(QPixmap(":/Images/images/course_image.png"))
         self.ui.btn_search.setIcon(QIcon(":/Icons/images/icons/Course/magnifier.png"))
 
-    # ---------------------- Kết nối MySQL ----------------------
-    def connect_db(self):
-        return mysql.connector.connect(
-            host="tramway.proxy.rlwy.net",
-            port=25079,
-            user="root",
-            password="CkjQqbvmmpblZmyrmLnlSEVAAURNRlRt",
-            database="railway"
-        )
+        for i in range(1,7):
+            getattr(self.ui, f"image_course_{i}").setPixmap(QPixmap(":/Images/images/course_image.png"))
 
-    # ---------------------- Load dữ liệu ----------------------
+    # ---------------- CONNECT SIGNALS ----------------
+    def connect_signals(self):
+        self.ui.btn_next.clicked.connect(self.next_page)
+        self.ui.btn_previous.clicked.connect(self.previous_page)
+
     def load_courses_from_db(self):
-        try:
-            conn = self.connect_db()
-            cursor = conn.cursor(dictionary=True)
-            cursor.execute("""
-                SELECT code_module, code_presentation, module_presentation_length
-                FROM courses
-                ORDER BY code_module, code_presentation;
-            """)
-            self.courses = cursor.fetchall()
-            conn.close()
-        except Exception as e:
-            QMessageBox.critical(self, "Database Error", str(e))
-            self.courses = []
+        query = """
+            SELECT code_module, code_presentation, module_presentation_length
+            FROM courses 
+            ORDER BY code_module, code_presentation;
+        """
+        self.courses = DBExecuteService.fetch_all(query) or []
 
-        self.display_courses()
-
-    # ---------------------- Hiển thị dữ liệu ----------------------
+    # ---------------- DISPLAY DATA ----------------
     def display_courses(self):
         total_pages = max(1, (len(self.courses) + self.per_page - 1) // self.per_page)
         self.current_page = min(self.current_page, total_pages)
@@ -88,9 +65,9 @@ class MainApp(QMainWindow):
             frame = frames[i]
             if i < len(data):
                 course = data[i]
-                getattr(self.ui, f"course_code_module{i+1}").setText(course["code_module"])
-                getattr(self.ui, f"course_code_presentation{i+1}").setText(course["code_presentation"])
-                getattr(self.ui, f"presentation{i+1}").setText(str(course["module_presentation_length"]))
+                getattr(self.ui, f"course_code_module{i + 1}").setText(course["code_module"])
+                getattr(self.ui, f"course_code_presentation{i + 1}").setText(course["code_presentation"])
+                getattr(self.ui, f"presentation{i + 1}").setText(str(course["module_presentation_length"]))
                 frame.show()
             else:
                 frame.hide()
@@ -173,14 +150,5 @@ class MainApp(QMainWindow):
         self.display_courses()
 
     def previous_page(self):
-        if self.current_page > 1:
-            self.current_page -= 1
-            self.display_courses()
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = MainApp()
-    window.show()
-    sys.exit(app.exec())
-
+        self.current_page -= 1
+        self.display_courses()
