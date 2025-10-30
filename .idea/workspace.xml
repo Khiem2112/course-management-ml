@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c8f1b277-1cfa-497c-b0de-2ec862972e50" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ext/Extanalysis.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ext/Extcourse.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/GUI.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/course/course_result.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/application/home_page_ex.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/config.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management-ml/GUI.py" beforeDir="false" afterPath="$PROJECT_DIR$/course-management-ml/GUI.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/course-management-ml/database/student/student.py" beforeDir="false" afterPath="$PROJECT_DIR$/course-management-ml/database/student/student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/connection_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/course/course.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/execute_service.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/student/student.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/environment.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/data_ready.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/model_weights/student_ensemble_model.pkl" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/inference/predict.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/analysis.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/analysis_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/cluster_analysis.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/cluster_analysis_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_assessment.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_assessment_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_result.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_result.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_result_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_student.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_student_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/course_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/home_page.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/home_page.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/payment.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/payment_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/student.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/student_ui.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/window/course/window_course.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ui/window/course/window_course.ui" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/logger.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/plot/course.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/plot/plot_manager.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/plot/student_score.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/table/table_manager.py" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/course-management-ml" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
+  <component name="ProjectId" id="33OwAm1Nomaa66TYeIzBEyuQnKJ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.add_name_student.executor&quot;: &quot;Run&quot;,
+    &quot;Python.analyst.executor&quot;: &quot;Run&quot;,
+    &quot;Python.analyst2.executor&quot;: &quot;Run&quot;,
+    &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.course.executor&quot;: &quot;Run&quot;,
+    &quot;Python.course_result.executor&quot;: &quot;Run&quot;,
+    &quot;Python.db1.executor&quot;: &quot;Run&quot;,
+    &quot;Python.home_page_ex.executor&quot;: &quot;Run&quot;,
+    &quot;Python.student.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_courses.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test_student.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/NAM3_HK1/DOAN_ML/DOAN&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\NAM3_HK1\DOAN_ML\DOAN" />
+      <recent name="D:\NAM3_HK1\DOAN_ML\DOAN\course-management-ml\application" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-PY-241.14494.241" />
+        <option value="bundled-python-sdk-0509580d9d50-28c9f5db9ffe-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-241.14494.241" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c8f1b277-1cfa-497c-b0de-2ec862972e50" name="Changes" comment="" />
+      <created>1759201284969</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1759201284969</updated>
+      <workItem from="1759201289963" duration="6000" />
+      <workItem from="1759279194308" duration="756000" />
+      <workItem from="1759410423725" duration="3677000" />
+      <workItem from="1759647425829" duration="437000" />
+      <workItem from="1759750712103" duration="1321000" />
+      <workItem from="1759846591473" duration="44000" />
+      <workItem from="1759846657754" duration="878000" />
+      <workItem from="1759881628963" duration="9000" />
+      <workItem from="1759924390240" duration="2673000" />
+      <workItem from="1759983445374" duration="2929000" />
+      <workItem from="1760445702377" duration="19000" />
+      <workItem from="1760614029346" duration="147000" />
+      <workItem from="1760624256163" duration="634000" />
+      <workItem from="1761091607003" duration="174000" />
+      <workItem from="1761136167354" duration="3075000" />
+      <workItem from="1761143553527" duration="1800000" />
+      <workItem from="1761186864807" duration="10467000" />
+      <workItem from="1761307937321" duration="2493000" />
+      <workItem from="1761383197916" duration="2023000" />
+      <workItem from="1761385264502" duration="2401000" />
+      <workItem from="1761395773599" duration="1493000" />
+      <workItem from="1761397296718" duration="2831000" />
+      <workItem from="1761442745588" duration="8127000" />
+      <workItem from="1761469715205" duration="90000" />
+      <workItem from="1761483703963" duration="2551000" />
+      <workItem from="1761572675599" duration="2128000" />
+      <workItem from="1761618141978" duration="1468000" />
+      <workItem from="1761697845260" duration="8000" />
+      <workItem from="1761703635913" duration="1050000" />
+      <workItem from="1761746971616" duration="948000" />
+      <workItem from="1761792858606" duration="32000" />
+      <workItem from="1761792924688" duration="3747000" />
+      <workItem from="1761821365883" duration="161000" />
+      <workItem from="1761830123285" duration="805000" />
+      <workItem from="1761830954293" duration="575000" />
+      <workItem from="1761831551064" duration="1241000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/app_py$student.coverage" NAME="student Coverage Results" MODIFIED="1761144656961" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/database/student" />
+    <SUITE FILE_PATH="coverage/app_py$home_page_ex.coverage" NAME="home_page_ex Coverage Results" MODIFIED="1761384682686" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/application" />
+    <SUITE FILE_PATH="coverage/app_py$db1.coverage" NAME="db1 Coverage Results" MODIFIED="1759413999082" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$test_courses.coverage" NAME="test_courses Coverage Results" MODIFIED="1761189688447" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/database/course" />
+    <SUITE FILE_PATH="coverage/app_py$course.coverage" NAME="course Coverage Results" MODIFIED="1761144699609" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/database/course" />
+    <SUITE FILE_PATH="coverage/app_py$test_student.coverage" NAME="test_student Coverage Results" MODIFIED="1761308289127" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/database/student" />
+    <SUITE FILE_PATH="coverage/app_py$add_name_student.coverage" NAME="add_name_student Coverage Results" MODIFIED="1761703682578" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/app_py$analyst2.coverage" NAME="analyst2 Coverage Results" MODIFIED="1761747846626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/database/analyst" />
+    <SUITE FILE_PATH="coverage/app_py$app.coverage" NAME="app Coverage Results" MODIFIED="1761386393907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course_management_ml" />
+    <SUITE FILE_PATH="coverage/app_py$analyst.coverage" NAME="analyst Coverage Results" MODIFIED="1761747517883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/database/analyst" />
+    <SUITE FILE_PATH="coverage/app_py$course_result.coverage" NAME="course_result Coverage Results" MODIFIED="1761384670464" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/course-management-ml/application/course" />
+  </component>
+</project>
