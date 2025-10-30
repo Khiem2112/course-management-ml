@@ -38,7 +38,10 @@ class ConfigManager:
         # ML and Application Settings
         # ---------------------
         self.LOG_LEVEL = os.getenv("LOG_LEVEL", "INFO").upper()
-        self.MODEL_PATH = os.getenv("MODEL_PATH", "assets/model.pkl")
+        self.MODEL_PATH = os.getenv("MODEL_PATH", "assets/model.pkl") 
+        
+        # --- ADD THIS LINE ---
+        self.FEATURE_DATA_PATH = os.getenv("FEATURE_DATA_PATH", "data/features.csv")
         self.DEFAULT_TIMEOUT_SEC = int(os.getenv("DEFAULT_TIMEOUT_SEC", 60))
         
         # ---------------------
