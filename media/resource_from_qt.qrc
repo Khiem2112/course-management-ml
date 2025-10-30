@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="Icons">
+    <file>../images/icons/Login/check.png</file>
+    <file>../images/icons/Login/eye_closed.png</file>
+    <file>../images/icons/Login/eye_open.png</file>
+    <file>../images/icons/Login/tải xuống.png</file>
+    <file>../images/icons/Login/x.png</file>
+    <file>../images/icons/Course/Analysis.png</file>
+    <file>../images/icons/Course/Course.png</file>
+    <file>../images/icons/Course/Create1.png</file>
+    <file>../images/icons/Course/Filter1.png</file>
+    <file>../images/icons/Course/le-Photoroom.png</file>
+    <file>../images/icons/Course/Log_Out.png</file>
+    <file>../images/icons/Course/magnifier.png</file>
+    <file>../images/icons/Course/Payment.png</file>
+    <file>../images/icons/Course/ri-Photoroom.png</file>
+    <file>../images/icons/Course/Student1.png</file>
+  </qresource>
+  <qresource prefix="Images">
+    <file>../images/course_image.png</file>
+    <file>../images/Logo DUKI.png</file>
+  </qresource>
+</RCC>

@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>823</width>
-    <height>614</height>
+    <width>813</width>
+    <height>589</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -39,7 +39,7 @@ QLabel#brand {
     text-align: left;
     padding: 8px 20px;
     border: none;
-	color: black;
+    color: black;
 }
 #menu_analysis:hover,
 #menu_course:hover,
@@ -50,25 +50,25 @@ QLabel#brand {
     background-color: #eaeaea;
 }
 #menu_logout {
-    color: red;
-    padding: 10px;
     text-align: left;
-	border: none;
+    padding: 10px;
+    border: none;
+    color: red;
 }
-#menu_course {
-    background-color: #eaeaea;
-}
-#course_search_lineEdit {
+#lineEdit_search {
     background-color: #F8F8F8;
     border: 1px solid #CCCCCC;
     border-radius-right: 10px;
     padding: 6px 12px;
     color: #555;
 }
-#course_search_lineEdit:focus {
+#lineEdit_search:focus {
     border: 2px solid #A0A0A0;
 }
-#course_search_comboBox {
+#btn_search {
+    border:none;
+}
+#comboBox_search {
     background-color: #2E2E2E;
     color: white;
     padding: 6px 12px;
@@ -80,7 +80,7 @@ QComboBox QAbstractItemView {
     selection-background-color: #444444;
     selection-color: white;
 }
-#course_create {
+#btn_create {
     background-color: #4C8BF5;
     color: white;
     border: none;
@@ -88,24 +88,24 @@ QComboBox QAbstractItemView {
     padding: 6px 10px;
     font-weight: bold;
 }
-#course_create:hover {
+#btn_create:hover {
     background-color: #3B73E0;
 }
-#course_filter {
+#btn_filter {
     background-color: #F4F4F4;
     border: 1px solid #CCCCCC;
     border-radius: 8px;
     padding: 6px 10px;
-	color: black;
+    color: black;
 }
-#course_filter:hover {
+#btn_filter:hover {
     background-color: #EAEAEA;
 }
 #header{
 	background-color: #f9f9f9;
 	color: black;
 }
-#course_previous, #course_next {
+#btn_previous, #btn_next {
     background-color: white;
     color: #2E3A59;
     border: 1px solid #D0D0D0;
@@ -113,7 +113,7 @@ QComboBox QAbstractItemView {
     padding: 6px 12px;
     font-weight: 500;
 }
-#course_previous:hover, #course_next:hover {
+#btn_previous:hover, #btn_next:hover {
     background-color: #F5F5F5;
 }
 #course_page_1, #course_page_2, #course_page_3, #course_page_8, #course_page_9, #course_page_10 {
@@ -122,7 +122,7 @@ QComboBox QAbstractItemView {
     color: #444;
     padding: 6px 10px;
 }
-#course_page_1 {
+#course_page_1:hover, #course_page_2:hover, #course_page_3:hover, #course_page_8:hover, #course_page_9:hover, #course_page_10:hover {
     background-color: #E0E0E0;
     border-radius: 6px;
     font-weight: bold;
@@ -171,7 +171,7 @@ QComboBox QAbstractItemView {
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="menu">
+        <widget class="QFrame" name="frame_sidebar">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -208,6 +208,12 @@ QComboBox QAbstractItemView {
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>160</width>
+              <height>90</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>20</pointsize>
@@ -217,7 +223,13 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>DUKI</string>
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="resource_from_qt.qrc">:/Images/images/Logo DUKI.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -232,7 +244,7 @@ QComboBox QAbstractItemView {
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_2">
+           <widget class="QFrame" name="frame_menu">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
@@ -269,6 +281,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Course</string>
                </property>
+               <property name="icon">
+                <iconset resource="resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -288,6 +304,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Student</string>
                </property>
+               <property name="icon">
+                <iconset resource="resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -303,6 +323,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Analysis</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -325,6 +349,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Payment</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -387,13 +415,17 @@ QComboBox QAbstractItemView {
             <property name="text">
              <string>Log out</string>
             </property>
+            <property name="icon">
+             <iconset resource="resource_from_qt.qrc">
+              <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
+            </property>
            </widget>
           </item>
          </layout>
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_3">
+        <widget class="QFrame" name="frame_main">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -420,7 +452,7 @@ QComboBox QAbstractItemView {
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="option">
+           <widget class="QFrame" name="frame_topbar">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -434,6 +466,9 @@ QComboBox QAbstractItemView {
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <property name="spacing">
+              <number>0</number>
+             </property>
              <property name="leftMargin">
               <number>0</number>
              </property>
@@ -447,25 +482,31 @@ QComboBox QAbstractItemView {
               <number>0</number>
              </property>
              <item>
-              <widget class="QFrame" name="search">
+              <widget class="QFrame" name="frame_search">
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
+               <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,0,1">
                 <property name="spacing">
                  <number>0</number>
                 </property>
+                <property name="leftMargin">
+                 <number>6</number>
+                </property>
                 <property name="topMargin">
                  <number>11</number>
+                </property>
+                <property name="rightMargin">
+                 <number>0</number>
                 </property>
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QComboBox" name="course_search_comboBox">
+                 <widget class="QComboBox" name="comboBox_search">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -496,7 +537,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="course_search_lineEdit">
+                 <widget class="QLineEdit" name="lineEdit_search">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -510,7 +551,33 @@ QComboBox QAbstractItemView {
                    </size>
                   </property>
                   <property name="placeholderText">
-                   <string>Search</string>
+                   <string>Search...</string>
+                  </property>
+                  <property name="clearButtonEnabled">
+                   <bool>true</bool>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_search">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="resource_from_qt.qrc">
+                    <normaloff>:/Icons/images/icons/Course/magnifier.png</normaloff>:/Icons/images/icons/Course/magnifier.png</iconset>
+                  </property>
+                  <property name="iconSize">
+                   <size>
+                    <width>20</width>
+                    <height>20</height>
+                   </size>
                   </property>
                  </widget>
                 </item>
@@ -518,7 +585,7 @@ QComboBox QAbstractItemView {
               </widget>
              </item>
              <item>
-              <widget class="QFrame" name="frame_5">
+              <widget class="QFrame" name="frame_option">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -539,7 +606,7 @@ QComboBox QAbstractItemView {
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="course_filter">
+                 <widget class="QPushButton" name="btn_filter">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -555,10 +622,14 @@ QComboBox QAbstractItemView {
                   <property name="text">
                    <string>Filter</string>
                   </property>
+                  <property name="icon">
+                   <iconset resource="resource_from_qt.qrc">
+                    <normaloff>:/Icons/images/icons/Course/Filter1.png</normaloff>:/Icons/images/icons/Course/Filter1.png</iconset>
+                  </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="course_create">
+                 <widget class="QPushButton" name="btn_create">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -572,7 +643,11 @@ QComboBox QAbstractItemView {
                    </size>
                   </property>
                   <property name="text">
-                   <string>+ Create</string>
+                   <string>Create</string>
+                  </property>
+                  <property name="icon">
+                   <iconset resource="resource_from_qt.qrc">
+                    <normaloff>:/Icons/images/icons/Course/Create1.png</normaloff>:/Icons/images/icons/Course/Create1.png</iconset>
                   </property>
                  </widget>
                 </item>
@@ -608,7 +683,7 @@ QComboBox QAbstractItemView {
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_6">
+           <widget class="QFrame" name="frame_content">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -648,6 +723,18 @@ QComboBox QAbstractItemView {
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_3">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_2">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
@@ -657,7 +744,7 @@ QComboBox QAbstractItemView {
 background-color: black</string>
                   </property>
                   <property name="text">
-                   <string>AAA</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -670,12 +757,12 @@ background-color: black</string>
                    <string notr="true">color: black</string>
                   </property>
                   <property name="text">
-                   <string>2013J</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_16">
+                 <widget class="QFrame" name="frame_module_presentation2">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -693,7 +780,7 @@ background-color: black</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="course_module_presentation1_2">
+                    <widget class="QLabel" name="course_module_presentation2">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
@@ -703,12 +790,12 @@ background-color: black</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_24">
+                    <widget class="QLabel" name="presentation2">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>268</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -722,7 +809,7 @@ background-color: black</string>
               </widget>
              </item>
              <item row="1" column="0">
-              <widget class="QFrame" name="frame_8">
+              <widget class="QFrame" name="course_4">
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
@@ -741,6 +828,18 @@ background-color: black</string>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_5">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_4">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
@@ -750,7 +849,7 @@ background-color: black</string>
 background-color: black</string>
                   </property>
                   <property name="text">
-                   <string>AAA</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -763,12 +862,12 @@ background-color: black</string>
                    <string notr="true">color: black</string>
                   </property>
                   <property name="text">
-                   <string>2013J</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_10">
+                 <widget class="QFrame" name="frame_module_presentation4">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -786,7 +885,7 @@ background-color: black</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="course_module_presentation1_4">
+                    <widget class="QLabel" name="course_module_presentation4">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
@@ -796,12 +895,12 @@ background-color: black</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_8">
+                    <widget class="QLabel" name="presentation4">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>268</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -834,6 +933,18 @@ background-color: black</string>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_4">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_3">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
@@ -843,7 +954,7 @@ background-color: black</string>
 background-color: black</string>
                   </property>
                   <property name="text">
-                   <string>AAA</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -856,12 +967,12 @@ background-color: black</string>
                    <string notr="true">color: black</string>
                   </property>
                   <property name="text">
-                   <string>2013J</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_20">
+                 <widget class="QFrame" name="frame_module_presentation3">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -879,7 +990,7 @@ background-color: black</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="course_module_presentation1_3">
+                    <widget class="QLabel" name="course_module_presentation3">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
@@ -889,12 +1000,12 @@ background-color: black</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_32">
+                    <widget class="QLabel" name="presentation3">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>268</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -927,6 +1038,18 @@ background-color: black</string>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_2">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_1">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
@@ -936,7 +1059,7 @@ background-color: black</string>
 background-color: black</string>
                   </property>
                   <property name="text">
-                   <string>AAA</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -949,12 +1072,12 @@ background-color: black</string>
                    <string notr="true">color: black</string>
                   </property>
                   <property name="text">
-                   <string>2013J</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_9">
+                 <widget class="QFrame" name="frame_module_presentation1">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -982,12 +1105,12 @@ background-color: black</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_4">
+                    <widget class="QLabel" name="presentation1">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>268</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1020,6 +1143,18 @@ background-color: black</string>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_7">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_6">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
@@ -1029,7 +1164,7 @@ background-color: black</string>
 background-color: black</string>
                   </property>
                   <property name="text">
-                   <string>AAA</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1042,12 +1177,12 @@ background-color: black</string>
                    <string notr="true">color: black</string>
                   </property>
                   <property name="text">
-                   <string>2013J</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_22">
+                 <widget class="QFrame" name="frame_module_presentation6">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -1065,7 +1200,7 @@ background-color: black</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_35">
+                    <widget class="QLabel" name="course_module_presentation6">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
@@ -1075,12 +1210,12 @@ background-color: black</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_36">
+                    <widget class="QLabel" name="presentation6">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>268</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1113,6 +1248,18 @@ background-color: black</string>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_6">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_5">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
@@ -1122,7 +1269,7 @@ background-color: black</string>
 background-color: black</string>
                   </property>
                   <property name="text">
-                   <string>AAA</string>
+                   <string/>
                   </property>
                   <property name="alignment">
                    <set>Qt::AlignCenter</set>
@@ -1135,12 +1282,12 @@ background-color: black</string>
                    <string notr="true">color: black</string>
                   </property>
                   <property name="text">
-                   <string>2013J</string>
+                   <string/>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_18">
+                 <widget class="QFrame" name="frame_module_presentation5">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
@@ -1158,7 +1305,7 @@ background-color: black</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="course_module_presentation1_5">
+                    <widget class="QLabel" name="course_module_presentation5">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
@@ -1168,12 +1315,12 @@ background-color: black</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="label_28">
+                    <widget class="QLabel" name="presentation5">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>268</string>
+                      <string/>
                      </property>
                      <property name="alignment">
                       <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
@@ -1190,7 +1337,7 @@ background-color: black</string>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_7">
+           <widget class="QFrame" name="frame_pagination">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -1203,15 +1350,41 @@ background-color: black</string>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
+            <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,0,0,0,1">
              <property name="topMargin">
               <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>6</number>
              </property>
              <property name="bottomMargin">
               <number>0</number>
              </property>
              <item>
-              <spacer name="horizontalSpacer_3">
+              <widget class="QPushButton" name="btn_previous">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>80</width>
+                 <height>16777215</height>
+                </size>
+               </property>
+               <property name="text">
+                <string>Previous</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/le-Photoroom.png</normaloff>:/Icons/images/icons/Course/le-Photoroom.png</iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
@@ -1224,33 +1397,7 @@ background-color: black</string>
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="course_previous">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="text">
-                <string>&lt;- Previous</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>1</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QWidget" name="course_page" native="true">
+              <widget class="QWidget" name="page_container" native="true">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                  <horstretch>30</horstretch>
@@ -1271,137 +1418,17 @@ background-color: black</string>
                  <number>11</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="course_page_1">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
+                 <layout class="QHBoxLayout" name="pagination_layout">
+                  <property name="spacing">
+                   <number>6</number>
                   </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
+                  <property name="leftMargin">
+                   <number>6</number>
                   </property>
-                  <property name="text">
-                   <string>1</string>
+                  <property name="rightMargin">
+                   <number>6</number>
                   </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="course_page_2">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>2</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="course_page_8">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>3</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="course_space">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="text">
-                   <string>...</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="course_page_10">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>8</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="course_page_9">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>9</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="course_page_3">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>10</string>
-                  </property>
-                 </widget>
+                 </layout>
                 </item>
                </layout>
               </widget>
@@ -1413,37 +1440,37 @@ background-color: black</string>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>4</width>
+                 <width>40</width>
                  <height>20</height>
                 </size>
                </property>
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="course_next">
+              <widget class="QPushButton" name="btn_next">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="text">
-                <string>   Next -&gt; </string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_4">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
+               <property name="maximumSize">
                 <size>
-                 <width>40</width>
-                 <height>20</height>
+                 <width>80</width>
+                 <height>16777215</height>
                 </size>
                </property>
-              </spacer>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
+               <property name="text">
+                <string>   Next</string>
+               </property>
+               <property name="icon">
+                <iconset resource="resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</iconset>
+               </property>
+              </widget>
              </item>
             </layout>
            </widget>
@@ -1461,13 +1488,15 @@ background-color: black</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>823</width>
-     <height>26</height>
+     <width>813</width>
+     <height>18</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="resource_from_qt.qrc"/>
+ </resources>
  <connections/>
 </ui>

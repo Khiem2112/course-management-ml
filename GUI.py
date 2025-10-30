@@ -1,9 +1,12 @@
+import sys, os
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget
 from ui.course_ui import Ui_MainWindow as CourseUI
 from ui.student_ui import Ui_MainWindow as StudentUI
 from ui.payment_ui import Ui_MainWindow as PaymentUI
 from ui.analysis_ui import Ui_MainWindow as AnalysisUI
-
+from application.course_ex import CourseManagementEx
 
 # ====== FRAME CHO MỖI UI ======
 class CourseFrame(QMainWindow):
@@ -11,7 +14,7 @@ class CourseFrame(QMainWindow):
         super().__init__(parent)
         self.ui = CourseUI()
         self.ui.setupUi(self)
-
+        self.logic = CourseManagementEx(self.ui)
 
 class StudentFrame(QMainWindow):
     def __init__(self, parent=None):
