@@ -1,9 +1,0 @@
-test*
-**/__pycache__/
-# Object file
-*.o
-
-# Ada Library Information
-*.ali
-.idea
-.vscode

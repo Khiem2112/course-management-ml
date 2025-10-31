@@ -1,1 +1,0 @@
-# course-management-ml
