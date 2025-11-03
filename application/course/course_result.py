@@ -1,8 +1,8 @@
-from ui.course_result import Ui_MainWindow
+from ui.course_result import Ui_MainWindow as CourseResultUI
 from PyQt6.QtWidgets import QMainWindow, QLabel, QHBoxLayout, QVBoxLayout, QWidget
 from utils.logger import get_class_logger
-from database.course.course import get_n_highest_score_student, get_dropout_percentage, get_student_score_statistic
-from database.student.student import get_student_score_per_course
+from database.course.course_logic import CoursesLogic
+from database.student.student_logic import StudentsLogic
 from utils.plot.plot_manager import PlotManager
 from utils.plot.student_score import StudentScoreVisualizer
 from utils.plot.course import CourseInfoVisualizer
@@ -11,14 +11,23 @@ class CourseResultEx(QMainWindow):
   
   def __init__(self):
     super().__init__()
-    self.ui = Ui_MainWindow()
+    self.ui = CourseResultUI()
     self.ui.setupUi(self)
   
-    self.logger = get_class_logger(__name__, __class__.__name__)
-    self.pre_run_the_page()
+    self.logger = get_class_logger(__name__,__class__.__name__)
     
+  def load_data(self, code_module: str, code_presentation: str):
+    """
+    This method is REQUIRED by the BaseCourseTabPage.
+    It's called by the router (CourseManagementEx) when a course is selected.
+    """
+    # 1. Store the "props"
+    self.code_module = code_module
+    self.code_presentation = code_presentation
     
-  def pre_run_the_page(self):
+    self.logger.info(f"Loading Result Tab for: {code_module}-{code_presentation}")
+    
+    # 2. Run all the page-specific logic
     self.visualize_student_score_distibution()
     self.show_top_5_students()
     self.visualize_drop_out_rate()
@@ -37,7 +46,7 @@ class CourseResultEx(QMainWindow):
     self.logger.info("Loading student score distribution plot...")
     try:
       # 1. Fetch data
-      score_data = get_student_score_per_course()
+      score_data = StudentsLogic.get_student_score_per_course()
       self.logger.debug(f"Fetched {len(score_data) if score_data else 0} score records.")
 
       # 2. Call the PlotManager static method, passing the TARGET WIDGET and data
@@ -72,8 +81,8 @@ class CourseResultEx(QMainWindow):
         self.logger.error("UI does not have 'course_result_top5' frame. Cannot load top-5 students.")
         return
 
-      students = get_n_highest_score_student(code_module='AAA',
-                                             code_presentation='2013J',
+      students = CoursesLogic.get_top_students_by_score(code_module=self.code_module,
+                                             code_presentation=self.code_presentation,
                                              n=5) or []
       self.logger.debug(f"Fetched {len(students)} top student records.")
 
@@ -119,14 +128,14 @@ class CourseResultEx(QMainWindow):
       self.logger.error(f"Failed to load top-5 students: {e}", exc_info=True)
     
   def show_course_statistic_info(self):
-    stu_statistic_score = get_student_score_statistic(code_module='AAA',code_presentation='2013J')
+    stu_statistic_score = CoursesLogic.get_student_score_statistic(code_module=self.code_module,code_presentation=self.code_presentation)
     self.ui.mean_stu_score.setText(str(stu_statistic_score.get('mean_score')))
     self.ui.max_stu_score.setText(str(stu_statistic_score.get('max_score')))
     self.ui.min_stu_score.setText(str(stu_statistic_score.get('min_score')))
     self.ui.mode_stu_score.setText(str(stu_statistic_score.get('mode_score')))
   
   def visualize_drop_out_rate(self):
-    data = get_dropout_percentage(code_module='AAA',code_presentation='2013J')
+    data = CoursesLogic.get_dropout_percentage(code_module=self.code_module,code_presentation=self.code_presentation)
     plot_manager = CourseInfoVisualizer.create_dropout_rate_pie(data=data, target_widget=self.ui.pie_chart)
     plot_manager.set_title("Dropout/Retention Rate")
     

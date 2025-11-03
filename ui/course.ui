@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>813</width>
-    <height>589</height>
+    <width>823</width>
+    <height>614</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -226,7 +226,7 @@ QComboBox QAbstractItemView {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap resource="resource_from_qt.qrc">:/Images/images/Logo DUKI.png</pixmap>
+             <pixmap>:/Images/images/Logo DUKI.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -282,7 +282,7 @@ QComboBox QAbstractItemView {
                 <string>Course</string>
                </property>
                <property name="icon">
-                <iconset resource="resource_from_qt.qrc">
+                <iconset>
                  <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
                </property>
               </widget>
@@ -305,7 +305,7 @@ QComboBox QAbstractItemView {
                 <string>Student</string>
                </property>
                <property name="icon">
-                <iconset resource="resource_from_qt.qrc">
+                <iconset>
                  <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
                </property>
               </widget>
@@ -325,7 +325,7 @@ QComboBox QAbstractItemView {
                 <string>Analysis</string>
                </property>
                <property name="icon">
-                <iconset resource="resource_from_qt.qrc">
+                <iconset>
                  <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
@@ -351,7 +351,7 @@ QComboBox QAbstractItemView {
                 <string>Payment</string>
                </property>
                <property name="icon">
-                <iconset resource="resource_from_qt.qrc">
+                <iconset>
                  <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
@@ -416,7 +416,7 @@ QComboBox QAbstractItemView {
              <string>Log out</string>
             </property>
             <property name="icon">
-             <iconset resource="resource_from_qt.qrc">
+             <iconset>
               <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
@@ -570,7 +570,7 @@ QComboBox QAbstractItemView {
                    <string/>
                   </property>
                   <property name="icon">
-                   <iconset resource="resource_from_qt.qrc">
+                   <iconset>
                     <normaloff>:/Icons/images/icons/Course/magnifier.png</normaloff>:/Icons/images/icons/Course/magnifier.png</iconset>
                   </property>
                   <property name="iconSize">
@@ -623,7 +623,7 @@ QComboBox QAbstractItemView {
                    <string>Filter</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="resource_from_qt.qrc">
+                   <iconset>
                     <normaloff>:/Icons/images/icons/Course/Filter1.png</normaloff>:/Icons/images/icons/Course/Filter1.png</iconset>
                   </property>
                  </widget>
@@ -646,7 +646,7 @@ QComboBox QAbstractItemView {
                    <string>Create</string>
                   </property>
                   <property name="icon">
-                   <iconset resource="resource_from_qt.qrc">
+                   <iconset>
                     <normaloff>:/Icons/images/icons/Course/Create1.png</normaloff>:/Icons/images/icons/Course/Create1.png</iconset>
                   </property>
                  </widget>
@@ -703,29 +703,29 @@ QComboBox QAbstractItemView {
              <enum>QFrame::Raised</enum>
             </property>
             <layout class="QGridLayout" name="gridLayout">
-             <item row="0" column="1">
-              <widget class="QFrame" name="course_2">
+             <item row="1" column="1">
+              <widget class="QFrame" name="course_5">
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_9">
+               <layout class="QVBoxLayout" name="verticalLayout_10">
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QWidget" name="image_2" native="true">
+                 <widget class="QWidget" name="image_5" native="true">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_3">
+                  <layout class="QGridLayout" name="gridLayout_6">
                    <item row="0" column="0">
-                    <widget class="QLabel" name="image_course_2">
+                    <widget class="QLabel" name="image_course_5">
                      <property name="text">
                       <string/>
                      </property>
@@ -738,7 +738,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="course_code_module2">
+                 <widget class="QLabel" name="course_code_module5">
                   <property name="styleSheet">
                    <string notr="true">color: white;
 background-color: black</string>
@@ -752,7 +752,7 @@ background-color: black</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="course_code_presentation2">
+                 <widget class="QLabel" name="course_code_presentation5">
                   <property name="styleSheet">
                    <string notr="true">color: black</string>
                   </property>
@@ -762,14 +762,14 @@ background-color: black</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_module_presentation2">
+                 <widget class="QFrame" name="frame_module_presentation5">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                  <layout class="QHBoxLayout" name="horizontalLayout_14">
                    <property name="leftMargin">
                     <number>0</number>
                    </property>
@@ -780,332 +780,17 @@ background-color: black</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="course_module_presentation2">
+                    <widget class="QLabel" name="course_module_presentation5">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>Module presentation</string>
+                      <string>Lecture counts</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="presentation2">
-                     <property name="styleSheet">
-                      <string notr="true">color: red</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="1" column="0">
-              <widget class="QFrame" name="course_4">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_5">
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QWidget" name="image_4" native="true">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_5">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="image_course_4">
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="scaledContents">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="course_code_module4">
-                  <property name="styleSheet">
-                   <string notr="true">color: white;
-background-color: black</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="course_code_presentation4">
-                  <property name="styleSheet">
-                   <string notr="true">color: black</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_module_presentation4">
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_9">
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QLabel" name="course_module_presentation4">
-                     <property name="styleSheet">
-                      <string notr="true">color: red</string>
-                     </property>
-                     <property name="text">
-                      <string>Module presentation</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="presentation4">
-                     <property name="styleSheet">
-                      <string notr="true">color: red</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="0" column="2">
-              <widget class="QFrame" name="course_3">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_11">
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QWidget" name="image_3" native="true">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_4">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="image_course_3">
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="scaledContents">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="course_code_module3">
-                  <property name="styleSheet">
-                   <string notr="true">color: white;
-background-color: black</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="course_code_presentation3">
-                  <property name="styleSheet">
-                   <string notr="true">color: black</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_module_presentation3">
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_15">
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QLabel" name="course_module_presentation3">
-                     <property name="styleSheet">
-                      <string notr="true">color: red</string>
-                     </property>
-                     <property name="text">
-                      <string>Module presentation</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="presentation3">
-                     <property name="styleSheet">
-                      <string notr="true">color: red</string>
-                     </property>
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item row="0" column="0">
-              <widget class="QFrame" name="course_1">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QVBoxLayout" name="verticalLayout_4">
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QWidget" name="image_1" native="true">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_2">
-                   <item row="0" column="0">
-                    <widget class="QLabel" name="image_course_1">
-                     <property name="text">
-                      <string/>
-                     </property>
-                     <property name="scaledContents">
-                      <bool>true</bool>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="course_code_module1">
-                  <property name="styleSheet">
-                   <string notr="true">color: white;
-background-color: black</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="course_code_presentation1">
-                  <property name="styleSheet">
-                   <string notr="true">color: black</string>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_module_presentation1">
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_8">
-                   <property name="leftMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="topMargin">
-                    <number>0</number>
-                   </property>
-                   <property name="bottomMargin">
-                    <number>0</number>
-                   </property>
-                   <item>
-                    <widget class="QLabel" name="course_module_presentation1">
-                     <property name="styleSheet">
-                      <string notr="true">color: red</string>
-                     </property>
-                     <property name="text">
-                      <string>Module presentation</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="presentation1">
+                    <widget class="QLabel" name="presentation5">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
@@ -1205,7 +890,7 @@ background-color: black</string>
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>Module presentation</string>
+                      <string>Lecture counts</string>
                      </property>
                     </widget>
                    </item>
@@ -1228,29 +913,29 @@ background-color: black</string>
                </layout>
               </widget>
              </item>
-             <item row="1" column="1">
-              <widget class="QFrame" name="course_5">
+             <item row="0" column="0">
+              <widget class="QFrame" name="course_1">
                <property name="frameShape">
                 <enum>QFrame::StyledPanel</enum>
                </property>
                <property name="frameShadow">
                 <enum>QFrame::Raised</enum>
                </property>
-               <layout class="QVBoxLayout" name="verticalLayout_10">
+               <layout class="QVBoxLayout" name="verticalLayout_4">
                 <property name="bottomMargin">
                  <number>0</number>
                 </property>
                 <item>
-                 <widget class="QWidget" name="image_5" native="true">
+                 <widget class="QWidget" name="image_1" native="true">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
                     <horstretch>0</horstretch>
                     <verstretch>0</verstretch>
                    </sizepolicy>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_6">
+                  <layout class="QGridLayout" name="gridLayout_2">
                    <item row="0" column="0">
-                    <widget class="QLabel" name="image_course_5">
+                    <widget class="QLabel" name="image_course_1">
                      <property name="text">
                       <string/>
                      </property>
@@ -1263,7 +948,7 @@ background-color: black</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="course_code_module5">
+                 <widget class="QLabel" name="course_code_module1">
                   <property name="styleSheet">
                    <string notr="true">color: white;
 background-color: black</string>
@@ -1277,7 +962,7 @@ background-color: black</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="course_code_presentation5">
+                 <widget class="QLabel" name="course_code_presentation1">
                   <property name="styleSheet">
                    <string notr="true">color: black</string>
                   </property>
@@ -1287,14 +972,14 @@ background-color: black</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="frame_module_presentation5">
+                 <widget class="QFrame" name="frame_module_presentation1">
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QHBoxLayout" name="horizontalLayout_14">
+                  <layout class="QHBoxLayout" name="horizontalLayout_8">
                    <property name="leftMargin">
                     <number>0</number>
                    </property>
@@ -1305,17 +990,332 @@ background-color: black</string>
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="course_module_presentation5">
+                    <widget class="QLabel" name="course_module_presentation1">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
                      <property name="text">
-                      <string>Module presentation</string>
+                      <string>Lecture counts</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QLabel" name="presentation5">
+                    <widget class="QLabel" name="presentation1">
+                     <property name="styleSheet">
+                      <string notr="true">color: red</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="1" column="0">
+              <widget class="QFrame" name="course_4">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="image_4" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_5">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_4">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="course_code_module4">
+                  <property name="styleSheet">
+                   <string notr="true">color: white;
+background-color: black</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="course_code_presentation4">
+                  <property name="styleSheet">
+                   <string notr="true">color: black</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_module_presentation4">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_9">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="course_module_presentation4">
+                     <property name="styleSheet">
+                      <string notr="true">color: red</string>
+                     </property>
+                     <property name="text">
+                      <string>Lecture counts</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="presentation4">
+                     <property name="styleSheet">
+                      <string notr="true">color: red</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="1">
+              <widget class="QFrame" name="course_2">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_9">
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="image_2" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_3">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_2">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="course_code_module2">
+                  <property name="styleSheet">
+                   <string notr="true">color: white;
+background-color: black</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="course_code_presentation2">
+                  <property name="styleSheet">
+                   <string notr="true">color: black</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_module_presentation2">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_13">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="course_module_presentation2">
+                     <property name="styleSheet">
+                      <string notr="true">color: red</string>
+                     </property>
+                     <property name="text">
+                      <string>Lecture counts</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="presentation2">
+                     <property name="styleSheet">
+                      <string notr="true">color: red</string>
+                     </property>
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="alignment">
+                      <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item row="0" column="2">
+              <widget class="QFrame" name="course_3">
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <layout class="QVBoxLayout" name="verticalLayout_11">
+                <property name="bottomMargin">
+                 <number>0</number>
+                </property>
+                <item>
+                 <widget class="QWidget" name="image_3" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_4">
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="image_course_3">
+                     <property name="text">
+                      <string/>
+                     </property>
+                     <property name="scaledContents">
+                      <bool>true</bool>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="course_code_module3">
+                  <property name="styleSheet">
+                   <string notr="true">color: white;
+background-color: black</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignCenter</set>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="course_code_presentation3">
+                  <property name="styleSheet">
+                   <string notr="true">color: black</string>
+                  </property>
+                  <property name="text">
+                   <string/>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QFrame" name="frame_module_presentation3">
+                  <property name="frameShape">
+                   <enum>QFrame::StyledPanel</enum>
+                  </property>
+                  <property name="frameShadow">
+                   <enum>QFrame::Raised</enum>
+                  </property>
+                  <layout class="QHBoxLayout" name="horizontalLayout_15">
+                   <property name="leftMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="topMargin">
+                    <number>0</number>
+                   </property>
+                   <property name="bottomMargin">
+                    <number>0</number>
+                   </property>
+                   <item>
+                    <widget class="QLabel" name="course_module_presentation3">
+                     <property name="styleSheet">
+                      <string notr="true">color: red</string>
+                     </property>
+                     <property name="text">
+                      <string>Lecture counts</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QLabel" name="presentation3">
                      <property name="styleSheet">
                       <string notr="true">color: red</string>
                      </property>
@@ -1378,7 +1378,7 @@ background-color: black</string>
                 <string>Previous</string>
                </property>
                <property name="icon">
-                <iconset resource="resource_from_qt.qrc">
+                <iconset>
                  <normaloff>:/Icons/images/icons/Course/le-Photoroom.png</normaloff>:/Icons/images/icons/Course/le-Photoroom.png</iconset>
                </property>
               </widget>
@@ -1467,7 +1467,7 @@ background-color: black</string>
                 <string>   Next</string>
                </property>
                <property name="icon">
-                <iconset resource="resource_from_qt.qrc">
+                <iconset>
                  <normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</iconset>
                </property>
               </widget>
@@ -1488,14 +1488,15 @@ background-color: black</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>813</width>
-     <height>18</height>
+     <width>823</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
  <resources>
+  <include location="../media/resource_from_qt.qrc"/>
   <include location="resource_from_qt.qrc"/>
  </resources>
  <connections/>
