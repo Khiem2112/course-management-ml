@@ -7,3 +7,6 @@ test*
 *.ali
 .idea
 .vscode
+.mypy_cache
+Ext/
+
