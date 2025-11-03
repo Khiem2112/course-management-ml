@@ -1,5 +1,5 @@
-from course_management_ml.database.execute_service import DBExecuteService as db
-from course_management_ml.utils.logger import get_class_logger
+from database.execute_service import DBExecuteService as db
+from utils.logger import get_class_logger
 
 logger = get_class_logger(__name__, "StudentsLogic")
 
