@@ -72,3 +72,22 @@ class StudentsLogic:
         data = db.fetch_all(query, params)
         logger.info(f"Fetched {len(data)} students with filters: {code_module=}, {keyword=}.")
         return data
+    
+    @staticmethod 
+    def get_student_per_course(code_module:str, code_presentation: str) -> list[dict]:
+        data = db.fetch_all("""
+        SELECT
+        name_student,
+        (CASE gender
+        WHEN 'M' THEN 'Male'
+        WHEN 'F' THEN 'Female'
+        END) AS gender, -- Added END and an alias
+        region,
+        highest_education,
+        imd_band
+        FROM studentInfo
+        WHERE
+        code_module = %s
+        AND code_presentation = %s;
+                            """, params=(code_module,code_presentation))
+        return data
