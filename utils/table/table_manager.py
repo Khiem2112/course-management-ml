@@ -23,12 +23,13 @@ class TableWidgetManager:
         Args:
             table_widget: The QTableWidget instance this manager will control.
         """
+        self.logger = get_class_logger(__name__,self.__class__.__name__)
         if not isinstance(table_widget, QTableWidget):
             raise TypeError("Expected a QTableWidget instance.")
+        
         self.table_widget = table_widget
         self.header_labels: list[str] | None = None # Store headers after loading
         self._configure_table() # Apply initial configuration
-        self.logger = get_class_logger(__name__,self.__class__.__name__)
 
     def _configure_table(self):
         """Apply default table configuration to the managed table."""
