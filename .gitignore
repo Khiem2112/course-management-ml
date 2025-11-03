@@ -8,5 +8,5 @@ test*
 .idea
 .vscode
 .mypy_cache
-Ext/
+Ext
 

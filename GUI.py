@@ -6,7 +6,8 @@ from ui.course_ui import Ui_MainWindow as CourseUI
 from ui.student_ui import Ui_MainWindow as StudentUI
 from ui.payment_ui import Ui_MainWindow as PaymentUI
 from ui.analysis_ui import Ui_MainWindow as AnalysisUI
-from application.course_ex import CourseManagementEx
+from application.course.course_ex import CourseManagementEx
+from utils.logger import get_class_logger
 
 # ====== FRAME CHO MỖI UI ======
 class CourseFrame(QMainWindow):
@@ -14,7 +15,7 @@ class CourseFrame(QMainWindow):
         super().__init__(parent)
         self.ui = CourseUI()
         self.ui.setupUi(self)
-        self.logic = CourseManagementEx(self.ui)
+        CourseManagementEx(self.ui, self)
 
 class StudentFrame(QMainWindow):
     def __init__(self, parent=None):
@@ -41,7 +42,8 @@ class MainApp(QMainWindow):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("Hệ thống quản lý khóa học")
-
+        self.logger = get_class_logger(__name__,__class__.__name__)
+        
         # Tạo stacked widget
         self.stacked_widget = QStackedWidget()
         self.setCentralWidget(self.stacked_widget)
@@ -59,7 +61,7 @@ class MainApp(QMainWindow):
         self.stacked_widget.addWidget(self.analysis_frame) # index 3
 
         # Mặc định mở tab "Course"
-        self.stacked_widget.setCurrentIndex(0)
+        self.stacked_widget.setCurrentIndex(3)
 
         # Gắn sự kiện cho menu
         self.connect_menus()
