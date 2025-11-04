@@ -3,6 +3,7 @@ from media.resource_from_qt import *  # load Qt resources
 from PyQt6.QtWidgets import (QApplication, QMainWindow, QMessageBox, QPushButton, QLabel)
 from database.student.student_logic import StudentsLogic
 from utils.table.table_manager import TableWidgetManager
+from utils.logger import get_class_logger
 from functools import partial
 
 class CourseStudentEx(QMainWindow):
@@ -10,7 +11,8 @@ class CourseStudentEx(QMainWindow):
     super().__init__()
     self.ui = CourseStudentUI()
     self.ui.setupUi(self)
-    self_students = []
+    self.logger = get_class_logger(__name__,__class__.__name__)
+    self.students = []
   def load_data(self, code_module: str, code_presentation:str):
     self.code_module = code_module
     self.code_presentation = code_presentation
@@ -19,6 +21,7 @@ class CourseStudentEx(QMainWindow):
     self.current_page = 1
     self.num_students_per_page = 12
     self.display_current_page()
+    self.connect_signals()
   def display_current_page(self):
     """
     Slices the full student list and loads the current page into the table.
@@ -45,6 +48,7 @@ class CourseStudentEx(QMainWindow):
     self.update_pagination_buttons(total_pages)
     
     # 5. Enable/Disable buttons
+    self.logger.info(f'Current page is: {self.current_page}')
     self.ui.course_student_previous.setEnabled(self.current_page > 1)
     self.ui.course_student_next.setEnabled(self.current_page < total_pages)
 
