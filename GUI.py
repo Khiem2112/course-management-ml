@@ -61,7 +61,7 @@ class MainApp(QMainWindow):
         self.stacked_widget.addWidget(self.analysis_frame) # index 3
 
         # Mặc định mở tab "Course"
-        self.stacked_widget.setCurrentIndex(3)
+        self.stacked_widget.setCurrentIndex(0)
 
         # Gắn sự kiện cho menu
         self.connect_menus()
