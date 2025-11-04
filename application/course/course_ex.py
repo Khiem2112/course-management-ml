@@ -16,8 +16,8 @@ from functools import partial
 
 class CourseManagementEx():
     def __init__(self, 
-                 ui: CourseUI,
-                 main_window: QMainWindow
+                 main_window: QMainWindow,
+                 ui: CourseUI
                  ):
         super().__init__()
         self.logger = get_class_logger(__name__,__class__.__name__)
@@ -127,8 +127,6 @@ class CourseManagementEx():
     # ---------------- CONNECT SIGNALS ----------------
     def connect_signals(self):
         self.replace_frames_with_clickable()
-        self.ui.btn_next.clicked.connect(self.next_page)
-        self.ui.btn_previous.clicked.connect(self.previous_page)
         self.ui.btn_next.clicked.connect(self.next_page)
         self.ui.btn_previous.clicked.connect(self.previous_page)
         
