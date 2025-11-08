@@ -275,6 +275,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Course</string>
                </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Course.png</normaloff>../media/images/icons/Course/Course.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -294,6 +298,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Student</string>
                </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Student1.png</normaloff>../media/images/icons/Course/Student1.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -309,6 +317,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Analysis</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Analysis.png</normaloff>../media/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -331,6 +343,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Payment</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Payment.png</normaloff>../media/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -392,6 +408,10 @@ QComboBox QAbstractItemView {
             </property>
             <property name="text">
              <string>Log out</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../media/images/icons/Course/Log_Out.png</normaloff>../media/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
