@@ -1,4 +1,4 @@
-from ui.course_result import Ui_MainWindow as CourseResultUI
+from ui.course_result_ui import Ui_MainWindow as CourseResultUI
 from PyQt6.QtWidgets import QMainWindow, QLabel, QHBoxLayout, QVBoxLayout, QWidget
 from utils.logger import get_class_logger
 from database.course.course_logic import CoursesLogic
@@ -138,4 +138,4 @@ class CourseResultEx(QMainWindow):
     data = CoursesLogic.get_dropout_percentage(code_module=self.code_module,code_presentation=self.code_presentation)
     plot_manager = CourseInfoVisualizer.create_dropout_rate_pie(data=data, target_widget=self.ui.pie_chart)
     plot_manager.set_title("Dropout/Retention Rate")
-    
+

@@ -269,6 +269,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Course</string>
                </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Course.png</normaloff>../media/images/icons/Course/Course.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -288,6 +292,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Student</string>
                </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Student1.png</normaloff>../media/images/icons/Course/Student1.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -303,6 +311,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Analysis</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Analysis.png</normaloff>../media/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -325,6 +337,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Payment</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Payment.png</normaloff>../media/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -386,6 +402,10 @@ QComboBox QAbstractItemView {
             </property>
             <property name="text">
              <string>Log out</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../media/images/icons/Course/Log_Out.png</normaloff>../media/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
@@ -575,24 +595,9 @@ QComboBox QAbstractItemView {
                   <property name="text">
                    <string>Filter</string>
                   </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="payment_create">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>82</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>+ Create</string>
+                  <property name="icon">
+                   <iconset>
+                    <normaloff>../media/images/icons/Course/Filter1.png</normaloff>../media/images/icons/Course/Filter1.png</iconset>
                   </property>
                  </widget>
                 </item>

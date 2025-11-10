@@ -269,6 +269,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Course</string>
                </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Course.png</normaloff>../media/images/icons/Course/Course.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -288,6 +292,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Student</string>
                </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Student1.png</normaloff>../media/images/icons/Course/Student1.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -303,6 +311,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Analysis</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Analysis.png</normaloff>../media/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -325,6 +337,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Payment</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/Payment.png</normaloff>../media/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -386,6 +402,10 @@ QComboBox QAbstractItemView {
             </property>
             <property name="text">
              <string>Log out</string>
+            </property>
+            <property name="icon">
+             <iconset>
+              <normaloff>../media/images/icons/Course/Log_Out.png</normaloff>../media/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
@@ -460,7 +480,13 @@ QComboBox QAbstractItemView {
               </spacer>
              </item>
              <item>
-              <widget class="QLabel" name="header_result">
+              <widget class="QPushButton" name="header_result">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
@@ -468,50 +494,56 @@ QComboBox QAbstractItemView {
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">color: black</string>
+                <string notr="true">border: none;
+color: black
+</string>
                </property>
                <property name="text">
                 <string>Result</string>
                </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="header_assessment">
+              <widget class="QPushButton" name="header_assessment">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">color:#757575</string>
+                <string notr="true">color:#757575;
+border: none</string>
                </property>
                <property name="text">
                 <string>Assessments</string>
                </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
               </widget>
              </item>
              <item>
-              <widget class="QLabel" name="header_student">
+              <widget class="QPushButton" name="header_student">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="font">
                 <font>
                  <pointsize>10</pointsize>
-                 <underline>false</underline>
                 </font>
                </property>
                <property name="styleSheet">
-                <string notr="true">color:#757575</string>
+                <string notr="true">color:#757575;
+border: none</string>
                </property>
                <property name="text">
                 <string>Student</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                </property>
               </widget>
              </item>
@@ -927,6 +959,8 @@ color: black</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../media/resource_from_qt.qrc"/>
+ </resources>
  <connections/>
 </ui>
