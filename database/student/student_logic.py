@@ -91,3 +91,20 @@ class StudentsLogic:
         AND code_presentation = %s;
                             """, params=(code_module,code_presentation))
         return data
+    
+    @staticmethod
+    def get_all_clusters():
+        query = """
+        SELECT
+    count(id_student) AS total_student,
+    CASE
+        WHEN cluster_id IS NULL THEN 'not clustered'
+        ELSE CAST(cluster_id AS CHAR) -- Convert the cluster_id (assuming it's a number) to a string for consistency
+    END AS cluster_id
+FROM
+    studentInfo
+GROUP BY
+    cluster_id;
+        """
+        data = db.fetch_all(query)
+        return data

@@ -100,6 +100,16 @@ class PlotManager:
 
     # --- Configuration Methods (Operate on the referenced Axes) ---
     # These methods modify the plot *after* a static method has drawn it.
+    def draw(self) -> PlotManager:
+        """
+        Redraws the associated canvas to show any changes.
+        """
+        try:
+            self.canvas.draw_idle()
+            self.has_plot = not self.canvas._is_empty
+        except Exception as e:
+            PlotManager.logger.error(f"Failed to draw canvas: {e}", exc_info=True)
+        return self
 
     def set_title(self, title: str, **kwargs) -> PlotManager:
         """Sets the title of the referenced plot and redraws the canvas."""
