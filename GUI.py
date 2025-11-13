@@ -8,6 +8,7 @@ from ui.payment_ui import Ui_MainWindow as PaymentUI
 from ui.analysis_ui import Ui_MainWindow as AnalysisUI
 from application.course.course_ex import CourseManagementEx 
 from application.student.student_ex import StudentManagementEx
+from application.analysis.analysis_ex import AnalysisManagementEx
 from utils.logger import get_class_logger
 
 # ====== FRAME CHO MỖI UI ======
@@ -33,11 +34,12 @@ class PaymentFrame(QMainWindow):
         self.ui.setupUi(self)
 
 
-class AnalysisFrame(QMainWindow):
+class AnalysisFrame(QMainWindow): # <-- Changed
     def __init__(self, parent=None):
         super().__init__(parent)
-        self.ui = AnalysisUI()
-        self.ui.setupUi(self)
+        self.ui = AnalysisUI()        # 1. Create the UI
+        self.ui.setupUi(self)       # 2. Load the UI onto this QWidget
+        self.logic = AnalysisManagementEx(self, self.ui)
 
 # ====== MAIN WINDOW CHÍNH ======
 class MainApp(QMainWindow):
