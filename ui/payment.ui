@@ -116,7 +116,7 @@ QComboBox QAbstractItemView {
 #payment_previous:hover, #payment_next:hover {
     background-color: #F5F5F5;
 }
-#payment_page_1, #payment_page_2, #payment_page_3, #payment_page_8, #cpayment_page_9, #cpayment_page_10 {
+#payment_page_1, #payment_page_2, #payment_page_3, #payment_page_8, #payment_page_9, #payment_page_10 {
     background-color: transparent;
     border: none;
     color: #444;

@@ -115,7 +115,7 @@ class Ui_MainWindow(object):
 "#payment_previous:hover, #payment_next:hover {\n"
 "    background-color: #F5F5F5;\n"
 "}\n"
-"#payment_page_1, #payment_page_2, #payment_page_3, #payment_page_8, #cpayment_page_9, #cpayment_page_10 {\n"
+"#payment_page_1, #payment_page_2, #payment_page_3, #payment_page_8, #payment_page_9, #payment_page_10 {\n"
 "    background-color: transparent;\n"
 "    border: none;\n"
 "    color: #444;\n"
@@ -175,7 +175,7 @@ class Ui_MainWindow(object):
         self.brand.setFont(font)
         self.brand.setStyleSheet("")
         self.brand.setText("")
-        self.brand.setPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/Logo DUKI.png"))
+        self.brand.setPixmap(QtGui.QPixmap(":/Icons/images/Logo DUKI.png"))
         self.brand.setScaledContents(True)
         self.brand.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.brand.setObjectName("brand")
@@ -201,7 +201,7 @@ class Ui_MainWindow(object):
         self.menu_course.setSizePolicy(sizePolicy)
         self.menu_course.setStyleSheet("")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/Course.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Course.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.menu_course.setIcon(icon)
         self.menu_course.setObjectName("menu_course")
         self.verticalLayout_3.addWidget(self.menu_course)
@@ -214,7 +214,7 @@ class Ui_MainWindow(object):
         self.menu_student.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.menu_student.setStyleSheet("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/Student1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon1.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Student1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.menu_student.setIcon(icon1)
         self.menu_student.setObjectName("menu_student")
         self.verticalLayout_3.addWidget(self.menu_student)
@@ -226,7 +226,7 @@ class Ui_MainWindow(object):
         self.menu_analysis.setSizePolicy(sizePolicy)
         self.menu_analysis.setStyleSheet("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/Analysis.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon2.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Analysis.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.menu_analysis.setIcon(icon2)
         self.menu_analysis.setObjectName("menu_analysis")
         self.verticalLayout_3.addWidget(self.menu_analysis)
@@ -239,7 +239,7 @@ class Ui_MainWindow(object):
         self.menu_payment.setMinimumSize(QtCore.QSize(150, 28))
         self.menu_payment.setStyleSheet("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/Payment.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon3.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Payment.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.menu_payment.setIcon(icon3)
         self.menu_payment.setObjectName("menu_payment")
         self.verticalLayout_3.addWidget(self.menu_payment)
@@ -269,7 +269,7 @@ class Ui_MainWindow(object):
         self.menu_logout.setSizePolicy(sizePolicy)
         self.menu_logout.setStyleSheet("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/Log_Out.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon4.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Log_Out.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.menu_logout.setIcon(icon4)
         self.menu_logout.setObjectName("menu_logout")
         self.verticalLayout.addWidget(self.menu_logout)
@@ -352,7 +352,7 @@ class Ui_MainWindow(object):
         self.payment_filter.setSizePolicy(sizePolicy)
         self.payment_filter.setMinimumSize(QtCore.QSize(70, 30))
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/Filter1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon5.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Filter1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.payment_filter.setIcon(icon5)
         self.payment_filter.setObjectName("payment_filter")
         self.horizontalLayout_4.addWidget(self.payment_filter)
@@ -426,7 +426,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.payment_previous.sizePolicy().hasHeightForWidth())
         self.payment_previous.setSizePolicy(sizePolicy)
         icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/le-Photoroom.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon6.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/le-Photoroom.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.payment_previous.setIcon(icon6)
         self.payment_previous.setObjectName("payment_previous")
         self.horizontalLayout_6.addWidget(self.payment_previous)
@@ -518,7 +518,7 @@ class Ui_MainWindow(object):
         self.payment_next.setSizePolicy(sizePolicy)
         self.payment_next.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
         icon7 = QtGui.QIcon()
-        icon7.addPixmap(QtGui.QPixmap("C:\\Users\\phamn\\Documents\\course-management-ml\\ui\\../media/images/icons/Course/ri-Photoroom.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        icon7.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/ri-Photoroom.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
         self.payment_next.setIcon(icon7)
         self.payment_next.setObjectName("payment_next")
         self.horizontalLayout_6.addWidget(self.payment_next)
