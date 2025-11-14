@@ -208,6 +208,12 @@ QComboBox QAbstractItemView {
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>60</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>20</pointsize>
@@ -217,7 +223,13 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>DUKI</string>
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap>../media/images/Logo DUKI.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -767,8 +779,15 @@ QComboBox QAbstractItemView {
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
                <property name="text">
-                <string>&lt;- Previous</string>
+                <string>Previous</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/le-Photoroom.png</normaloff>../media/images/icons/Course/le-Photoroom.png</iconset>
                </property>
               </widget>
              </item>
@@ -963,8 +982,15 @@ QComboBox QAbstractItemView {
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
                <property name="text">
-                <string>   Next -&gt; </string>
+                <string>   Next </string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>../media/images/icons/Course/ri-Photoroom.png</normaloff>../media/images/icons/Course/ri-Photoroom.png</iconset>
                </property>
               </widget>
              </item>
@@ -1004,6 +1030,8 @@ QComboBox QAbstractItemView {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../media/resource_from_qt.qrc"/>
+ </resources>
  <connections/>
 </ui>
