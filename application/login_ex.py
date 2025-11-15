@@ -17,6 +17,8 @@ class LoginApp(QMainWindow, Ui_MainWindow):
         super().__init__()
         self.setupUi(self)
 
+        self.login_success_callback = None
+
         # UI FIXED SIZE
         self.fixed_width = self.width()
         self.fixed_height = self.height()
@@ -162,10 +164,16 @@ class LoginApp(QMainWindow, Ui_MainWindow):
         if not user:
             return QMessageBox.warning(self, "Login", "Email không tồn tại!")
 
-        if user["password"] == hashed_pwd:
-            QMessageBox.information(self, "Login", f"Xin chào {user['username']}!")
-        else:
-            QMessageBox.warning(self, "Login", "Sai mật khẩu!")
+        if not user:
+            return QMessageBox.warning(self, "Login", "Email không tồn tại!")
+
+        if user["password"] != hashed_pwd:
+            return QMessageBox.warning(self, "Login", "Sai mật khẩu!")
+
+        QMessageBox.information(self, "Login", f"Xin chào {user['username']}!")
+
+        if self.login_success_callback:
+            self.login_success_callback()
 
     # Register
     def register(self):
@@ -230,10 +238,3 @@ class LoginApp(QMainWindow, Ui_MainWindow):
                 return
 
         QMessageBox.warning(self, "Reset", "Email không tồn tại!")
-
-
-if __name__ == "__main__":
-    app = QApplication(sys.argv)
-    window = LoginApp()
-    window.show()
-    sys.exit(app.exec())
