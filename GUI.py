@@ -2,13 +2,15 @@ import sys, os
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 from PyQt6.QtWidgets import QApplication, QMainWindow, QStackedWidget
+from ui.login import Ui_MainWindow
 from ui.course_ui import Ui_MainWindow as CourseUI
 from ui.student_ui import Ui_MainWindow as StudentUI
 from ui.payment_ui import Ui_MainWindow as PaymentUI
 from ui.analysis_ui import Ui_MainWindow as AnalysisUI
-from application.course.course_ex import CourseManagementEx 
 from application.student.student_ex import StudentManagementEx
 from application.analysis.analysis_ex import AnalysisManagementEx
+from application.course.course_ex import CourseManagementEx
+from application.login_ex import LoginApp
 from utils.logger import get_class_logger
 
 # ====== FRAME CHO MỖI UI ======
@@ -96,11 +98,29 @@ class MainApp(QMainWindow):
         """Thoát ứng dụng"""
         QApplication.quit()
 
+class AppManager:
+    def __init__(self):
+        self.login = LoginApp()
+        self.login.login_success_callback = self.open_main_app
+
+    def open_main_app(self):
+        self.main = MainApp()
+        self.main.logout_callback = self.open_login_again
+
+        self.main.show()
+        self.login.close()
+
+    def open_login_again(self):
+        self.login = LoginApp()
+        self.login.login_success_callback = self.open_main_app
+
+        self.login.show()
+        self.main.close()
 
 # ====== CHẠY APP ======
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
-    window = MainApp()
-    window.show()
+    manager = AppManager()
+    manager.login.show()
     sys.exit(app.exec())
