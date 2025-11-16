@@ -1,4 +1,4 @@
-from ui.course_result import Ui_MainWindow as CourseResultUI
+from ui.course_result_ui import Ui_MainWindow as CourseResultUI
 from PyQt6.QtWidgets import QMainWindow, QLabel, QHBoxLayout, QVBoxLayout, QWidget
 from utils.logger import get_class_logger
 from database.course.course_logic import CoursesLogic

@@ -58,7 +58,8 @@ class CourseManagementEx():
         self.display_courses()
         self.logger.info(f"Current courses: {self.courses}")
 
-        # self.set_up_tab_pages()
+        self.set_up_tab_pages()
+        self.set_up_navigation_menus()
         
         
     # Convert QFrame
@@ -178,8 +179,26 @@ class CourseManagementEx():
                 ui.header_student.clicked.connect(lambda: self.switch_to(1))
                 ui.header_result.clicked.connect(lambda: self.switch_to(2))
                 ui.header_assessment.clicked.connect(lambda: self.switch_to(3))
+                ui.header_return.clicked.connect(lambda: self.switch_to(0))
             except AttributeError as e:
                 self.logger.warn(f"Warning: Could not connect header buttons for {page.__class__.__name__}. {e}")
+    
+    def set_up_navigation_menus(self):
+        frames = [
+            self.student_tab_page,
+            self.result_tab_page,
+            self.assessment_tab_page
+        ]
+
+        # Gán hành vi cho tất cả menu của từng frame
+        for frame in frames:
+            ui = frame.ui
+            ui.menu_course.clicked.connect(lambda: self.ui.menu_course.click())
+            ui.menu_student.clicked.connect(lambda: self.ui.menu_student.click())
+            ui.menu_payment.clicked.connect(lambda: self.ui.menu_payment.click())
+            ui.menu_analysis.clicked.connect(lambda: self.ui.menu_analysis.click())
+            ui.menu_logout.clicked.connect(lambda: self.ui.menu_logout.click())
+    
     def switch_to(self, index: int):
         """Chuyển tab theo index"""
         self.page_stack.setCurrentIndex(index)
