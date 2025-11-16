@@ -36,7 +36,7 @@ class AnalysisManagementEx:
     
 
     # --- 3. Connect Signals & Load Data ---
-    self.connect_signals()
+    # self.connect_signals()
     self.load_cluster_data()
 
   def load_cluster_data(self):
@@ -72,6 +72,7 @@ class AnalysisManagementEx:
       
       # Connect search/filter buttons
       # self.ui.analysis_search_button.clicked.connect(self.on_search)
+      pass
     except AttributeError as e:
       self.logger.warning(f"Could not connect analysis signals: {e}")
 
