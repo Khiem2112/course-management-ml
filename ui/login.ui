@@ -1,0 +1,801 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>302</width>
+    <height>447</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QStackedWidget" name="stackedWidget">
+    <property name="geometry">
+     <rect>
+      <x>6</x>
+      <y>6</y>
+      <width>291</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="layoutDirection">
+     <enum>Qt::LeftToRight</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QStackedWidget {
+background-color: rgb(255, 255, 255)
+}</string>
+    </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
+    <widget class="QWidget" name="Welcome">
+     <layout class="QGridLayout" name="gridLayout" rowstretch="0,0,0">
+      <property name="verticalSpacing">
+       <number>0</number>
+      </property>
+      <item row="0" column="0">
+       <widget class="QLabel" name="image1">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>C:/Users/ADMIN/Pictures/Final_project/tải xuống.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0">
+       <widget class="QFrame" name="frame_3">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+border: None
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="0,0">
+         <item>
+          <widget class="QPushButton" name="btn_Login">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font-size: 14px
+}</string>
+           </property>
+           <property name="text">
+            <string>Login</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_Register">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font-size: 14px
+}</string>
+           </property>
+           <property name="text">
+            <string>Register</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item row="2" column="0">
+       <widget class="QFrame" name="frame_4">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+border: None
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_4"/>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="Login">
+     <layout class="QVBoxLayout" name="verticalLayout" stretch="0,2,0,0,0,0,0,0,0,0,0">
+      <property name="bottomMargin">
+       <number>4</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_Back">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: transparent;
+border: none;
+color: #rgb(123, 123, 123);
+font-size: 12px;
+text-align: left;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>&lt; Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="image2">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>C:/Users/ADMIN/Pictures/Final_project/tải xuống.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_1">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 20px;
+font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Hello</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_2">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 14px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Sign into your Account</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="Email_Label">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Email:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="Email_LineEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+font-size: 12px
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="Password_Label">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Password:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="Password_LineEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+font-size: 12px
+}</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="btn_ForgotPass">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: transparent;
+border: none;
+color: #rgb(123, 123, 123);
+font-size: 12px;
+text-align: right;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>Forgot your password?</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_6">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+border:None
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="4,4,4">
+         <item>
+          <spacer name="horizontalSpacer_3">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>66</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_Login_2">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font-size: 14px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Login</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_4">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>83</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+border:None
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="6,4">
+         <property name="spacing">
+          <number>4</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_3">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Don't have an account ?</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_Register_2">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	text-decoration: underline;
+	font: 8pt &quot;MS Shell Dlg 2&quot;;
+background: transparent;
+border: none;
+color: #rgb(123, 123, 123);
+font-size: 12px;
+text-align: left
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string>Register now</string>
+           </property>
+           <property name="autoExclusive">
+            <bool>false</bool>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="Register">
+     <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,1,0,0,0,0,0,0,0,0,0,0">
+      <property name="spacing">
+       <number>4</number>
+      </property>
+      <property name="topMargin">
+       <number>8</number>
+      </property>
+      <property name="bottomMargin">
+       <number>4</number>
+      </property>
+      <item>
+       <widget class="QPushButton" name="btn_Back_2">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: transparent;
+border: none;
+color: #rgb(123, 123, 123);
+font-size: 12px;
+text-align: left;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>&lt; Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="image3">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>C:/Users/ADMIN/Pictures/Final_project/tải xuống.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_7">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 20px;
+font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Hello</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_4">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 14px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Create New Account</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="UserName_Label">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>User Name:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="UserName_LineEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+font-size: 12px
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="Email_Label_2">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Email:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="Email_LineEdit_2">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+font-size: 12px
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="Password_Label_2">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Password:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="Password_LineEdit_2">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+font-size: 12px
+}</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_5">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+border:None
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,8,1">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>77</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_Register_4">
+           <property name="maximumSize">
+            <size>
+             <width>100</width>
+             <height>16777215</height>
+            </size>
+           </property>
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font-size: 14px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Register</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_2">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>76</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_2">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+border:None
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="7,3">
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="label_5">
+           <property name="styleSheet">
+            <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Already have an account ?</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="btn_Login_3">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+	text-decoration: underline;
+	font: 8pt &quot;MS Shell Dlg 2&quot;;
+background: transparent;
+border: none;
+color: #rgb(123, 123, 123);
+font-size: 12px;
+text-align: left
+}
+
+</string>
+           </property>
+           <property name="text">
+            <string>Login</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+    <widget class="QWidget" name="Reset_Password">
+     <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,3,1,1,1,1,1,1">
+      <item>
+       <widget class="QPushButton" name="btn_Back_3">
+        <property name="styleSheet">
+         <string notr="true">QPushButton {
+background: transparent;
+border: none;
+color: #rgb(123, 123, 123);
+font-size: 12px;
+text-align: left;
+}
+
+</string>
+        </property>
+        <property name="text">
+         <string>&lt; Back</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="image4">
+        <property name="text">
+         <string/>
+        </property>
+        <property name="pixmap">
+         <pixmap>C:/Users/ADMIN/Pictures/Final_project/tải xuống.png</pixmap>
+        </property>
+        <property name="scaledContents">
+         <bool>true</bool>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="label_6">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 16px;
+font-weight: bold;
+}</string>
+        </property>
+        <property name="text">
+         <string>Reset Password</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="NewPassword_Label">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>New Password:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="NewPassword_LineEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+font-size: 12px
+}</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="RePassword_Label">
+        <property name="styleSheet">
+         <string notr="true">QLabel {
+font-size: 12px;
+}</string>
+        </property>
+        <property name="text">
+         <string>Re - enter New Password:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="RePassword_LineEdit">
+        <property name="styleSheet">
+         <string notr="true">QLineEdit {
+font-size: 12px
+}</string>
+        </property>
+        <property name="echoMode">
+         <enum>QLineEdit::Normal</enum>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QFrame" name="frame_7">
+        <property name="styleSheet">
+         <string notr="true">QFrame {
+border:None
+}</string>
+        </property>
+        <property name="frameShape">
+         <enum>QFrame::StyledPanel</enum>
+        </property>
+        <property name="frameShadow">
+         <enum>QFrame::Raised</enum>
+        </property>
+        <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="4,4,4">
+         <item>
+          <spacer name="horizontalSpacer_5">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>83</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="Finish_btn">
+           <property name="styleSheet">
+            <string notr="true">QPushButton {
+font-size: 14px;
+}</string>
+           </property>
+           <property name="text">
+            <string>Finish</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="horizontalSpacer_6">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>83</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>302</width>
+     <height>18</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
