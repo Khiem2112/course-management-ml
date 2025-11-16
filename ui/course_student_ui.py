@@ -30,6 +30,36 @@ class Ui_MainWindow(object):
 "    color: black;\n"
 "}\n"
 "\n"
+"#header_result,\n"
+"#header_assessment,\n"
+"#header_student {\n"
+"\n"
+"border: none;\n"
+"padding: 5px 10px;\n"
+"}\n"
+"\n"
+"#header_student {\n"
+"    background-color: #4C8BF5; /* A vibrant blue (matches existing create button) */\n"
+"    \n"
+"    /* Ensure it overrides the basic button style from the common rule */\n"
+"    border: none;\n"
+"    padding: 5px 10px;\n"
+"    \n"
+"    /* Optional visual flair */\n"
+"    border-radius: 4px; \n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"#header_return {\n"
+"\n"
+"background-color: black;\n"
+"color: red;\n"
+"border: none;\n"
+"padding: 5px 10px;\n"
+"font-weight:bold;\n"
+"}\n"
 "#menu_analysis,\n"
 "#menu_course,\n"
 "#menu_payment,\n"
@@ -275,33 +305,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setContentsMargins(0, 0, 11, 0)
         self.horizontalLayout_9.setSpacing(7)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem1)
-        self.header_result = QtWidgets.QLabel(parent=self.header)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.header_result.setFont(font)
-        self.header_result.setStyleSheet("color:#757575")
-        self.header_result.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.header_result = QtWidgets.QPushButton(parent=self.header)
+        self.header_result.setStyleSheet("backgroud:transparent;")
         self.header_result.setObjectName("header_result")
         self.horizontalLayout_9.addWidget(self.header_result)
-        self.header_assessment = QtWidgets.QLabel(parent=self.header)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.header_assessment.setFont(font)
-        self.header_assessment.setStyleSheet("color:#757575")
-        self.header_assessment.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.header_assessment = QtWidgets.QPushButton(parent=self.header)
         self.header_assessment.setObjectName("header_assessment")
         self.horizontalLayout_9.addWidget(self.header_assessment)
-        self.header_student = QtWidgets.QLabel(parent=self.header)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setUnderline(True)
-        self.header_student.setFont(font)
-        self.header_student.setStyleSheet("color: black")
-        self.header_student.setAlignment(QtCore.Qt.AlignmentFlag.AlignRight|QtCore.Qt.AlignmentFlag.AlignTrailing|QtCore.Qt.AlignmentFlag.AlignVCenter)
+        self.header_student = QtWidgets.QPushButton(parent=self.header)
         self.header_student.setObjectName("header_student")
         self.horizontalLayout_9.addWidget(self.header_student)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem1)
+        self.header_return = QtWidgets.QPushButton(parent=self.header)
+        self.header_return.setObjectName("header_return")
+        self.horizontalLayout_9.addWidget(self.header_return)
         self.verticalLayout_2.addWidget(self.header)
         self.option = QtWidgets.QFrame(parent=self.frame_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
@@ -547,8 +565,9 @@ class Ui_MainWindow(object):
         self.menu_setting.setText(_translate("MainWindow", "Setting"))
         self.menu_logout.setText(_translate("MainWindow", "Log out"))
         self.header_result.setText(_translate("MainWindow", "Result"))
-        self.header_assessment.setText(_translate("MainWindow", "Assessments"))
+        self.header_assessment.setText(_translate("MainWindow", "Assessment"))
         self.header_student.setText(_translate("MainWindow", "Student"))
+        self.header_return.setText(_translate("MainWindow", "Return"))
         self.course_student_search_comboBox.setItemText(0, _translate("MainWindow", "ID student"))
         self.course_student_search_comboBox.setItemText(1, _translate("MainWindow", "Date Registration"))
         self.course_student_search_comboBox.setItemText(2, _translate("MainWindow", "Date Unregistration"))

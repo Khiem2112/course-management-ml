@@ -1497,7 +1497,7 @@ background-color: black</string>
  </widget>
  <resources>
   <include location="../media/resource_from_qt.qrc"/>
-  <include location="resource_from_qt.qrc"/>
+  <include location="../media/resource_from_qt.qrc"/>
  </resources>
  <connections/>
 </ui>

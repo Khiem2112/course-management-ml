@@ -31,6 +31,37 @@ QLabel#brand {
     color: black;
 }
 
+#header_result,
+#header_assessment,
+#header_student {
+
+border: none;
+padding: 5px 10px;
+}
+
+#header_assessment {
+
+background-color: #4C8BF5; /* A vibrant blue (matches existing create button) */
+    
+    /* Ensure it overrides the basic button style from the common rule */
+    border: none;
+    padding: 5px 10px;
+    
+    /* Optional visual flair */
+    border-radius: 4px; 
+    font-weight: bold;
+}
+
+
+#header_return {
+
+background-color: black;
+color: red;
+border: none;
+padding: 5px 10px;
+font-weight:bold;
+}
+
 #menu_analysis,
 #menu_course,
 #menu_payment,
@@ -447,6 +478,27 @@ QComboBox QAbstractItemView {
               <number>0</number>
              </property>
              <item>
+              <widget class="QPushButton" name="header_result">
+               <property name="text">
+                <string>Result</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="header_assessment">
+               <property name="text">
+                <string>Assessment</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="header_student">
+               <property name="text">
+                <string>Student</string>
+               </property>
+              </widget>
+             </item>
+             <item>
               <spacer name="horizontalSpacer_5">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
@@ -460,58 +512,9 @@ QComboBox QAbstractItemView {
               </spacer>
              </item>
              <item>
-              <widget class="QLabel" name="header_result">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color:#757575</string>
-               </property>
+              <widget class="QPushButton" name="header_return">
                <property name="text">
-                <string>Result</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="header_assessment">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                 <underline>true</underline>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color: black</string>
-               </property>
-               <property name="text">
-                <string>Assessments</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QLabel" name="header_student">
-               <property name="font">
-                <font>
-                 <pointsize>10</pointsize>
-                 <underline>false</underline>
-                </font>
-               </property>
-               <property name="styleSheet">
-                <string notr="true">color:#757575</string>
-               </property>
-               <property name="text">
-                <string>Student</string>
-               </property>
-               <property name="alignment">
-                <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                <string>Return</string>
                </property>
               </widget>
              </item>
