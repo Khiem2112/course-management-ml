@@ -13,4 +13,4 @@ class CourseInfoVisualizer():
     
     drop_out_dict = data
     ax.pie(x=drop_out_dict.values(), labels= drop_out_dict.keys(), autopct="%1.1f%%")
-    return PlotManager(figure=fig, axes=ax)
+    return PlotManager(canvas)
