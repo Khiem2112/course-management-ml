@@ -51,11 +51,11 @@ class AnalysisVisualizer:
           except (ValueError, TypeError):
               c_id = -1
 
-          # 2. Get Name (Label) -> THIS IS THE CHANGE
+          # 2. Get Name (Label)
           if name_map and c_id in name_map:
               labels.append(name_map[c_id])
           else:
-              labels.append(f"Cluster {c_id}")
+              labels.append(f"Non-clustered")
 
           # 3. Get Color (Consistent with buttons)
           colors.append(AnalysisVisualizer.CLUSTER_COLORS.get(c_id, AnalysisVisualizer.DEFAULT_COLOR))
