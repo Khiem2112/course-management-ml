@@ -514,7 +514,8 @@ QComboBox QAbstractItemView {
              <item>
               <widget class="QPushButton" name="header_result">
                <property name="styleSheet">
-                <string notr="true">backgroud:transparent;</string>
+                <string notr="true">
+color: black</string>
                </property>
                <property name="text">
                 <string>Result</string>
@@ -523,6 +524,9 @@ QComboBox QAbstractItemView {
              </item>
              <item>
               <widget class="QPushButton" name="header_assessment">
+               <property name="styleSheet">
+                <string notr="true">color: black</string>
+               </property>
                <property name="text">
                 <string>Assessment</string>
                </property>
@@ -530,6 +534,9 @@ QComboBox QAbstractItemView {
              </item>
              <item>
               <widget class="QPushButton" name="header_student">
+               <property name="styleSheet">
+                <string notr="true">color: black</string>
+               </property>
                <property name="text">
                 <string>Student</string>
                </property>
