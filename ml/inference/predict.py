@@ -43,33 +43,77 @@ class RecommendationManager:
 
     # --- The Master 5x7 -> 5x3 Recommendation Map ---
     RECOMMENDATIONS_CONTENT = {
-        COLLABORATIVE: {
-            ENGAGEMENT_MEDIUM: ["Interactive AI Basics: Weekly Quizzes and Forums", "Applied AI: Practical Exercises with Peer Feedback"],
-            ENGAGEMENT_HIGH: ["Collaborative AI Projects: Team-Based Learning", "Advanced AI Techniques: Group Workshops"],
-            ENGAGEMENT_LOW: ['Introduction to AI: Self-Paced Fundamentals', 'AI Basics: Introductory Video Series']
+        COLLABORATIVE: { # Archetypes 1.1, 2.2, 3.1
+            ENGAGEMENT_HIGH: [ # 1.1 The Collaborative Leader
+                "We've noticed you're a leader in the forums, which is fantastic.",
+                "**Action:** Can you help elevate the discussion? Try starting a thread that summarizes the 'Top 3 Takeaways' from this week's module, or pose a question that connects this topic to a previous one."
+            ],
+            ENGAGEMENT_MEDIUM: [ # 2.2 The Quiet Observer
+                "We see you're actively reading the forums, which is a great way to learn. We'd love to hear your perspective too.",
+                "**Action:** A great first step is to use the 'Like' button on posts you find helpful, or try answering a simple poll. The next step? Ask one question you have in the 'Weekly Questions' thread."
+            ],
+            ENGAGEMENT_LOW: [ # 3.1 The Hesitant Lurker
+                "It can be intimidating to post in a public forum. Many students feel the same way.",
+                "**Action:** You don't need to post publicly. If you have a question, feel free to reply to this message directly. We are here to help."
+            ]
         },
-        OFFLINE_CONTENT: {
-            ENGAGEMENT_MEDIUM: ["AI Principles: Self-Study with Case Studies", "Machine Learning: Offline Course with Practice Problems"],
-            ENGAGEMENT_HIGH: ["Advanced AI: Comprehensive Textbook with Projects", "Deep Learning: In-Depth Study with Capstone Projects"],
-            ENGAGEMENT_LOW: ['AI Basics: Essential Readings and Key Concepts', 'Machine Learning Fundamentals: Self-Study Workbook']
+        OFFLINE_CONTENT: { # Archetypes 1.2, 2.1, 3.2
+            ENGAGEMENT_HIGH: [ # 1.2 The Diligent Researcher
+                "Your pace is excellent and you're mastering the core materials. You're ready for more complex work.",
+                "**Action:** We've unlocked an 'Extension' module for you. It contains links to academic papers and industry case studies that go far beyond the syllabus."
+            ],
+            ENGAGEMENT_MEDIUM: [ # 2.1 The Steady Worker
+                "Great job staying on schedule this month. Your consistency is noted and is the key to success.",
+                "**Action:** As you review this week's chapter, pay special attention to the 'Key Terms' box on page 4. It's a hint for the upcoming quiz."
+            ],
+            ENGAGEMENT_LOW: [ # 3.2 The Overwhelmed Novice
+                "It's easy to feel overwhelmed by the syllabus. Let's simplify and remove the clutter.",
+                "**Action:** Ignore the full list of readings for now. Your *only* goal today is to read the 2-page 'Module Summary' PDF. That's it. (We've linked it here)."
+            ]
         },
-        INTERACTIVE: {
-            ENGAGEMENT_MEDIUM: ["Machine Learning: Interactive Coding Exercises", "AI Applications: Interactive Case Studies"],
-            ENGAGEMENT_HIGH: ["Advanced AI: Interactive Group Projects and Hackathons", "Deep Learning: Interactive Labs"],
-            ENGAGEMENT_LOW: ["AI Basics: Interactive Quizzes and Flashcards", "Introduction to Machine Learning: Interactive Visualizations"]
+        INTERACTIVE: { # Archetypes 1.3, 2.3, 3.3
+            ENGAGEMENT_HIGH: [ # 1.3 The Skilled Achiever
+                "You've aced the last two labs, which is outstanding. You're ready to move from consuming content to creating it.",
+                "**Action:** We have a beta version of an 'Advanced Scenario' for this lab. Would you be willing to test it out and give us feedback?"
+            ],
+            ENGAGEMENT_MEDIUM: [ # 2.3 The Efficient Practitioner
+                "We see you're focusing on the quizzes to stay efficient. That's smart, but you might be missing the 'why' behind the 'how.'",
+                "**Action:** Here's a hint: The answer to the final, 10-point question on this week's quiz is discussed in detail in the 'Optional Reading' PDF. It's a good return on investment."
+            ],
+            ENGAGEMENT_LOW: [ # 3.3 The Anxious Performer
+                "We noticed you spent a lot of time on the last quiz. It's okay to struggle; that's part of learning.",
+                "**Action:** To help reduce the pressure, we've opened an 'Untimed Practice Mode' for this quiz. You can take it as many times as you want, with no stakes, to get comfortable with the material."
+            ]
         },
-        INFORMATIONAL: {
-            ENGAGEMENT_MEDIUM: ["Machine Learning: Structured Video Course", "AI Concepts: Comprehensive Video Series"],
-            ENGAGEMENT_HIGH: ["Advanced AI: Detailed Lecture Series and Readings", "Deep Learning: Advanced Lecture Series"],
-            ENGAGEMENT_LOW: ["AI Overview: Short Video Lectures", "Introduction to Machine Learning: Podcast Series"]
+        INFORMATIONAL: { # Archetypes (1.2/1.3 hybrid), 2.2, 3.2
+            ENGAGEMENT_HIGH: [ # (Adapted from 1.2/1.3)
+                "You've watched all the core lectures. Your high engagement shows you're ready for a deeper dive.",
+                "**Action:** We've made a 'Guest Lecture' from an industry expert available to you. It connects this week's topic to a real-world case study at a major company."
+            ],
+            ENGAGEMENT_MEDIUM: [ # 2.2 The Quiet Observer
+                "We see you're diligently watching the videos, which is great. You're absorbing the material, but the next step is to synthesize it.",
+                "**Action:** This week, try a 'low-stakes' interaction. We're running a 1-click poll: 'What was the hardest part of this video?' Just click one option. It helps you reflect and helps us improve."
+            ],
+            ENGAGEMENT_LOW: [ # 3.2 The Overwhelmed Novice
+                "It's easy to feel overwhelmed by a list of 1-hour lectures. Let's start with a pebble, not the mountain.",
+                "**Action:** Ignore the full lecture list for now. Your *only* goal today is to watch this 5-minute 'Module Introduction' video. That's it."
+            ]
         },
-        RESOURCE_BASED: {
-            ENGAGEMENT_MEDIUM: ["Machine Learning: Comprehensive eBooks and Guides", "AI Applications: Case Study Compilations"],
-            ENGAGEMENT_HIGH: ["Advanced AI: Research Papers and Technical Reports", "Deep Learning: Comprehensive Textbooks"],
-            ENGAGEMENT_LOW: ["AI Basics: Curated Reading Lists", "Introduction to Machine Learning: Beginner-Friendly Blogs"]
+        RESOURCE_BASED: { # Archetypes 1.2, (2.1 hybrid), (3.2 hybrid)
+            ENGAGEMENT_HIGH: [ # 1.2 The Diligent Researcher
+                "Your high engagement with all the course resources (e-books, articles) shows you're a voracious consumer.",
+                "**Action:** We've unlocked a 'Deep Dive' folder for you with advanced, optional materials. We are *not* giving you more work; we are giving you more *complex* work."
+            ],
+            ENGAGEMENT_MEDIUM: [ # (Adapted from 2.1)
+                "Great job exploring the different resources. That curiosity is key.",
+                "**Action:** To help you focus, try to use the 'Quick Reference Guide' as a 'cheat sheet' while you're working on the main assignment. It connects all the resources together."
+            ],
+            ENGAGEMENT_LOW: [ # (Adapted from 3.2)
+                "It's easy to feel lost in all the files and folders. Let's make it simple.",
+                "**Action:** Ignore all the optional folders. For this week, find and read *only* the one file named 'Module_1_Getting_Started.pdf'. It's the perfect place to start."
+            ]
         }
     }
-
     # --- Metadata maps for clear, human-readable output ---
     STUDY_METHOD_NAMES = {
         COLLABORATIVE: "Collaborative",
