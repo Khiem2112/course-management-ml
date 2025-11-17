@@ -21,7 +21,7 @@ class StudentScoreVisualizer():
         if not canvas:
             PlotManager.logger.error(f"Could not get canvas for '{target_widget.objectName()}' to create score distribution.")
             fig, ax = plt.subplots(); ax.clear(); plt.close(fig) # Dummy fig/ax
-            return PlotManager(fig, ax)
+            return PlotManager(canvas)
 
         # Proceed with plotting on the obtained canvas
         ax = canvas.axes
@@ -40,7 +40,7 @@ class StudentScoreVisualizer():
                 PlotManager.logger.warning("No data provided for score distribution.")
                 canvas.draw_idle()
                 canvas._is_empty = True
-                return PlotManager(fig, ax)
+                return PlotManager(canvas)
 
             df = pd.DataFrame(score_data)
 
@@ -51,7 +51,7 @@ class StudentScoreVisualizer():
                 PlotManager.logger.warning(f"Invalid or empty data in '{SCORE_COL}'.")
                 canvas.draw_idle()
                 canvas._is_empty = True
-                return PlotManager(fig, ax)
+                return PlotManager(canvas)
 
             # --- Apply Style (Optional) ---
             try:
@@ -88,7 +88,7 @@ class StudentScoreVisualizer():
             PlotManager.logger.info("Score distribution plot drawn successfully.")
 
             # --- Return Manager for Configuration ---
-            return PlotManager(fig, ax) # Return manager referencing the plotted axes
+            return PlotManager(canvas) # Return manager referencing the plotted axes
 
         except Exception as e:
             PlotManager.logger.error(f"Error creating score distribution plot: {e}", exc_info=True)
@@ -103,5 +103,5 @@ class StudentScoreVisualizer():
             except Exception as display_err:
                  PlotManager.logger.error(f"Further error displaying plot error message: {display_err}", exc_info=True)
             # Return manager referencing the axes in error state
-            return PlotManager(fig, ax)
+            return PlotManager(canvas)
     

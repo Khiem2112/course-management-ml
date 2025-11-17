@@ -226,7 +226,7 @@ QComboBox QAbstractItemView {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>../media/images/Logo DUKI.png</pixmap>
+             <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/Logo DUKI.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -282,8 +282,8 @@ QComboBox QAbstractItemView {
                 <string>Course</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Course.png</normaloff>../media/images/icons/Course/Course.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
                </property>
               </widget>
              </item>
@@ -305,8 +305,8 @@ QComboBox QAbstractItemView {
                 <string>Student</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Student1.png</normaloff>../media/images/icons/Course/Student1.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
                </property>
               </widget>
              </item>
@@ -325,8 +325,8 @@ QComboBox QAbstractItemView {
                 <string>Analysis</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Analysis.png</normaloff>../media/images/icons/Course/Analysis.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -348,11 +348,11 @@ QComboBox QAbstractItemView {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Payment</string>
+                <string>Payment*</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Payment.png</normaloff>../media/images/icons/Course/Payment.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -384,7 +384,7 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Setting</string>
+             <string>Setting*</string>
             </property>
            </widget>
           </item>
@@ -416,8 +416,8 @@ QComboBox QAbstractItemView {
              <string>Log out</string>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>../media/images/icons/Course/Log_Out.png</normaloff>../media/images/icons/Course/Log_Out.png</iconset>
+             <iconset resource="../media/resource_from_qt.qrc">
+              <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
@@ -478,179 +478,18 @@ QComboBox QAbstractItemView {
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
-              <widget class="QFrame" name="search">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QComboBox" name="student_search_comboBox">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>165</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Code module</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Code presentation</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Id student</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Gender</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Region</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Highest education</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>IMB band</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Age band</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Previous attempt</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Studied credit</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLineEdit" name="student_search_lineEdit">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>260</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Search</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_5">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QPushButton" name="student_filter">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>70</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Filter</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>../media/images/icons/Course/Filter1.png</normaloff>../media/images/icons/Course/Filter1.png</iconset>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="student_create">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>82</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>+ Create</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
             </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+background-color: white</string>
+            </property>
+            <property name="text">
+             <string>  Infomation about student study in Duki</string>
+            </property>
            </widget>
           </item>
           <item>
@@ -805,11 +644,11 @@ QComboBox QAbstractItemView {
                 </sizepolicy>
                </property>
                <property name="text">
-                <string> Previous</string>
+                <string>Previous</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/le-Photoroom.png</normaloff>../media/images/icons/Course/le-Photoroom.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/le-Photoroom.png</normaloff>:/Icons/images/icons/Course/le-Photoroom.png</iconset>
                </property>
               </widget>
              </item>
@@ -1011,8 +850,8 @@ QComboBox QAbstractItemView {
                 <string>   Next </string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/ri-Photoroom.png</normaloff>../media/images/icons/Course/ri-Photoroom.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</iconset>
                </property>
               </widget>
              </item>
@@ -1052,6 +891,8 @@ QComboBox QAbstractItemView {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../media/resource_from_qt.qrc"/>
+ </resources>
  <connections/>
 </ui>

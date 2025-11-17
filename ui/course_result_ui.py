@@ -30,6 +30,36 @@ class Ui_MainWindow(object):
 "    color: black;\n"
 "}\n"
 "\n"
+"#header_result,\n"
+"#header_assessment,\n"
+"#header_student {\n"
+"\n"
+"border: none;\n"
+"padding: 5px 10px;\n"
+"}\n"
+"\n"
+"#header_result {\n"
+"    background-color: #4C8BF5; /* A vibrant blue (matches existing create button) */\n"
+"    \n"
+"    /* Ensure it overrides the basic button style from the common rule */\n"
+"    border: none;\n"
+"    padding: 5px 10px;\n"
+"    \n"
+"    /* Optional visual flair */\n"
+"    border-radius: 4px; \n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"#header_return {\n"
+"\n"
+"background-color: black;\n"
+"color: red;\n"
+"border: none;\n"
+"padding: 5px 10px;\n"
+"font-weight:bold;\n"
+"}\n"
+"\n"
+"\n"
 "#menu_analysis,\n"
 "#menu_course,\n"
 "#menu_payment,\n"
@@ -175,7 +205,7 @@ class Ui_MainWindow(object):
         self.brand.setFont(font)
         self.brand.setStyleSheet("")
         self.brand.setText("")
-        self.brand.setPixmap(QtGui.QPixmap(":/Icons/images/Logo DUKI.png"))
+        self.brand.setPixmap(QtGui.QPixmap(":/Images/images/Logo DUKI.png"))
         self.brand.setScaledContents(True)
         self.brand.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.brand.setObjectName("brand")
@@ -294,49 +324,21 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setContentsMargins(0, 0, 11, 0)
         self.horizontalLayout_9.setSpacing(7)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem1)
         self.header_result = QtWidgets.QPushButton(parent=self.header)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.header_result.sizePolicy().hasHeightForWidth())
-        self.header_result.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setUnderline(True)
-        self.header_result.setFont(font)
-        self.header_result.setStyleSheet("border: none;\n"
-"color: black\n"
-"")
+        self.header_result.setStyleSheet("backgroud:transparent;")
         self.header_result.setObjectName("header_result")
         self.horizontalLayout_9.addWidget(self.header_result)
         self.header_assessment = QtWidgets.QPushButton(parent=self.header)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.header_assessment.sizePolicy().hasHeightForWidth())
-        self.header_assessment.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.header_assessment.setFont(font)
-        self.header_assessment.setStyleSheet("color:#757575;\n"
-"border: none")
         self.header_assessment.setObjectName("header_assessment")
         self.horizontalLayout_9.addWidget(self.header_assessment)
         self.header_student = QtWidgets.QPushButton(parent=self.header)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.header_student.sizePolicy().hasHeightForWidth())
-        self.header_student.setSizePolicy(sizePolicy)
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        self.header_student.setFont(font)
-        self.header_student.setStyleSheet("color:#757575;\n"
-"border: none")
         self.header_student.setObjectName("header_student")
         self.horizontalLayout_9.addWidget(self.header_student)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_9.addItem(spacerItem1)
+        self.header_return = QtWidgets.QPushButton(parent=self.header)
+        self.header_return.setObjectName("header_return")
+        self.horizontalLayout_9.addWidget(self.header_return)
         self.verticalLayout_2.addWidget(self.header)
         self.frame_6 = QtWidgets.QFrame(parent=self.frame_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
@@ -583,12 +585,13 @@ class Ui_MainWindow(object):
         self.menu_course.setText(_translate("MainWindow", "Course"))
         self.menu_student.setText(_translate("MainWindow", "Student"))
         self.menu_analysis.setText(_translate("MainWindow", "Analysis"))
-        self.menu_payment.setText(_translate("MainWindow", "Payment"))
-        self.menu_setting.setText(_translate("MainWindow", "Setting"))
+        self.menu_payment.setText(_translate("MainWindow", "Payment*"))
+        self.menu_setting.setText(_translate("MainWindow", "Setting*"))
         self.menu_logout.setText(_translate("MainWindow", "Log out"))
         self.header_result.setText(_translate("MainWindow", "Result"))
-        self.header_assessment.setText(_translate("MainWindow", "Assessments"))
+        self.header_assessment.setText(_translate("MainWindow", "Assessment"))
         self.header_student.setText(_translate("MainWindow", "Student"))
+        self.header_return.setText(_translate("MainWindow", "Return"))
         self.label_12.setText(_translate("MainWindow", "Top 5 Students"))
         self.course_result_1.setText(_translate("MainWindow", "1."))
         self.course_result_2.setText(_translate("MainWindow", "2."))
@@ -603,3 +606,13 @@ class Ui_MainWindow(object):
         self.mean_stu_score.setText(_translate("MainWindow", "0000"))
         self.label_9.setText(_translate("MainWindow", "Max"))
         self.max_stu_score.setText(_translate("MainWindow", "0000"))
+
+
+if __name__ == "__main__":
+    import sys
+    app = QtWidgets.QApplication(sys.argv)
+    MainWindow = QtWidgets.QMainWindow()
+    ui = Ui_MainWindow()
+    ui.setupUi(MainWindow)
+    MainWindow.show()
+    sys.exit(app.exec())

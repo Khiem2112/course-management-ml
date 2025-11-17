@@ -201,7 +201,7 @@ QComboBox QAbstractItemView {
            <number>0</number>
           </property>
           <item>
-           <widget class="QLabel" name="brand">
+           <widget class="QLabel" name="brand_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -226,7 +226,7 @@ QComboBox QAbstractItemView {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>../media/images/Logo DUKI.png</pixmap>
+             <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/Logo DUKI.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -282,8 +282,8 @@ QComboBox QAbstractItemView {
                 <string>Course</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Course.png</normaloff>../media/images/icons/Course/Course.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
                </property>
               </widget>
              </item>
@@ -305,8 +305,8 @@ QComboBox QAbstractItemView {
                 <string>Student</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Student1.png</normaloff>../media/images/icons/Course/Student1.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
                </property>
               </widget>
              </item>
@@ -325,8 +325,8 @@ QComboBox QAbstractItemView {
                 <string>Analysis</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Analysis.png</normaloff>../media/images/icons/Course/Analysis.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -348,11 +348,11 @@ QComboBox QAbstractItemView {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Payment</string>
+                <string>Payment*</string>
                </property>
                <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/Payment.png</normaloff>../media/images/icons/Course/Payment.png</iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -384,7 +384,7 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Setting</string>
+             <string>Setting*</string>
             </property>
            </widget>
           </item>
@@ -416,8 +416,8 @@ QComboBox QAbstractItemView {
              <string>Log out</string>
             </property>
             <property name="icon">
-             <iconset>
-              <normaloff>../media/images/icons/Course/Log_Out.png</normaloff>../media/images/icons/Course/Log_Out.png</iconset>
+             <iconset resource="../media/resource_from_qt.qrc">
+              <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
@@ -425,7 +425,7 @@ QComboBox QAbstractItemView {
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_3">
+        <widget class="QFrame" name="central_page">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -438,7 +438,10 @@ QComboBox QAbstractItemView {
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,10">
+          <property name="sizeConstraint">
+           <enum>QLayout::SetMaximumSize</enum>
+          </property>
           <property name="leftMargin">
            <number>0</number>
           </property>
@@ -452,176 +455,9 @@ QComboBox QAbstractItemView {
            <number>0</number>
           </property>
           <item>
-           <widget class="QFrame" name="option">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QFrame" name="search">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QComboBox" name="analysis_search_comboBox">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>165</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Code module</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Code presentation</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>ID Student</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLineEdit" name="analysis_search_lineEdit">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>260</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Search</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_5">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QPushButton" name="analysis_filter">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>70</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Filter</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>../media/images/icons/Course/Filter1.png</normaloff>../media/images/icons/Course/Filter1.png</iconset>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="analysis_create">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>82</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>+ Create</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
            <widget class="QLabel" name="header">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -644,7 +480,7 @@ QComboBox QAbstractItemView {
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_6">
+           <widget class="QFrame" name="main_page">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
               <horstretch>0</horstretch>
@@ -663,7 +499,7 @@ QComboBox QAbstractItemView {
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_8">
+            <layout class="QHBoxLayout" name="horizontalLayout_8" stretch="4,7">
              <property name="leftMargin">
               <number>0</number>
              </property>
@@ -677,44 +513,41 @@ QComboBox QAbstractItemView {
               <number>0</number>
              </property>
              <item>
-              <widget class="QTableWidget" name="analysis_table">
+              <widget class="QScrollArea" name="scrollArea">
                <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Expanding">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="minimumSize">
-                <size>
-                 <width>420</width>
-                 <height>0</height>
-                </size>
+               <property name="widgetResizable">
+                <bool>true</bool>
                </property>
-               <property name="styleSheet">
-                <string notr="true">color: black</string>
-               </property>
-               <attribute name="horizontalHeaderDefaultSectionSize">
-                <number>140</number>
-               </attribute>
-               <column>
-                <property name="text">
-                 <string>Code module</string>
+               <widget class="QWidget" name="scrollAreaWidgetContents">
+                <property name="geometry">
+                 <rect>
+                  <x>0</x>
+                  <y>0</y>
+                  <width>224</width>
+                  <height>485</height>
+                 </rect>
                 </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Code presentation</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>ID Student</string>
-                </property>
-               </column>
+                <widget class="QWidget" name="verticalLayoutWidget">
+                 <property name="geometry">
+                  <rect>
+                   <x>0</x>
+                   <y>10</y>
+                   <width>221</width>
+                   <height>451</height>
+                  </rect>
+                 </property>
+                 <layout class="QVBoxLayout" name="cluster_layout"/>
+                </widget>
+               </widget>
               </widget>
              </item>
              <item>
-              <widget class="QWidget" name="widget" native="true">
+              <widget class="QWidget" name="pie_chart_widget" native="true">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -733,279 +566,6 @@ QComboBox QAbstractItemView {
     border-radius: 12px;          /* bo tròn góc */</string>
                </property>
               </widget>
-             </item>
-            </layout>
-           </widget>
-          </item>
-          <item>
-           <widget class="QFrame" name="frame_7">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="frameShape">
-             <enum>QFrame::StyledPanel</enum>
-            </property>
-            <property name="frameShadow">
-             <enum>QFrame::Raised</enum>
-            </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_6">
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <spacer name="horizontalSpacer_3">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="analysis_previous">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::LeftToRight</enum>
-               </property>
-               <property name="text">
-                <string>Previous</string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/le-Photoroom.png</normaloff>../media/images/icons/Course/le-Photoroom.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>1</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QWidget" name="analysis_page" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                 <horstretch>30</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>350</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_7">
-                <property name="leftMargin">
-                 <number>11</number>
-                </property>
-                <property name="rightMargin">
-                 <number>11</number>
-                </property>
-                <item>
-                 <widget class="QPushButton" name="analysis_page_1">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>1</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="analysis_page_2">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>2</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="analysis_page_8">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>3</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLabel" name="analysis_space">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="layoutDirection">
-                   <enum>Qt::LeftToRight</enum>
-                  </property>
-                  <property name="text">
-                   <string>...</string>
-                  </property>
-                  <property name="alignment">
-                   <set>Qt::AlignCenter</set>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="analysis_page_10">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>8</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="analysis_page_9">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>9</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="analysis_page_3">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>28</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>10</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_2">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>4</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="analysis_next">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="layoutDirection">
-                <enum>Qt::RightToLeft</enum>
-               </property>
-               <property name="text">
-                <string>   Next </string>
-               </property>
-               <property name="icon">
-                <iconset>
-                 <normaloff>../media/images/icons/Course/ri-Photoroom.png</normaloff>../media/images/icons/Course/ri-Photoroom.png</iconset>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_4">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
              </item>
             </layout>
            </widget>

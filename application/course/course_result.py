@@ -138,4 +138,4 @@ class CourseResultEx(QMainWindow):
     data = CoursesLogic.get_dropout_percentage(code_module=self.code_module,code_presentation=self.code_presentation)
     plot_manager = CourseInfoVisualizer.create_dropout_rate_pie(data=data, target_widget=self.ui.pie_chart)
     plot_manager.set_title("Dropout/Retention Rate")
-
+    

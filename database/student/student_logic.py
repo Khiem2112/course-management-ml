@@ -91,3 +91,49 @@ class StudentsLogic:
         AND code_presentation = %s;
                             """, params=(code_module,code_presentation))
         return data
+    
+    @staticmethod
+    def get_students_by_cluster(cluster_id: int) -> list[dict] | None:
+        """
+        Fetches all students belonging to a specific cluster,
+        including their name and predicted study method.
+        
+        NOTE: You must adapt table/column names.
+        """
+        query = """
+                SELECT 
+                    s_info.id_student, 
+                    s_info.name_student,
+                    s_info.region,
+                    s_info.study_method_id,
+                    s_info.cluster_id from
+                    studentInfo AS s_info
+                WHERE 
+                    s_info.cluster_id = %s and study_method_id is not null
+                ORDER BY 
+                    s_info.name_student;
+        """
+        try:
+            return db.fetch_all(query, (cluster_id,))
+        except Exception as e:
+            logger.error(f"Error fetching students for cluster {cluster_id}: {e}", exc_info=True)
+            return None
+    @staticmethod
+    def get_cluster_student_counts():
+        query ="""
+                SELECT
+            count(id_student) AS student_count,
+            CASE
+                WHEN cluster_id IS NULL THEN 'not clustered'
+                ELSE CAST(cluster_id AS CHAR) 
+            END AS cluster_id
+        FROM
+            studentInfo
+        GROUP BY
+            cluster_id;
+        """
+        try:
+            return db.fetch_all(query)
+        except Exception as e:
+            logger.error(f"Error fetching cluster number of students: {e}", exc_info=True)
+            return None

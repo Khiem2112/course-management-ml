@@ -1,240 +1,243 @@
+import sqlite3
 import pandas as pd
-import joblib
-import sys
-from typing import TypedDict, List, Tuple, Any, Dict # Added imports
-
-# --- Configuration and Database Imports ---
-from config.config import GLOBAL_CONFIG
+from typing import List, Dict, Tuple, Any
 from database.execute_service import DBExecuteService as db
+from mysql.connector import Error as DBError
+
 from utils.logger import get_class_logger
 
-# Configure logger for this module/class
-logger = get_class_logger(__name__, "RecommendationService")
+# --- 1. The Recommendation Class ---
 
-# --- Define the TypedDict for the return value ---
-class RecommendationResult(TypedDict):
-    """Defines the structure of the recommendation result dictionary."""
-    courses: List[str]
-    study_method_label: str | None
-    engagement_label: str | None
-# ---
+logger = get_class_logger(__name__, "RecommendationManager")
 
-class RecommendationService:
+class RecommendationManager:
     """
-    Manages loading the ML model, a feature CSV, caching predictions,
-    and generating student learning path recommendations.
+    Manages the 5 (Study Method) x 7 (Cluster) recommendation map.
+
+    This class performs a crucial mapping: it translates the 7 raw cluster
+    IDs into the 3 "Engagement Levels" (Low, Medium, High) that your
+    recommendation content is based on.
     """
 
-    # --- Class Attributes for Maps (Load once) ---
-    STUDY_METHOD_MAP: Dict[int, str] = {
-        0: "Collaborative", 1: "Offline Content", 2: "Interactive",
-        3: "Informational", 4: "Resource-Based"
-    } #
-    ENGAGEMENT_LEVEL_MAP: Dict[int, str] = {
-        0: "Moderate Engagement", 1: "High Engagement", 2: "Low Engagement"
-    } #
-    RECOMMENDATIONS: Dict[int, Dict[int, List[str]]] = {
-        # --- Your full RECOMMENDATIONS dictionary here ---
-        #
-         0: {
-            0: ["Interactive AI Basics: Weekly Quizzes and Forums", "Applied AI: Practical Exercises with Peer Feedback", "Introduction to Machine Learning: Online Workshops", "AI Ethics: Case Studies and Discussion Groups"], # Moderate
-            1: ["Collaborative AI Projects: Team-Based Learning", "Advanced AI Techniques: Group Workshops and Peer Reviews", "Machine Learning Bootcamp: Intensive Group Projects", "AI in Practice: Team Challenges and Hackathons"], # High
-            2: ['Introduction to AI: Self-Paced Fundamentals', 'AI Basics: Introductory Video Series', 'Foundations of Machine Learning: Self-Study Edition', 'AI for Everyone: Introductory Readings and Quizzes'] # Low
+    # --- Define clear constants for your 5 Study Methods ---
+    COLLABORATIVE = 0
+    OFFLINE_CONTENT = 1
+    INTERACTIVE = 2
+    INFORMATIONAL = 3
+    RESOURCE_BASED = 4
+
+    # --- Define the 3 Engagement Levels from your old map ---
+    ENGAGEMENT_MEDIUM = 0
+    ENGAGEMENT_HIGH = 1
+    ENGAGEMENT_LOW = 2
+    
+    CLUSTER_NAME_MAP = {
+    0: "Resource-Based Learners",
+    1: "Balanced Achievers",
+    2: "High-Achieving Collaborators",
+    3: "Independent Explorers",
+    4: "Interactive Specialists",
+    5: "Offline Achievers", 
+    6: "Engaged Collaborators"
+  }
+
+    # --- The Master 5x7 -> 5x3 Recommendation Map ---
+    RECOMMENDATIONS_CONTENT = {
+        COLLABORATIVE: {
+            ENGAGEMENT_MEDIUM: ["Interactive AI Basics: Weekly Quizzes and Forums", "Applied AI: Practical Exercises with Peer Feedback"],
+            ENGAGEMENT_HIGH: ["Collaborative AI Projects: Team-Based Learning", "Advanced AI Techniques: Group Workshops"],
+            ENGAGEMENT_LOW: ['Introduction to AI: Self-Paced Fundamentals', 'AI Basics: Introductory Video Series']
         },
-        1: { # Offline Content
-            0: ["AI Principles: Self-Study with Case Studies", "Machine Learning: Offline Course with Practice Problems", "Applied AI: Textbook and Supplementary Materials", "Data Science: Case Studies and Analytical Exercises"], # Moderate
-            1: ["Advanced AI: Comprehensive Textbook with Projects", "Deep Learning: In-Depth Study with Capstone Projects", "AI and Machine learning: Project-Based Learning", "Data Science Mastery: Offline Content with Comprehensive Projects"], # High
-            2: ['AI Basics: Essential Readings and Key Concepts', 'Machine Learning Fundamentals: Self-Study Workbook', "AI Concepts: Downloadable Lecture Series", "Introduction to Data Science: Offline Learning Modules"] # Low
+        OFFLINE_CONTENT: {
+            ENGAGEMENT_MEDIUM: ["AI Principles: Self-Study with Case Studies", "Machine Learning: Offline Course with Practice Problems"],
+            ENGAGEMENT_HIGH: ["Advanced AI: Comprehensive Textbook with Projects", "Deep Learning: In-Depth Study with Capstone Projects"],
+            ENGAGEMENT_LOW: ['AI Basics: Essential Readings and Key Concepts', 'Machine Learning Fundamentals: Self-Study Workbook']
         },
-         2: { # Interactive
-            0: ["Machine Learning: Interactive Coding Exercises", "AI Applications: Interactive Case Studies", "Data Science: Interactive Projects and Peer Reviews", "AI Ethics: Discussion Forums and Interactive Scenarios"], # Moderate
-            1: ["Advanced AI: Interactive Group Projects and Hackathons", "Deep Learning: Interactive Labs and Collaborative Projects", "Machine Learning Mastery: Interactive Workshops and Challenges", "AI Research: Collaborative Research Projects and Peer Feedback"], # High
-            2: ["AI Basics: Interactive Quizzes and Flashcards", "Introduction to Machine Learning: Interactive Visualizations", "AI Fundamentals: Interactive Notebooks", "AI Concepts: Gamified Learning Modules"] # Low
+        INTERACTIVE: {
+            ENGAGEMENT_MEDIUM: ["Machine Learning: Interactive Coding Exercises", "AI Applications: Interactive Case Studies"],
+            ENGAGEMENT_HIGH: ["Advanced AI: Interactive Group Projects and Hackathons", "Deep Learning: Interactive Labs"],
+            ENGAGEMENT_LOW: ["AI Basics: Interactive Quizzes and Flashcards", "Introduction to Machine Learning: Interactive Visualizations"]
         },
-         3: { # Informational
-            0: ["Machine Learning: Structured Video Course", "AI Concepts: Comprehensive Video Series", "Data Science: Interactive Reading and Video Modules", "AI in Practice: Lecture Notes and Case Studies"], # Moderate
-            1: ["Advanced AI: Detailed Lecture Series and Readings", "Deep Learning: Advanced Lecture Series with Supplemental Readings", "AI and Machine Learning: Research Papers and Advanced Lectures", "Data Science Masterclass: Comprehensive Reading and Video Content"], # High
-            2: ["AI Overview: Short Video Lectures", "Introduction to Machine Learning: Podcast Series", "AI Fundamentals: Infographics and Summaries", "Data Science: Essential Readings and Articles"] # Low
+        INFORMATIONAL: {
+            ENGAGEMENT_MEDIUM: ["Machine Learning: Structured Video Course", "AI Concepts: Comprehensive Video Series"],
+            ENGAGEMENT_HIGH: ["Advanced AI: Detailed Lecture Series and Readings", "Deep Learning: Advanced Lecture Series"],
+            ENGAGEMENT_LOW: ["AI Overview: Short Video Lectures", "Introduction to Machine Learning: Podcast Series"]
         },
-         4: { # Resource-Based
-            0: ["Machine Learning: Comprehensive eBooks and Guides", "AI Applications: Case Study Compilations", "Data Science: In-Depth Articles and White Papers", "AI Concepts: Research Articles and Detailed Guides"], # Moderate
-            1: ["Advanced AI: Research Papers and Technical Reports", "Deep Learning: Comprehensive Textbooks and Resource Repositories", "Machine Learning Mastery: Advanced Documentation and APIs", "AI Ethics: Government and Institutional Reports"], # High
-            2: ["AI Basics: Curated Reading Lists", "Introduction to Machine Learning: Beginner-Friendly Blogs", "Data Science Overview: Quick Reference Guides", "AI Fundamentals: Online Documentation"] # Low
+        RESOURCE_BASED: {
+            ENGAGEMENT_MEDIUM: ["Machine Learning: Comprehensive eBooks and Guides", "AI Applications: Case Study Compilations"],
+            ENGAGEMENT_HIGH: ["Advanced AI: Research Papers and Technical Reports", "Deep Learning: Comprehensive Textbooks"],
+            ENGAGEMENT_LOW: ["AI Basics: Curated Reading Lists", "Introduction to Machine Learning: Beginner-Friendly Blogs"]
         }
     }
 
+    # --- Metadata maps for clear, human-readable output ---
+    STUDY_METHOD_NAMES = {
+        COLLABORATIVE: "Collaborative",
+        OFFLINE_CONTENT: "Offline Content",
+        INTERACTIVE: "Interactive",
+        INFORMATIONAL: "Informational",
+        RESOURCE_BASED: "Resource-Based"
+    }
+
+    ENGAGEMENT_LEVEL_NAMES = {
+        ENGAGEMENT_HIGH: "High Engagement",
+        ENGAGEMENT_MEDIUM: "Medium Engagement",
+        ENGAGEMENT_LOW: "Low Engagement / At-Risk"
+    }
 
     def __init__(self):
-        """
-        Initializes the service, loading the model and feature data from
-        paths specified in GLOBAL_CONFIG.
-        """
-        # Type hints for instance attributes
-        
-        self.model, self.feature_df = self._load_artifacts()
+        # In a real app, you might load this map from a JSON or YAML file.
+        print("RecommendationManager initialized.")
 
-    def _load_artifacts(self) -> Tuple[Any | None, pd.DataFrame | None]:
-        """Loads the model and feature DataFrame from disk."""
-        model_path: str = GLOBAL_CONFIG.MODEL_PATH
-        data_path: str = GLOBAL_CONFIG.FEATURE_DATA_PATH
-        
-        model: Any | None = None
-        feature_df: pd.DataFrame | None = None
-        
-        # Load Model
+    def _map_cluster_to_engagement(self, cluster_id: int) -> int:
+        """
+        **This is the core logic that connects your 7 clusters to your 3 levels.**
+
+        This is a HYPOTHETICAL mapping. You must replace this with your
+        actual analysis from your clustering notebook
+        (e.g., by checking the `cluster_centers_`).
+        """
+        # Example mapping:
+        if cluster_id in [5, 6]:
+            # Clusters 5 & 6 have the highest click counts
+            return self.ENGAGEMENT_HIGH
+        elif cluster_id in [2, 3, 4]:
+            # Clusters 2, 3, 4 are the "average" students
+            return self.ENGAGEMENT_MEDIUM
+        elif cluster_id in [0, 1]:
+            # Clusters 0 & 1 have the lowest scores and clicks
+            return self.ENGAGEMENT_LOW
+        else:
+            # Fallback for safety
+            print(f"Warning: Unknown cluster_id {cluster_id}. Defaulting to Low Engagement.")
+            return self.ENGAGEMENT_LOW
+
+    def get_recommendation(self, study_method_id: int, cluster_id: int) -> Dict[str, Any]:
+        """
+        Gets the recommendations and metadata for a given student's IDs.
+        """
+        # 1. Map the raw cluster ID to a meaningful engagement level
+        engagement_level_id = self._map_cluster_to_engagement(cluster_id)
+
+        # 2. Look up the content in the master map
         try:
-            model = joblib.load(model_path)
-            logger.info(f"Successfully loaded prediction model from {model_path}")
-        except FileNotFoundError:
-            logger.error(f"Error: Model file not found at {model_path}. Prediction disabled.")
+            # Find the study method "bucket"
+            method_bucket = self.RECOMMENDATIONS_CONTENT.get(study_method_id)
+            if not method_bucket:
+                raise KeyError(f"Invalid study_method_id: {study_method_id}")
+
+            # Find the recommendations within that bucket
+            recommendations = method_bucket.get(engagement_level_id)
+            if not recommendations:
+                raise KeyError(f"Invalid engagement_level_id: {engagement_level_id}")
+
+            # 3. Get human-readable names
+            method_name = self.STUDY_METHOD_NAMES.get(study_method_id, "Unknown")
+            engagement_name = self.ENGAGEMENT_LEVEL_NAMES.get(engagement_level_id, "Unknown")
+
+            return {
+                "status": "success",
+                "study_method_name": method_name,
+                "engagement_level_name": engagement_name,
+                "recommendations": recommendations,
+                "raw_ids": {
+                    "study_method_id": study_method_id,
+                    "cluster_id": cluster_id,
+                    "mapped_engagement_id": engagement_level_id
+                }
+            }
+        except KeyError as e:
+            return {
+                "status": "error",
+                "message": str(e),
+                "recommendations": [],
+                "raw_ids": {
+                    "study_method_id": study_method_id,
+                    "cluster_id": cluster_id
+                }
+            }
+    def get_recommendation_for_student(self, student_id: int) -> dict:
+        """
+        Fetches a single student's pre-computed IDs from the database,
+        gets their recommendation from the manager, and returns the result.
+
+        This is the primary function your application (e.g., PyQt6) will call.
+
+        Args:
+            student_id (int): The ID of the student to look up.
+            manager (RecommendationManager): An initialized instance of the manager.
+
+        Returns:
+            dict: A dictionary containing the recommendation result or error info.
+        """
+        logger.info(f"Processing request for student_id: {student_id}")
+
+        # --- 1. Fetch Data (The "Fast" Query) ---
+        # Use %s for parameter binding as per mysql.connector standard
+        query = "SELECT id_student, name_student, study_method_id, cluster_id FROM studentInfo WHERE id_student = %s"
+        
+        params = (student_id,)
+
+        student_data = None
+        try:
+            # Use fetch_one, which is more appropriate for a single lookup
+            student_data = db.fetch_one(query, params)
+        except DBError as e:
+            logger.error(f"Database query failed for student {student_id}: {e}")
+            return {"status": "error", "message": f"Database error. Check connection."}
         except Exception as e:
-            logger.error(f"Error loading model: {e}. Prediction disabled.", exc_info=True)
+            logger.error(f"An unexpected error occurred during data fetching for {student_id}: {e}")
+            return {"status": "error", "message": f"Unexpected application error."}
+
+        # --- 2. Handle "Not Found" ---
+        logger.info(f'Full data: {student_data}')
+        if not student_data:
+            logger.warning(f"No data found for student_id: {student_id}")
+            return {"status": "error", "message": "Student not found."} 
+
+        # --- 3. Process the Data ---
+        # --- 3. Process the Data & Handle Missing Values ---
+        method_id = student_data.get('study_method_id')
+        cluster_id = student_data.get('cluster_id')
+
+        # STRATEGY: Default Fallback
+        # If data is missing, assume "General" or "New" student profile.
+        is_generic_recommendation = False
+        
+        if method_id is None:
+            logger.warning(f"Student {student_id} missing study_method_id. Using default (0).")
+            method_id = 0 # Default to 'Collaborative' or your most common type
+            is_generic_recommendation = True
             
-        # Load Feature Data
+        if cluster_id is None:
+            logger.warning(f"Student {student_id} missing cluster_id. Using default (0).")
+            cluster_id = 0 # Default to Cluster 0
+            is_generic_recommendation = True
+
+        # --- CRITICAL: Handle NULL/None Data ---
+        # (As seen for student 30268 in your demo_tabe_student_info.csv)
+        if method_id is None or cluster_id is None:
+            logger.warning(f"Student {student_id} has missing (NULL) data.")
+            return {
+                "status": "error",
+                "message": "Recommendation cannot be generated. Student has incomplete data."
+            }
+
         try:
-            feature_df = pd.read_csv(data_path)
-            if 'id_student' in feature_df.columns:
-                 # Ensure correct type for matching
-                 feature_df['id_student'] = feature_df['id_student'].astype(int)
-            logger.info(f"Successfully loaded feature data from {data_path}")
-        except FileNotFoundError:
-            logger.error(f"Error: Feature data file not found at {data_path}. Prediction disabled.")
-        except Exception as e:
-            logger.error(f"Error loading feature data: {e}. Prediction disabled.", exc_info=True)
+            # Ensure data is integer before passing to manager
+            method_id = int(method_id)
+            cluster_id = int(cluster_id)
+        except ValueError:
+            logger.error(f"Data is corrupt for student {student_id}. "
+                        f"Got: method={method_id}, cluster={cluster_id}")
+            return {
+                "status": "error",
+                "message": "Data is corrupt. Cannot process recommendation."
+            }
 
-        return model, feature_df
+        # --- 4. Get the recommendation ---
+        # This is the final step, mapping the IDs to the content.
+        result = self.get_recommendation(method_id, cluster_id)
+        result['cluster_name'] = self.CLUSTER_NAME_MAP.get(cluster_id, "Unknown")
+        return result   
 
-
-    def _get_cached_recommendation(self, student_id: int) -> Tuple[int | None, int | None]:
-        """Checks the studentRecommendations table for existing predictions."""
-        logger.debug(f"Checking recommendation cache for student_id: {student_id}")
-        cached_result: Dict[str, Any] | None = db.fetch_one(
-            "SELECT predicted_study_method, engagement_level FROM studentRecommendations WHERE id_student = %s",
-            (student_id,)
-        )
-        if cached_result:
-            logger.info(f"Cache hit for student {student_id}.")
-            try:
-                # Ensure data from DB is integer
-                study_id = int(cached_result['predicted_study_method'])
-                engage_id = int(cached_result['engagement_level'])
-                return study_id, engage_id
-            except (KeyError, TypeError, ValueError) as e:
-                logger.warning(f"Cached data for student {student_id} is corrupt: {e}")
-                return None, None
-        logger.info(f"Cache miss for student {student_id}.")
-        return None, None
-
-    def _predict_and_cache(self, student_id: int) -> Tuple[int | None, int | None]:
-        """
-        Runs prediction using the loaded CSV and caches the result.
-        This logic is adapted from your predict.py script.
-        """
-        # Check if model and data are loaded
-        if self.model is None or self.feature_df is None:
-             logger.warning("Model or feature data not loaded. Cannot predict.")
-             return None, None
-
-        # 1. Get student data row from the loaded DataFrame
-        student_data_row: pd.DataFrame = self.feature_df[self.feature_df['id_student'] == student_id]
-        
-        if student_data_row.empty:
-            logger.warning(f"Student {student_id} not found in {GLOBAL_CONFIG.FEATURE_DATA_PATH}.")
-            return None, None
-        
-        student_features: pd.DataFrame = student_data_row.copy()
-        
-        # 2. Extract Engagement Level (from the CSV data)
-        try:
-            engagement_level_id: int = int(student_features["engagement_classification"].iloc[0])
-        except (KeyError, IndexError, ValueError):
-            logger.warning(f"Could not find/parse 'engagement_classification' for student {student_id}.")
-            return None, None
-            
-        # 3. Prepare Features for Prediction (from predict.py)
-        cols_to_drop: List[str] = ['id_student', 'study_method_preference', 'final_result']
-        existing_cols_to_drop: List[str] = [col for col in cols_to_drop if col in student_features.columns]
-        
-        student_features = student_features.drop(columns=existing_cols_to_drop)
-
-        # 4. XGBoost Column Name Fix (from predict.py)
-        student_features.columns = student_features.columns.astype(str).str.replace('[', '', regex=False) \
-                                             .str.replace(']', '', regex=False) \
-                                             .str.replace('<', '', regex=False)
-        
-        # 5. Predict Study Method
-        try:
-            # model.predict usually returns a numpy array
-            predicted_label_array: Any = self.model.predict(student_features)
-            study_method_id: int = int(predicted_label_array[0])
-        except Exception as e:
-            logger.error(f"Error during model prediction for student {student_id}: {e}", exc_info=True)
-            return None, None
-
-        # 6. Save to Cache
-        self._save_recommendation_to_cache(student_id, study_method_id, engagement_level_id)
-
-        return study_method_id, engagement_level_id
-
-    def _save_recommendation_to_cache(self, student_id: int, study_method_id: int, engagement_level_id: int) -> None:
-        """Saves the prediction results to the database cache table."""
-        logger.debug(f"Saving prediction to cache: Student={student_id}, Study={study_method_id}, Engagement={engagement_level_id}")
-        success: bool | int = db.execute_query(
-            """
-            INSERT INTO studentRecommendations (id_student, predicted_study_method, engagement_level)
-            VALUES (%s, %s, %s)
-            ON DUPLICATE KEY UPDATE predicted_study_method = VALUES(predicted_study_method),
-                                   engagement_level = VALUES(engagement_level)
-            """,
-            (student_id, study_method_id, engagement_level_id)
-        )
-        if not success:
-             logger.warning(f"Failed to save prediction to cache for student {student_id}.")
-
-
-    # --- PUBLIC METHOD (with updated type hints) ---
-    def get_recommendations(self, student_id: int) -> RecommendationResult:
-        """
-        Gets course recommendations for a specific student.
-
-        Checks cache first. If not found, runs prediction using the
-        loaded CSV file, caches the result, and then returns recommendations.
-        """
-        # Ensure student_id is an integer
-        try:
-            student_id = int(student_id)
-        except (ValueError, TypeError):
-             logger.error(f"Invalid student_id provided: {student_id}. Must be an integer.")
-             # Return matching the TypedDict structure
-             return {'courses': ["Invalid student ID provided."], 'study_method_label': None, 'engagement_label': None}
-
-        study_method_id: int | None
-        engagement_level_id: int | None
-        study_method_id, engagement_level_id = self._get_cached_recommendation(student_id)
-
-        if study_method_id is None or engagement_level_id is None:
-            # Not in cache, run prediction
-            study_method_id, engagement_level_id = self._predict_and_cache(student_id)
-
-        # Prepare final output, explicitly typing the dictionary
-        result: RecommendationResult = {
-            'courses': [],
-            'study_method_label': None,
-            'engagement_label': None
-        }
-
-        if study_method_id is None or engagement_level_id is None:
-            result['courses'] = ["Could not generate recommendations for this student."]
-            return result
-
-        # Lookup courses in the map
-        result['courses'] = self.RECOMMENDATIONS.get(study_method_id, {}).get(engagement_level_id, [])
-        if not result['courses']:
-            result['courses'] = ["No specific recommendations found for this combination."]
-
-        # Add labels
-        result['study_method_label'] = self.STUDY_METHOD_MAP.get(study_method_id, f"Unknown ({study_method_id})")
-        result['engagement_label'] = self.ENGAGEMENT_LEVEL_MAP.get(engagement_level_id, f"Unknown ({engagement_level_id})")
-
-        logger.info(f"Final recommendations for Student {student_id}: Study={result['study_method_label']}, Engagement={result['engagement_label']}")
-        return result

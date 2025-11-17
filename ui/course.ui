@@ -171,7 +171,7 @@ QComboBox QAbstractItemView {
         <number>0</number>
        </property>
        <item>
-        <widget class="QFrame" name="frame_sidebar">
+        <widget class="QFrame" name="menu">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
@@ -184,7 +184,7 @@ QComboBox QAbstractItemView {
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout" stretch="0,0,0,0,0,0,0">
+         <layout class="QVBoxLayout" name="verticalLayout_15" stretch="0,0,0,0,0,0,0">
           <property name="spacing">
            <number>11</number>
           </property>
@@ -210,8 +210,8 @@ QComboBox QAbstractItemView {
             </property>
             <property name="maximumSize">
              <size>
-              <width>160</width>
-              <height>90</height>
+              <width>150</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -226,7 +226,7 @@ QComboBox QAbstractItemView {
              <string/>
             </property>
             <property name="pixmap">
-             <pixmap>:/Images/images/Logo DUKI.png</pixmap>
+             <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/Logo DUKI.png</pixmap>
             </property>
             <property name="scaledContents">
              <bool>true</bool>
@@ -237,21 +237,21 @@ QComboBox QAbstractItemView {
            </widget>
           </item>
           <item>
-           <widget class="Line" name="line_1">
+           <widget class="Line" name="line_9">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_menu">
+           <widget class="QFrame" name="frame_5">
             <property name="frameShape">
              <enum>QFrame::StyledPanel</enum>
             </property>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_3">
+            <layout class="QVBoxLayout" name="verticalLayout_16">
              <property name="spacing">
               <number>0</number>
              </property>
@@ -282,7 +282,7 @@ QComboBox QAbstractItemView {
                 <string>Course</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
                  <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
                </property>
               </widget>
@@ -305,7 +305,7 @@ QComboBox QAbstractItemView {
                 <string>Student</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
                  <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
                </property>
               </widget>
@@ -325,7 +325,7 @@ QComboBox QAbstractItemView {
                 <string>Analysis</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
                  <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
@@ -348,10 +348,10 @@ QComboBox QAbstractItemView {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Payment</string>
+                <string>Payment*</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
                  <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
@@ -360,7 +360,7 @@ QComboBox QAbstractItemView {
            </widget>
           </item>
           <item>
-           <widget class="Line" name="line_2">
+           <widget class="Line" name="line_10">
             <property name="orientation">
              <enum>Qt::Horizontal</enum>
             </property>
@@ -384,12 +384,12 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Setting</string>
+             <string>Setting*</string>
             </property>
            </widget>
           </item>
           <item>
-           <spacer name="verticalSpacer">
+           <spacer name="verticalSpacer_5">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -409,6 +409,9 @@ QComboBox QAbstractItemView {
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
             <property name="styleSheet">
              <string notr="true"/>
             </property>
@@ -416,7 +419,7 @@ QComboBox QAbstractItemView {
              <string>Log out</string>
             </property>
             <property name="icon">
-             <iconset>
+             <iconset resource="../media/resource_from_qt.qrc">
               <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
@@ -481,179 +484,6 @@ QComboBox QAbstractItemView {
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
-              <widget class="QFrame" name="frame_search">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,0,1">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="leftMargin">
-                 <number>6</number>
-                </property>
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="rightMargin">
-                 <number>0</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QComboBox" name="comboBox_search">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>165</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Code module</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Code presentation</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Module presentation</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLineEdit" name="lineEdit_search">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>260</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Search...</string>
-                  </property>
-                  <property name="clearButtonEnabled">
-                   <bool>true</bool>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_search">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="text">
-                   <string/>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>:/Icons/images/icons/Course/magnifier.png</normaloff>:/Icons/images/icons/Course/magnifier.png</iconset>
-                  </property>
-                  <property name="iconSize">
-                   <size>
-                    <width>20</width>
-                    <height>20</height>
-                   </size>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_option">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QPushButton" name="btn_filter">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>70</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Filter</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>:/Icons/images/icons/Course/Filter1.png</normaloff>:/Icons/images/icons/Course/Filter1.png</iconset>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="btn_create">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>82</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Create</string>
-                  </property>
-                  <property name="icon">
-                   <iconset>
-                    <normaloff>:/Icons/images/icons/Course/Create1.png</normaloff>:/Icons/images/icons/Course/Create1.png</iconset>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
@@ -1337,7 +1167,7 @@ background-color: black</string>
            </widget>
           </item>
           <item>
-           <widget class="QFrame" name="frame_pagination">
+           <widget class="QFrame" name="frame_7">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
@@ -1350,12 +1180,9 @@ background-color: black</string>
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,0,0,0,1">
+            <layout class="QHBoxLayout" name="horizontalLayout_10">
              <property name="topMargin">
               <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>6</number>
              </property>
              <property name="bottomMargin">
               <number>0</number>
@@ -1368,79 +1195,36 @@ background-color: black</string>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>80</width>
-                 <height>16777215</height>
-                </size>
-               </property>
                <property name="text">
                 <string>Previous</string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
                  <normaloff>:/Icons/images/icons/Course/le-Photoroom.png</normaloff>:/Icons/images/icons/Course/le-Photoroom.png</iconset>
                </property>
               </widget>
              </item>
              <item>
-              <spacer name="horizontalSpacer">
+              <spacer name="horizontalSpacer_4">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
+                 <width>1</width>
                  <height>20</height>
                 </size>
                </property>
               </spacer>
              </item>
              <item>
-              <widget class="QWidget" name="page_container" native="true">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                 <horstretch>30</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="minimumSize">
-                <size>
-                 <width>350</width>
-                 <height>0</height>
-                </size>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_7">
-                <property name="leftMargin">
-                 <number>11</number>
-                </property>
-                <property name="rightMargin">
-                 <number>11</number>
-                </property>
-                <item>
-                 <layout class="QHBoxLayout" name="pagination_layout">
-                  <property name="spacing">
-                   <number>6</number>
-                  </property>
-                  <property name="leftMargin">
-                   <number>6</number>
-                  </property>
-                  <property name="rightMargin">
-                   <number>6</number>
-                  </property>
-                 </layout>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_2">
+              <spacer name="horizontalSpacer_5">
                <property name="orientation">
                 <enum>Qt::Horizontal</enum>
                </property>
                <property name="sizeHint" stdset="0">
                 <size>
-                 <width>40</width>
+                 <width>4</width>
                  <height>20</height>
                 </size>
                </property>
@@ -1454,20 +1238,14 @@ background-color: black</string>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
-               <property name="maximumSize">
-                <size>
-                 <width>80</width>
-                 <height>16777215</height>
-                </size>
-               </property>
                <property name="layoutDirection">
                 <enum>Qt::RightToLeft</enum>
                </property>
                <property name="text">
-                <string>   Next</string>
+                <string>   Next </string>
                </property>
                <property name="icon">
-                <iconset>
+                <iconset resource="../media/resource_from_qt.qrc">
                  <normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</iconset>
                </property>
               </widget>
@@ -1497,7 +1275,7 @@ background-color: black</string>
  </widget>
  <resources>
   <include location="../media/resource_from_qt.qrc"/>
-  <include location="resource_from_qt.qrc"/>
+  <include location="../media/resource_from_qt.qrc"/>
  </resources>
  <connections/>
 </ui>
