@@ -26,6 +26,7 @@ from  ml.inference.predict import RecommendationManager as RecommendationService
 import sys
 from functools import partial
 from PyQt6.QtWidgets import QWidget, QStackedWidget, QVBoxLayout, QPushButton
+from base.widgets import ClusterPaperWidget
 from ui.analysis_ui import Ui_MainWindow as AnalysisUI
 from database.student.student_logic import StudentsLogic
 from utils.logger import get_class_logger
@@ -89,59 +90,64 @@ class AnalysisManagementEx:
       self.logger.warning("No cluster count data found. Analysis page will be empty.")
       return
 
-    # 2. Visualize the cluster distribution
+    # Visualize the cluster distribution
     AnalysisVisualizer.create_cluster_pie_chart(
-      target_widget=self.ui.pie_chart_widget, # Assumes this is your plot widget
-      cluster_data=cluster_counts
+      target_widget=self.ui.pie_chart_widget,
+      cluster_data=cluster_counts,
+      name_map=self.recommend_service.CLUSTER_NAME_MAP # <--- Pass the map here
     )
     
-    # 3. Create the "Cluster Papers" (clickable buttons)
-    # ** YOU MUST:
-    #    1. In analysis.ui, remove the 'analysis_table'.
-    #    2. Add a QScrollArea.
-    #    3. Inside the QScrollArea, add a QWidget (name it 'scroll_content')
-    #       and set its layout to a QVBoxLayout (name it 'cluster_list_layout').
-    # **
-    list_layout = self.ui.cluster_layout
-    if list_layout is None:
-        self.logger.error("UI missing 'cluster_list_layout'. Cannot create cluster papers.")
-        return
+    
+    
+
+    # Create the "Cluster Papers"
+    list_layout = self.ui.cluster_layout 
+    if list_layout is None: return
+    
+    # --- BEAUTIFY LAYOUT ---
+    list_layout.setSpacing(15) # Add nice gap between items
+    list_layout.setContentsMargins(10, 10, 15, 10) # Add padding around the list
+    # -----------------------
 
     # Clear old list
     while list_layout.count():
       child = list_layout.takeAt(0)
-      if child.widget():
-        child.widget().deleteLater()
+      if child.widget(): child.widget().deleteLater()
         
-    # Add new buttons
+    # 4. Add new ClusterPaperWidgets
     for cluster_info in cluster_counts:
-      # Get the name (e.g., "Cluster 0") and count
       cluster_name_label = cluster_info['cluster_id']
       count = cluster_info['student_count']
       
-      # Get the raw ID (e.g., 0)
       try:
         cluster_raw_id = int(cluster_name_label.split(" ")[-1])
       except:
-        cluster_raw_id = -1 # Fallback
+        cluster_raw_id = -1
       
-      # Get the friendly name from the service
+      # Get friendly name
       cluster_name = self.recommend_service.CLUSTER_NAME_MAP.get(
-          cluster_raw_id, cluster_name_label # Default to "Cluster 0"
+          cluster_raw_id, cluster_name_label
       )
       
-      button = QPushButton(f"{cluster_name} ({count} Students)")
-      button.setMinimumHeight(50)
-      # Add styling as needed
-      button.setStyleSheet("QPushButton { text-align: left; padding-left: 10px; }") 
+      # Get Color
+      bg_color = AnalysisVisualizer.CLUSTER_COLORS.get(
+          cluster_raw_id, AnalysisVisualizer.DEFAULT_COLOR
+      )
       
-      # Connect the click
-      button.clicked.connect(
+      # Text for the label
+      paper_text = f"{cluster_name}\n({count} Students)"
+      
+      # --- CREATE CUSTOM WIDGET ---
+      paper_widget = ClusterPaperWidget(text=paper_text, color=bg_color)
+      
+      # Connect Click
+      paper_widget.clicked.connect(
           partial(self.show_cluster_detail, cluster_raw_id, cluster_name)
       )
-      list_layout.addWidget(button)
       
-    list_layout.addStretch() # Pushes all buttons to the top
+      list_layout.addWidget(paper_widget)
+      
+    list_layout.addStretch() # Push items to the top
     
   def connect_signals(self):
     """Connects the Back button."""
