@@ -339,7 +339,7 @@ QComboBox QAbstractItemView {
                </property>
                <property name="icon">
                 <iconset resource="../media/resource_from_qt.qrc">
-                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
+                 <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
                </property>
               </widget>
              </item>
