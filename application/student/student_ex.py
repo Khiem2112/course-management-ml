@@ -75,20 +75,9 @@ class StudentManagementEx: # <-- Note: Not inheriting from QWidget or QMainWindo
     end = start + self.per_page
     data_slice = self.students[start:end] # This is a list[dict]
 
-    # 3. Define headers for the *data*
-    # ** YOU MUST CHANGE THIS **
-    # These must be the exact keys from your data_slice dictionaries
-    # and match the first columns of your table.
-    data_headers = [
-      "code_module", "code_presentation", "id_student", "gender", 
-      "region", "highest_education", "imd_band", "age_band", 
-      "num_of_prev_attempts", "studied_credits"
-    ]
-
     # 4. Load data using TableWidgetManager
     self.table_manager.load_data(
-      data=data_slice,
-      header_labels=data_headers
+      data=data_slice
     )
     
     # 5. Add the action buttons (Edit/Delete)

@@ -106,24 +106,6 @@ class CourseManagementEx():
                 child_name = child.objectName()
                 if hasattr(self.ui, child_name):
                     setattr(self.ui, child_name, child)    
-    
-
-    # ---------------- ICON SETUP ----------------
-    def setup_icons(self):
-        self.ui.brand.setPixmap(QPixmap(":/Images/images/Logo DUKI.png"))
-        self.ui.menu_course.setIcon(QIcon(":/Icons/images/icons/Course/Course.png"))
-        self.ui.menu_student.setIcon(QIcon(":/Icons/images/icons/Course/Student1.png"))
-        self.ui.menu_analysis.setIcon(QIcon(":/Icons/images/icons/Course/Analysis.png"))
-        self.ui.menu_payment.setIcon(QIcon(":/Icons/images/icons/Course/Payment.png"))
-        self.ui.menu_logout.setIcon(QIcon(":/Icons/images/icons/Course/Log_Out.png"))
-        self.ui.btn_filter.setIcon(QIcon(":/Icons/images/icons/Course/Filter1.png"))
-        self.ui.btn_create.setIcon(QIcon(":/Icons/images/icons/Course/Create1.png"))
-        self.ui.btn_next.setIcon(QIcon(":/Icons/images/icons/Course/ri-Photoroom.png"))
-        self.ui.btn_previous.setIcon(QIcon(":/Icons/images/icons/Course/le-Photoroom.png"))
-        self.ui.btn_search.setIcon(QIcon(":/Icons/images/icons/Course/magnifier.png"))
-
-        for i in range(1,7):
-            getattr(self.ui, f"image_course_{i}").setPixmap(QPixmap(":/Images/images/course_image.png"))
 
     # ---------------- CONNECT SIGNALS ----------------
     def connect_signals(self):
@@ -246,50 +228,6 @@ class CourseManagementEx():
         self.ui.btn_previous.setEnabled(self.current_page > 1)
         self.ui.btn_next.setEnabled(self.current_page < total_pages)
 
-    # ---------------------- Tạo nút phân trang ----------------------
-    def update_pagination_buttons(self, total_pages):
-        layout = self.ui.pagination_layout.layout() if hasattr(self.ui.pagination_layout, 'layout') else self.ui.pagination_layout
-        while layout.count():
-            item = layout.takeAt(0)
-            if item.widget():
-                item.widget().deleteLater()
-
-        pages_to_show = self.get_visible_pages(total_pages)
-
-        for page in pages_to_show:
-            if page == "...":
-                dots = QLabel("...")
-                dots.setStyleSheet("color: gray; font-weight: bold; margin: 0 4px;")
-                layout.addWidget(dots)
-            else:
-                btn = QPushButton(str(page))
-                btn.setFixedSize(32, 32)
-                btn.clicked.connect(lambda _, p=page: self.go_to_page(p))
-
-                # Style cho trang hiện tại
-                if page == self.current_page:
-                    btn.setStyleSheet("""
-                        QPushButton {
-                            background-color: #2b6cb0;
-                            color: white;
-                            border: 2px solid #1a365d;
-                            font-weight: bold;
-                            border-radius: 6px;
-                        }
-                    """)
-                else:
-                    btn.setStyleSheet("""
-                        QPushButton {
-                            background-color: #e2e8f0;
-                            color: black;
-                            border-radius: 6px;
-                        }
-                        QPushButton:hover {
-                            background-color: #cbd5e0;
-                        }
-                    """)
-
-                layout.addWidget(btn)
 
     # ---------------------- Tính toán danh sách trang hiển thị ----------------------
     def get_visible_pages(self, total_pages):

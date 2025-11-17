@@ -52,8 +52,16 @@ class StudentsLogic:
     @staticmethod
     def get_all_students(code_module=None, keyword=None):
         query = """
-            SELECT code_module, code_presentation, id_student, gender
-            FROM studentInfo
+            SELECT
+                name_student,
+                gender,
+                region,
+                highest_education,
+                imd_band,
+                studied_credits,
+                COALESCE(study_method_preference, 'Non-Clustered') AS study_method_preference
+            FROM
+                studentInfo;
         """
         conditions = []
         params = []
