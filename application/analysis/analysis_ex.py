@@ -97,8 +97,6 @@ class AnalysisManagementEx:
       name_map=self.recommend_service.CLUSTER_NAME_MAP # <--- Pass the map here
     )
     
-    
-    
 
     # Create the "Cluster Papers"
     list_layout = self.ui.cluster_layout 
