@@ -10,3 +10,4 @@ test*
 .mypy_cache
 Ext
 features
+main.py
