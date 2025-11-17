@@ -36,8 +36,8 @@ class ClusterDetailPage(QWidget):
                     study_method_id=int(method_id), 
                     cluster_id=int(cluster_id)
                 )
-                method_label = reco_data.get('study_method', 'Unknown')
-                engagement_label = reco_data.get('engagement_level', 'Unknown')
+                method_label = reco_data.get('study_method_name', 'Unknown')
+                engagement_label = reco_data.get('engagement_level_name', 'Unknown')
             else:
                 method_label = "N/A"
                 engagement_label = "N/A"
