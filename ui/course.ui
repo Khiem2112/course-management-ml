@@ -559,6 +559,9 @@ QComboBox QAbstractItemView {
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="pixmap">
+                      <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/course_image.png</pixmap>
+                     </property>
                      <property name="scaledContents">
                       <bool>true</bool>
                      </property>
@@ -663,6 +666,9 @@ background-color: black</string>
                     <widget class="QLabel" name="image_course_6">
                      <property name="text">
                       <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/course_image.png</pixmap>
                      </property>
                      <property name="scaledContents">
                       <bool>true</bool>
@@ -769,6 +775,9 @@ background-color: black</string>
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="pixmap">
+                      <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/course_image.png</pixmap>
+                     </property>
                      <property name="scaledContents">
                       <bool>true</bool>
                      </property>
@@ -873,6 +882,9 @@ background-color: black</string>
                     <widget class="QLabel" name="image_course_4">
                      <property name="text">
                       <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/course_image.png</pixmap>
                      </property>
                      <property name="scaledContents">
                       <bool>true</bool>
@@ -979,6 +991,9 @@ background-color: black</string>
                      <property name="text">
                       <string/>
                      </property>
+                     <property name="pixmap">
+                      <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/course_image.png</pixmap>
+                     </property>
                      <property name="scaledContents">
                       <bool>true</bool>
                      </property>
@@ -1083,6 +1098,9 @@ background-color: black</string>
                     <widget class="QLabel" name="image_course_3">
                      <property name="text">
                       <string/>
+                     </property>
+                     <property name="pixmap">
+                      <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/course_image.png</pixmap>
                      </property>
                      <property name="scaledContents">
                       <bool>true</bool>

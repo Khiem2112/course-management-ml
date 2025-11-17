@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from media.resource_from_qt import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
