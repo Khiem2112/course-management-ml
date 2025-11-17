@@ -10,6 +10,12 @@
     <height>614</height>
    </rect>
   </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Expanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
   <property name="windowTitle">
    <string>MainWindow</string>
   </property>
@@ -30,36 +36,6 @@ QFrame {
 QLabel#brand {
     color: black;
 }
-
-#header_result,
-#header_assessment,
-#header_student {
-
-border: none;
-padding: 5px 10px;
-}
-
-#header_result {
-    background-color: #4C8BF5; /* A vibrant blue (matches existing create button) */
-    
-    /* Ensure it overrides the basic button style from the common rule */
-    border: none;
-    padding: 5px 10px;
-    
-    /* Optional visual flair */
-    border-radius: 4px; 
-    font-weight: bold;
-}
-
-#header_return {
-
-background-color: black;
-color: red;
-border: none;
-padding: 5px 10px;
-font-weight:bold;
-}
-
 
 #menu_analysis,
 #menu_course,
@@ -85,20 +61,20 @@ font-weight:bold;
     text-align: left;
 	border: none;
 }
-#menu_course {
+#menu_analysis {
     background-color: #eaeaea;
 }
-#course_search_lineEdit {
+#analysis_search_lineEdit {
     background-color: #F8F8F8;
     border: 1px solid #CCCCCC;
     border-radius-right: 10px;
     padding: 6px 12px;
     color: #555;
 }
-#course_search_lineEdit:focus {
+#analysis_search_lineEdit:focus {
     border: 2px solid #A0A0A0;
 }
-#course_search_comboBox {
+#analysis_search_comboBox {
     background-color: #2E2E2E;
     color: white;
     padding: 6px 12px;
@@ -110,7 +86,7 @@ QComboBox QAbstractItemView {
     selection-background-color: #444444;
     selection-color: white;
 }
-#course_create {
+#analysis_create {
     background-color: #4C8BF5;
     color: white;
     border: none;
@@ -118,24 +94,24 @@ QComboBox QAbstractItemView {
     padding: 6px 10px;
     font-weight: bold;
 }
-#course_create:hover {
+#analysis_create:hover {
     background-color: #3B73E0;
 }
-#course_filter {
+#analysis_filter {
     background-color: #F4F4F4;
     border: 1px solid #CCCCCC;
     border-radius: 8px;
     padding: 6px 10px;
 	color: black;
 }
-#course_filter:hover {
+#analysis_filter:hover {
     background-color: #EAEAEA;
 }
 #header{
 	background-color: #f9f9f9;
 	color: black;
 }
-#course_previous, #course_next {
+#analysis_previous, #analysis_next {
     background-color: white;
     color: #2E3A59;
     border: 1px solid #D0D0D0;
@@ -143,16 +119,16 @@ QComboBox QAbstractItemView {
     padding: 6px 12px;
     font-weight: 500;
 }
-#course_previous:hover, #course_next:hover {
+#analysis_previous:hover, #analysis_next:hover {
     background-color: #F5F5F5;
 }
-#course_page_1, #course_page_2, #course_page_3, #course_page_8, #course_page_9, #course_page_10 {
+#analysis_page_1, #analysis_page_2, #analysis_page_3, #analysis_page_8, #analysis_page_9, #analysis_page_10 {
     background-color: transparent;
     border: none;
     color: #444;
     padding: 6px 10px;
 }
-#course_page_1 {
+#analysis_page_1 {
     background-color: #E0E0E0;
     border-radius: 6px;
     font-weight: bold;
@@ -238,6 +214,12 @@ QComboBox QAbstractItemView {
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>60</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>20</pointsize>
@@ -247,7 +229,13 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>DUKI</string>
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/Logo DUKI.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -299,6 +287,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Course</string>
                </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -318,6 +310,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Student</string>
                </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -333,6 +329,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Analysis</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -354,7 +354,11 @@ QComboBox QAbstractItemView {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Payment</string>
+                <string>Payment*</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -386,7 +390,7 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Setting</string>
+             <string>Setting*</string>
             </property>
            </widget>
           </item>
@@ -416,6 +420,10 @@ QComboBox QAbstractItemView {
             </property>
             <property name="text">
              <string>Log out</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../media/resource_from_qt.qrc">
+              <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
@@ -450,77 +458,39 @@ QComboBox QAbstractItemView {
            <number>0</number>
           </property>
           <item>
-           <widget class="QWidget" name="header" native="true">
+           <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+background-color: white</string>
+            </property>
+            <property name="text">
+             <string>  Result of student after cluster</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QLabel" name="header">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
             <property name="minimumSize">
              <size>
-              <width>50</width>
-              <height>50</height>
+              <width>0</width>
+              <height>41</height>
              </size>
             </property>
-            <property name="styleSheet">
-             <string notr="true">background-color: #f9f9f9;</string>
+            <property name="font">
+             <font>
+              <family>MS Shell Dlg 2</family>
+              <pointsize>12</pointsize>
+             </font>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_9">
-             <property name="spacing">
-              <number>7</number>
-             </property>
-             <property name="leftMargin">
-              <number>0</number>
-             </property>
-             <property name="topMargin">
-              <number>0</number>
-             </property>
-             <property name="rightMargin">
-              <number>11</number>
-             </property>
-             <property name="bottomMargin">
-              <number>0</number>
-             </property>
-             <item>
-              <widget class="QPushButton" name="header_result">
-               <property name="styleSheet">
-                <string notr="true">backgroud:transparent;</string>
-               </property>
-               <property name="text">
-                <string>Result</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="header_assessment">
-               <property name="text">
-                <string>Assessment</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <widget class="QPushButton" name="header_student">
-               <property name="text">
-                <string>Student</string>
-               </property>
-              </widget>
-             </item>
-             <item>
-              <spacer name="horizontalSpacer_5">
-               <property name="orientation">
-                <enum>Qt::Horizontal</enum>
-               </property>
-               <property name="sizeHint" stdset="0">
-                <size>
-                 <width>40</width>
-                 <height>20</height>
-                </size>
-               </property>
-              </spacer>
-             </item>
-             <item>
-              <widget class="QPushButton" name="header_return">
-               <property name="text">
-                <string>Return</string>
-               </property>
-              </widget>
-             </item>
-            </layout>
+            <property name="text">
+             <string> Analysis</string>
+            </property>
            </widget>
           </item>
           <item>
@@ -543,18 +513,36 @@ QComboBox QAbstractItemView {
             <property name="frameShadow">
              <enum>QFrame::Raised</enum>
             </property>
-            <layout class="QVBoxLayout" name="verticalLayout_4">
+            <layout class="QHBoxLayout" name="horizontalLayout_8">
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
              <item>
-              <widget class="QFrame" name="frame_4">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="2,1">
+              <widget class="QWidget" name="widget" native="true">
+               <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="10,4">
                 <item>
-                 <widget class="QWidget" name="line_chart" native="true">
+                 <widget class="QWidget" name="cluster_analysis_chart" native="true">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
+                  <property name="minimumSize">
+                   <size>
+                    <width>0</width>
+                    <height>0</height>
+                   </size>
+                  </property>
                   <property name="styleSheet">
                    <string notr="true">    background-color: white;
     border: 1px solid #dcdcdc;   /* viền xám nhạt */
@@ -563,139 +551,28 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QFrame" name="course_result_top5">
+                 <widget class="QFrame" name="frame_4">
+                  <property name="sizePolicy">
+                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                    <horstretch>0</horstretch>
+                    <verstretch>0</verstretch>
+                   </sizepolicy>
+                  </property>
                   <property name="frameShape">
                    <enum>QFrame::StyledPanel</enum>
                   </property>
                   <property name="frameShadow">
                    <enum>QFrame::Raised</enum>
                   </property>
-                  <layout class="QVBoxLayout" name="verticalLayout_13">
-                   <property name="leftMargin">
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
+                   <property name="topMargin">
                     <number>0</number>
                    </property>
-                   <property name="rightMargin">
+                   <property name="bottomMargin">
                     <number>0</number>
                    </property>
                    <item>
-                    <widget class="QLabel" name="label_12">
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 10px;          /* bo tròn góc */
-color: black</string>
-                     </property>
-                     <property name="text">
-                      <string>Top 5 Students</string>
-                     </property>
-                     <property name="alignment">
-                      <set>Qt::AlignCenter</set>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="course_result_1">
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 5px;         
-color: black</string>
-                     </property>
-                     <property name="text">
-                      <string>1.</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="course_result_2">
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 5px;          /* bo tròn góc */
-
-color: black</string>
-                     </property>
-                     <property name="text">
-                      <string>2.</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="course_result_3">
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 5px;          /* bo tròn góc */
-color: black</string>
-                     </property>
-                     <property name="text">
-                      <string>3.</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="course_result_4">
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 5px;          /* bo tròn góc */
-
-color: black</string>
-                     </property>
-                     <property name="text">
-                      <string>4.</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QLabel" name="course_result_5">
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 5px;          /* bo tròn góc */
-
-color: black</string>
-                     </property>
-                     <property name="text">
-                      <string>5.</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_5">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="3,4">
-                <item>
-                 <widget class="QWidget" name="pie_chart" native="true">
-                  <property name="styleSheet">
-                   <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 12px;          /* bo tròn góc */</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QFrame" name="frame_8">
-                  <property name="frameShape">
-                   <enum>QFrame::StyledPanel</enum>
-                  </property>
-                  <property name="frameShadow">
-                   <enum>QFrame::Raised</enum>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_2">
-                   <item row="1" column="1">
-                    <widget class="QFrame" name="cluster_analysis_groupA_7">
+                    <widget class="QFrame" name="cluster_analysis_groupA">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -713,20 +590,20 @@ color: black</string>
                      <property name="frameShadow">
                       <enum>QFrame::Raised</enum>
                      </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_11">
+                     <layout class="QVBoxLayout" name="verticalLayout_5">
                       <item>
-                       <widget class="QLabel" name="label_10">
+                       <widget class="QLabel" name="label">
                         <property name="styleSheet">
                          <string notr="true">border: none;
 color: black</string>
                         </property>
                         <property name="text">
-                         <string>Mode</string>
+                         <string>Group A</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="mode_stu_score">
+                       <widget class="QLabel" name="count_groupA">
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -746,112 +623,8 @@ color: black</string>
                      </layout>
                     </widget>
                    </item>
-                   <item row="0" column="0">
-                    <widget class="QFrame" name="cluster_analysis_groupA_8">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 12px;          /* bo tròn góc */</string>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_12">
-                      <item>
-                       <widget class="QLabel" name="label_11">
-                        <property name="styleSheet">
-                         <string notr="true">border: none;
-color: black</string>
-                        </property>
-                        <property name="text">
-                         <string>Min</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="min_stu_score">
-                        <property name="font">
-                         <font>
-                          <pointsize>10</pointsize>
-                          <weight>75</weight>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">border: None;
-color: black</string>
-                        </property>
-                        <property name="text">
-                         <string>0000</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                   <item row="1" column="0">
-                    <widget class="QFrame" name="cluster_analysis_groupA_5">
-                     <property name="sizePolicy">
-                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                       <horstretch>0</horstretch>
-                       <verstretch>0</verstretch>
-                      </sizepolicy>
-                     </property>
-                     <property name="styleSheet">
-                      <string notr="true">    background-color: white;
-    border: 1px solid #dcdcdc;   /* viền xám nhạt */
-    border-radius: 12px;          /* bo tròn góc */</string>
-                     </property>
-                     <property name="frameShape">
-                      <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                      <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QVBoxLayout" name="verticalLayout_9">
-                      <item>
-                       <widget class="QLabel" name="label_8">
-                        <property name="styleSheet">
-                         <string notr="true">border: none;
-color: black</string>
-                        </property>
-                        <property name="text">
-                         <string>Mean</string>
-                        </property>
-                       </widget>
-                      </item>
-                      <item>
-                       <widget class="QLabel" name="mean_stu_score">
-                        <property name="font">
-                         <font>
-                          <pointsize>10</pointsize>
-                          <weight>75</weight>
-                          <bold>true</bold>
-                         </font>
-                        </property>
-                        <property name="styleSheet">
-                         <string notr="true">border: None;
-color: black</string>
-                        </property>
-                        <property name="text">
-                         <string>0000</string>
-                        </property>
-                       </widget>
-                      </item>
-                     </layout>
-                    </widget>
-                   </item>
-                   <item row="0" column="1">
-                    <widget class="QFrame" name="cluster_analysis_groupA_6">
+                   <item>
+                    <widget class="QFrame" name="cluster_analysis_groupB">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                        <horstretch>0</horstretch>
@@ -871,19 +644,174 @@ color: black</string>
                      </property>
                      <layout class="QVBoxLayout" name="verticalLayout_10">
                       <item>
-                       <widget class="QLabel" name="label_9">
+                       <widget class="QLabel" name="label_11">
                         <property name="styleSheet">
                          <string notr="true">border: none;
-color: black
-</string>
+color: black</string>
                         </property>
                         <property name="text">
-                         <string>Max</string>
+                         <string>Group B</string>
                         </property>
                        </widget>
                       </item>
                       <item>
-                       <widget class="QLabel" name="max_stu_score">
+                       <widget class="QLabel" name="count_groupB">
+                        <property name="font">
+                         <font>
+                          <pointsize>10</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: None;
+color: black</string>
+                        </property>
+                        <property name="text">
+                         <string>0000</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="cluster_analysis_groupC">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">    background-color: white;
+    border: 1px solid #dcdcdc;   /* viền xám nhạt */
+    border-radius: 12px;          /* bo tròn góc */</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_8">
+                      <item>
+                       <widget class="QLabel" name="label_7">
+                        <property name="styleSheet">
+                         <string notr="true">border: none;
+color: black</string>
+                        </property>
+                        <property name="text">
+                         <string>Group C</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="count_groupC">
+                        <property name="font">
+                         <font>
+                          <pointsize>10</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: None;
+color: black</string>
+                        </property>
+                        <property name="text">
+                         <string>0000</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="cluster_analysis_groupD">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">    background-color: white;
+    border: 1px solid #dcdcdc;   /* viền xám nhạt */
+    border-radius: 12px;          /* bo tròn góc */</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_7">
+                      <item>
+                       <widget class="QLabel" name="label_5">
+                        <property name="styleSheet">
+                         <string notr="true">border: none;
+color: black</string>
+                        </property>
+                        <property name="text">
+                         <string>Group D</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="count_groupD">
+                        <property name="font">
+                         <font>
+                          <pointsize>10</pointsize>
+                          <weight>75</weight>
+                          <bold>true</bold>
+                         </font>
+                        </property>
+                        <property name="styleSheet">
+                         <string notr="true">border: None;
+color: black</string>
+                        </property>
+                        <property name="text">
+                         <string>0000</string>
+                        </property>
+                       </widget>
+                      </item>
+                     </layout>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QFrame" name="cluster_analysis_groupE">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="styleSheet">
+                      <string notr="true">    background-color: white;
+    border: 1px solid #dcdcdc;   /* viền xám nhạt */
+    border-radius: 12px;          /* bo tròn góc */</string>
+                     </property>
+                     <property name="frameShape">
+                      <enum>QFrame::StyledPanel</enum>
+                     </property>
+                     <property name="frameShadow">
+                      <enum>QFrame::Raised</enum>
+                     </property>
+                     <layout class="QVBoxLayout" name="verticalLayout_9">
+                      <item>
+                       <widget class="QLabel" name="label_9">
+                        <property name="styleSheet">
+                         <string notr="true">border: none;
+color: black</string>
+                        </property>
+                        <property name="text">
+                         <string>Group E</string>
+                        </property>
+                       </widget>
+                      </item>
+                      <item>
+                       <widget class="QLabel" name="count_groupE">
                         <property name="font">
                          <font>
                           <pointsize>10</pointsize>
@@ -932,6 +860,8 @@ color: black</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../media/resource_from_qt.qrc"/>
+ </resources>
  <connections/>
 </ui>

@@ -31,6 +31,36 @@ QLabel#brand {
     color: black;
 }
 
+#header_result,
+#header_assessment,
+#header_student {
+
+border: none;
+padding: 5px 10px;
+}
+
+#header_student {
+    background-color: #4C8BF5; /* A vibrant blue (matches existing create button) */
+    
+    /* Ensure it overrides the basic button style from the common rule */
+    border: none;
+    padding: 5px 10px;
+    
+    /* Optional visual flair */
+    border-radius: 4px; 
+    font-weight: bold;
+}
+
+
+
+#header_return {
+
+background-color: black;
+color: red;
+border: none;
+padding: 5px 10px;
+font-weight:bold;
+}
 #menu_analysis,
 #menu_course,
 #menu_payment,
@@ -55,20 +85,20 @@ QLabel#brand {
     text-align: left;
 	border: none;
 }
-#menu_student {
+#menu_course {
     background-color: #eaeaea;
 }
-#student_search_lineEdit {
+#course_student_search_lineEdit {
     background-color: #F8F8F8;
     border: 1px solid #CCCCCC;
     border-radius-right: 10px;
     padding: 6px 12px;
     color: #555;
 }
-#student_search_lineEdit:focus {
+#course_student_search_lineEdit:focus {
     border: 2px solid #A0A0A0;
 }
-#student_search_comboBox {
+#course_student_search_comboBox {
     background-color: #2E2E2E;
     color: white;
     padding: 6px 12px;
@@ -80,7 +110,7 @@ QComboBox QAbstractItemView {
     selection-background-color: #444444;
     selection-color: white;
 }
-#student_create {
+#course_student_create {
     background-color: #4C8BF5;
     color: white;
     border: none;
@@ -88,24 +118,24 @@ QComboBox QAbstractItemView {
     padding: 6px 10px;
     font-weight: bold;
 }
-#student_create:hover {
+#course_student_create:hover {
     background-color: #3B73E0;
 }
-#student_filter {
+#course_student_filter {
     background-color: #F4F4F4;
     border: 1px solid #CCCCCC;
     border-radius: 8px;
     padding: 6px 10px;
 	color: black;
 }
-#student_filter:hover {
+#course_student_filter:hover {
     background-color: #EAEAEA;
 }
 #header{
 	background-color: #f9f9f9;
 	color: black;
 }
-#student_previous, #student_next {
+#course_student_previous, #course_student_next {
     background-color: white;
     color: #2E3A59;
     border: 1px solid #D0D0D0;
@@ -113,16 +143,16 @@ QComboBox QAbstractItemView {
     padding: 6px 12px;
     font-weight: 500;
 }
-#student_previous:hover, #student_next:hover {
+#course_student_previous:hover, #course_student_next:hover {
     background-color: #F5F5F5;
 }
-#student_page_1, #student_page_2, #student_page_3, #student_page_8, #student_page_9, #student_page_10 {
+#course_student_page_1, #course_student_page_2, #course_student_page_3, #course_student_page_8, #course_student_page_9, #course_student_page_10 {
     background-color: transparent;
     border: none;
     color: #444;
     padding: 6px 10px;
 }
-#student_page_1 {
+#course_student_page_1 {
     background-color: #E0E0E0;
     border-radius: 6px;
     font-weight: bold;
@@ -208,16 +238,31 @@ QComboBox QAbstractItemView {
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
+            <property name="maximumSize">
+             <size>
+              <width>150</width>
+              <height>60</height>
+             </size>
+            </property>
             <property name="font">
              <font>
               <pointsize>20</pointsize>
              </font>
             </property>
+            <property name="layoutDirection">
+             <enum>Qt::RightToLeft</enum>
+            </property>
             <property name="styleSheet">
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>DUKI</string>
+             <string/>
+            </property>
+            <property name="pixmap">
+             <pixmap resource="../media/resource_from_qt.qrc">:/Images/images/Logo DUKI.png</pixmap>
+            </property>
+            <property name="scaledContents">
+             <bool>true</bool>
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
@@ -269,6 +314,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Course</string>
                </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -288,6 +337,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Student</string>
                </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -303,6 +356,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Analysis</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -324,7 +381,11 @@ QComboBox QAbstractItemView {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Payment</string>
+                <string>Payment*</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -356,7 +417,7 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Setting</string>
+             <string>Setting*</string>
             </property>
            </widget>
           </item>
@@ -386,6 +447,10 @@ QComboBox QAbstractItemView {
             </property>
             <property name="text">
              <string>Log out</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../media/resource_from_qt.qrc">
+              <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
@@ -420,6 +485,87 @@ QComboBox QAbstractItemView {
            <number>0</number>
           </property>
           <item>
+           <widget class="QWidget" name="header" native="true">
+            <property name="minimumSize">
+             <size>
+              <width>50</width>
+              <height>50</height>
+             </size>
+            </property>
+            <property name="styleSheet">
+             <string notr="true">background-color: #f9f9f9;</string>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_9">
+             <property name="spacing">
+              <number>7</number>
+             </property>
+             <property name="leftMargin">
+              <number>0</number>
+             </property>
+             <property name="topMargin">
+              <number>0</number>
+             </property>
+             <property name="rightMargin">
+              <number>11</number>
+             </property>
+             <property name="bottomMargin">
+              <number>0</number>
+             </property>
+             <item>
+              <widget class="QPushButton" name="header_result">
+               <property name="styleSheet">
+                <string notr="true">
+color: black</string>
+               </property>
+               <property name="text">
+                <string>Result</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="header_assessment">
+               <property name="styleSheet">
+                <string notr="true">color: black</string>
+               </property>
+               <property name="text">
+                <string>Assessment</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="header_student">
+               <property name="styleSheet">
+                <string notr="true">color: black</string>
+               </property>
+               <property name="text">
+                <string>Student</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="header_return">
+               <property name="text">
+                <string>Return</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
            <widget class="QFrame" name="option">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -446,199 +592,17 @@ QComboBox QAbstractItemView {
              <property name="bottomMargin">
               <number>0</number>
              </property>
-             <item>
-              <widget class="QFrame" name="search">
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_3">
-                <property name="spacing">
-                 <number>0</number>
-                </property>
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QComboBox" name="student_search_comboBox">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>165</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <item>
-                   <property name="text">
-                    <string>Code module</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Code presentation</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Id student</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Gender</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Region</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Highest education</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>IMB band</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Age band</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Previous attempt</string>
-                   </property>
-                  </item>
-                  <item>
-                   <property name="text">
-                    <string>Studied credit</string>
-                   </property>
-                  </item>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QLineEdit" name="student_search_lineEdit">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>260</width>
-                    <height>31</height>
-                   </size>
-                  </property>
-                  <property name="placeholderText">
-                   <string>Search</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
-             <item>
-              <widget class="QFrame" name="frame_5">
-               <property name="sizePolicy">
-                <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
-                 <horstretch>0</horstretch>
-                 <verstretch>0</verstretch>
-                </sizepolicy>
-               </property>
-               <property name="frameShape">
-                <enum>QFrame::StyledPanel</enum>
-               </property>
-               <property name="frameShadow">
-                <enum>QFrame::Raised</enum>
-               </property>
-               <layout class="QHBoxLayout" name="horizontalLayout_4">
-                <property name="topMargin">
-                 <number>11</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>0</number>
-                </property>
-                <item>
-                 <widget class="QPushButton" name="student_filter">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>70</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>Filter</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QPushButton" name="student_create">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>82</width>
-                    <height>30</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>+ Create</string>
-                  </property>
-                 </widget>
-                </item>
-               </layout>
-              </widget>
-             </item>
             </layout>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="header">
-            <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-              <horstretch>0</horstretch>
-              <verstretch>0</verstretch>
-             </sizepolicy>
-            </property>
-            <property name="minimumSize">
-             <size>
-              <width>0</width>
-              <height>41</height>
-             </size>
-            </property>
-            <property name="font">
-             <font>
-              <family>MS Shell Dlg 2</family>
-              <pointsize>12</pointsize>
-             </font>
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">color: black;
+background-color: white</string>
             </property>
             <property name="text">
-             <string> Profile</string>
+             <string>  Information about student in each course</string>
             </property>
            </widget>
           </item>
@@ -664,61 +628,36 @@ QComboBox QAbstractItemView {
             </property>
             <layout class="QHBoxLayout" name="horizontalLayout_8">
              <item>
-              <widget class="QTableWidget" name="student_table">
+              <widget class="QTableWidget" name="course_student_table">
                <property name="styleSheet">
                 <string notr="true">color: black</string>
                </property>
                <attribute name="horizontalHeaderDefaultSectionSize">
-                <number>150</number>
+                <number>140</number>
                </attribute>
                <column>
                 <property name="text">
-                 <string>Code module</string>
+                 <string>ID Student</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>Code presentation</string>
+                 <string>Date Registration</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>ID student</string>
+                 <string>Date Unregistration</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>Gender</string>
+                 <string>ID Assessment</string>
                 </property>
                </column>
                <column>
                 <property name="text">
-                 <string>Region</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Highest education</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>IMB band</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Age band</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Previous attempt</string>
-                </property>
-               </column>
-               <column>
-                <property name="text">
-                 <string>Studied credit</string>
+                 <string>Score</string>
                 </property>
                </column>
               </widget>
@@ -761,7 +700,7 @@ QComboBox QAbstractItemView {
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="student_previous">
+              <widget class="QPushButton" name="course_student_previous">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                  <horstretch>0</horstretch>
@@ -769,7 +708,11 @@ QComboBox QAbstractItemView {
                 </sizepolicy>
                </property>
                <property name="text">
-                <string>&lt;- Previous</string>
+                <string>Previous</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/le-Photoroom.png</normaloff>:/Icons/images/icons/Course/le-Photoroom.png</iconset>
                </property>
               </widget>
              </item>
@@ -787,7 +730,7 @@ QComboBox QAbstractItemView {
               </spacer>
              </item>
              <item>
-              <widget class="QWidget" name="student_page" native="true">
+              <widget class="QWidget" name="course_student_page" native="true">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Maximum" vsizetype="Preferred">
                  <horstretch>30</horstretch>
@@ -808,7 +751,7 @@ QComboBox QAbstractItemView {
                  <number>11</number>
                 </property>
                 <item>
-                 <widget class="QPushButton" name="student_page_1">
+                 <widget class="QPushButton" name="course_student_page_1">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -827,7 +770,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="student_page_2">
+                 <widget class="QPushButton" name="course_student_page_2">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -846,7 +789,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="student_page_8">
+                 <widget class="QPushButton" name="course_student_page_8">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -865,7 +808,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="student_space">
+                 <widget class="QLabel" name="course_student_space">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -884,7 +827,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="student_page_10">
+                 <widget class="QPushButton" name="course_student_page_10">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -903,7 +846,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="student_page_9">
+                 <widget class="QPushButton" name="course_student_page_9">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -922,7 +865,7 @@ QComboBox QAbstractItemView {
                  </widget>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="student_page_3">
+                 <widget class="QPushButton" name="course_student_page_3">
                   <property name="sizePolicy">
                    <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                     <horstretch>0</horstretch>
@@ -957,15 +900,22 @@ QComboBox QAbstractItemView {
               </spacer>
              </item>
              <item>
-              <widget class="QPushButton" name="student_next">
+              <widget class="QPushButton" name="course_student_next">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                  <horstretch>0</horstretch>
                  <verstretch>0</verstretch>
                 </sizepolicy>
                </property>
+               <property name="layoutDirection">
+                <enum>Qt::RightToLeft</enum>
+               </property>
                <property name="text">
-                <string>   Next -&gt; </string>
+                <string>   Next </string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</normaloff>:/Icons/images/icons/Course/ri-Photoroom.png</iconset>
                </property>
               </widget>
              </item>
@@ -1005,6 +955,8 @@ QComboBox QAbstractItemView {
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
- <resources/>
+ <resources>
+  <include location="../media/resource_from_qt.qrc"/>
+ </resources>
  <connections/>
 </ui>

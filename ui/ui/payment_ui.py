@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'course_student.ui'
+# Form implementation generated from reading ui file 'C:\Users\phamn\Documents\course-management-ml\ui\payment.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -30,36 +30,6 @@ class Ui_MainWindow(object):
 "    color: black;\n"
 "}\n"
 "\n"
-"#header_result,\n"
-"#header_assessment,\n"
-"#header_student {\n"
-"\n"
-"border: none;\n"
-"padding: 5px 10px;\n"
-"}\n"
-"\n"
-"#header_student {\n"
-"    background-color: #4C8BF5; /* A vibrant blue (matches existing create button) */\n"
-"    \n"
-"    /* Ensure it overrides the basic button style from the common rule */\n"
-"    border: none;\n"
-"    padding: 5px 10px;\n"
-"    \n"
-"    /* Optional visual flair */\n"
-"    border-radius: 4px; \n"
-"    font-weight: bold;\n"
-"}\n"
-"\n"
-"\n"
-"\n"
-"#header_return {\n"
-"\n"
-"background-color: black;\n"
-"color: red;\n"
-"border: none;\n"
-"padding: 5px 10px;\n"
-"font-weight:bold;\n"
-"}\n"
 "#menu_analysis,\n"
 "#menu_course,\n"
 "#menu_payment,\n"
@@ -84,20 +54,20 @@ class Ui_MainWindow(object):
 "    text-align: left;\n"
 "    border: none;\n"
 "}\n"
-"#menu_course {\n"
+"#menu_payment {\n"
 "    background-color: #eaeaea;\n"
 "}\n"
-"#course_student_search_lineEdit {\n"
+"#payment_search_lineEdit {\n"
 "    background-color: #F8F8F8;\n"
 "    border: 1px solid #CCCCCC;\n"
 "    border-radius-right: 10px;\n"
 "    padding: 6px 12px;\n"
 "    color: #555;\n"
 "}\n"
-"#course_student_search_lineEdit:focus {\n"
+"#payment_search_lineEdit:focus {\n"
 "    border: 2px solid #A0A0A0;\n"
 "}\n"
-"#course_student_search_comboBox {\n"
+"#payment_search_comboBox {\n"
 "    background-color: #2E2E2E;\n"
 "    color: white;\n"
 "    padding: 6px 12px;\n"
@@ -109,7 +79,7 @@ class Ui_MainWindow(object):
 "    selection-background-color: #444444;\n"
 "    selection-color: white;\n"
 "}\n"
-"#course_student_create {\n"
+"#payment_create {\n"
 "    background-color: #4C8BF5;\n"
 "    color: white;\n"
 "    border: none;\n"
@@ -117,24 +87,24 @@ class Ui_MainWindow(object):
 "    padding: 6px 10px;\n"
 "    font-weight: bold;\n"
 "}\n"
-"#course_student_create:hover {\n"
+"#payment_create:hover {\n"
 "    background-color: #3B73E0;\n"
 "}\n"
-"#course_student_filter {\n"
+"#payment_filter {\n"
 "    background-color: #F4F4F4;\n"
 "    border: 1px solid #CCCCCC;\n"
 "    border-radius: 8px;\n"
 "    padding: 6px 10px;\n"
 "    color: black;\n"
 "}\n"
-"#course_student_filter:hover {\n"
+"#payment_filter:hover {\n"
 "    background-color: #EAEAEA;\n"
 "}\n"
 "#header{\n"
 "    background-color: #f9f9f9;\n"
 "    color: black;\n"
 "}\n"
-"#course_student_previous, #course_student_next {\n"
+"#payment_previous, #payment_next {\n"
 "    background-color: white;\n"
 "    color: #2E3A59;\n"
 "    border: 1px solid #D0D0D0;\n"
@@ -142,16 +112,16 @@ class Ui_MainWindow(object):
 "    padding: 6px 12px;\n"
 "    font-weight: 500;\n"
 "}\n"
-"#course_student_previous:hover, #course_student_next:hover {\n"
+"#payment_previous:hover, #payment_next:hover {\n"
 "    background-color: #F5F5F5;\n"
 "}\n"
-"#course_student_page_1, #course_student_page_2, #course_student_page_3, #course_student_page_8, #course_student_page_9, #course_student_page_10 {\n"
+"#payment_page_1, #payment_page_2, #payment_page_3, #payment_page_8, #payment_page_9, #payment_page_10 {\n"
 "    background-color: transparent;\n"
 "    border: none;\n"
 "    color: #444;\n"
 "    padding: 6px 10px;\n"
 "}\n"
-"#course_student_page_1 {\n"
+"#payment_page_1 {\n"
 "    background-color: #E0E0E0;\n"
 "    border-radius: 6px;\n"
 "    font-weight: bold;\n"
@@ -199,10 +169,14 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.brand.sizePolicy().hasHeightForWidth())
         self.brand.setSizePolicy(sizePolicy)
+        self.brand.setMaximumSize(QtCore.QSize(150, 60))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.brand.setFont(font)
         self.brand.setStyleSheet("")
+        self.brand.setText("")
+        self.brand.setPixmap(QtGui.QPixmap(":/Images/images/Logo DUKI.png"))
+        self.brand.setScaledContents(True)
         self.brand.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.brand.setObjectName("brand")
         self.verticalLayout.addWidget(self.brand)
@@ -226,6 +200,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_course.sizePolicy().hasHeightForWidth())
         self.menu_course.setSizePolicy(sizePolicy)
         self.menu_course.setStyleSheet("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Course.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_course.setIcon(icon)
         self.menu_course.setObjectName("menu_course")
         self.verticalLayout_3.addWidget(self.menu_course)
         self.menu_student = QtWidgets.QPushButton(parent=self.frame_2)
@@ -236,6 +213,9 @@ class Ui_MainWindow(object):
         self.menu_student.setSizePolicy(sizePolicy)
         self.menu_student.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.menu_student.setStyleSheet("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Student1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_student.setIcon(icon1)
         self.menu_student.setObjectName("menu_student")
         self.verticalLayout_3.addWidget(self.menu_student)
         self.menu_analysis = QtWidgets.QPushButton(parent=self.frame_2)
@@ -245,6 +225,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_analysis.sizePolicy().hasHeightForWidth())
         self.menu_analysis.setSizePolicy(sizePolicy)
         self.menu_analysis.setStyleSheet("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Analysis.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_analysis.setIcon(icon2)
         self.menu_analysis.setObjectName("menu_analysis")
         self.verticalLayout_3.addWidget(self.menu_analysis)
         self.menu_payment = QtWidgets.QPushButton(parent=self.frame_2)
@@ -255,6 +238,9 @@ class Ui_MainWindow(object):
         self.menu_payment.setSizePolicy(sizePolicy)
         self.menu_payment.setMinimumSize(QtCore.QSize(150, 28))
         self.menu_payment.setStyleSheet("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Payment.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_payment.setIcon(icon3)
         self.menu_payment.setObjectName("menu_payment")
         self.verticalLayout_3.addWidget(self.menu_payment)
         self.verticalLayout.addWidget(self.frame_2)
@@ -281,7 +267,11 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.menu_logout.sizePolicy().hasHeightForWidth())
         self.menu_logout.setSizePolicy(sizePolicy)
+        self.menu_logout.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.menu_logout.setStyleSheet("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Log_Out.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_logout.setIcon(icon4)
         self.menu_logout.setObjectName("menu_logout")
         self.verticalLayout.addWidget(self.menu_logout)
         self.horizontalLayout.addWidget(self.menu)
@@ -297,106 +287,19 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.frame_3)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.header = QtWidgets.QWidget(parent=self.frame_3)
-        self.header.setMinimumSize(QtCore.QSize(50, 50))
-        self.header.setStyleSheet("background-color: #f9f9f9;")
+        self.header = QtWidgets.QLabel(parent=self.frame_3)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.header.sizePolicy().hasHeightForWidth())
+        self.header.setSizePolicy(sizePolicy)
+        self.header.setMinimumSize(QtCore.QSize(0, 41))
+        font = QtGui.QFont()
+        font.setFamily("MS Shell Dlg 2")
+        font.setPointSize(12)
+        self.header.setFont(font)
         self.header.setObjectName("header")
-        self.horizontalLayout_9 = QtWidgets.QHBoxLayout(self.header)
-        self.horizontalLayout_9.setContentsMargins(0, 0, 11, 0)
-        self.horizontalLayout_9.setSpacing(7)
-        self.horizontalLayout_9.setObjectName("horizontalLayout_9")
-        self.header_result = QtWidgets.QPushButton(parent=self.header)
-        self.header_result.setStyleSheet("backgroud:transparent;")
-        self.header_result.setObjectName("header_result")
-        self.horizontalLayout_9.addWidget(self.header_result)
-        self.header_assessment = QtWidgets.QPushButton(parent=self.header)
-        self.header_assessment.setObjectName("header_assessment")
-        self.horizontalLayout_9.addWidget(self.header_assessment)
-        self.header_student = QtWidgets.QPushButton(parent=self.header)
-        self.header_student.setObjectName("header_student")
-        self.horizontalLayout_9.addWidget(self.header_student)
-        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_9.addItem(spacerItem1)
-        self.header_return = QtWidgets.QPushButton(parent=self.header)
-        self.header_return.setObjectName("header_return")
-        self.horizontalLayout_9.addWidget(self.header_return)
         self.verticalLayout_2.addWidget(self.header)
-        self.option = QtWidgets.QFrame(parent=self.frame_3)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.option.sizePolicy().hasHeightForWidth())
-        self.option.setSizePolicy(sizePolicy)
-        self.option.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.option.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.option.setObjectName("option")
-        self.horizontalLayout_2 = QtWidgets.QHBoxLayout(self.option)
-        self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.search = QtWidgets.QFrame(parent=self.option)
-        self.search.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.search.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.search.setObjectName("search")
-        self.horizontalLayout_3 = QtWidgets.QHBoxLayout(self.search)
-        self.horizontalLayout_3.setContentsMargins(-1, 11, -1, 0)
-        self.horizontalLayout_3.setSpacing(0)
-        self.horizontalLayout_3.setObjectName("horizontalLayout_3")
-        self.course_student_search_comboBox = QtWidgets.QComboBox(parent=self.search)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_search_comboBox.sizePolicy().hasHeightForWidth())
-        self.course_student_search_comboBox.setSizePolicy(sizePolicy)
-        self.course_student_search_comboBox.setMinimumSize(QtCore.QSize(165, 31))
-        self.course_student_search_comboBox.setObjectName("course_student_search_comboBox")
-        self.course_student_search_comboBox.addItem("")
-        self.course_student_search_comboBox.addItem("")
-        self.course_student_search_comboBox.addItem("")
-        self.course_student_search_comboBox.addItem("")
-        self.course_student_search_comboBox.addItem("")
-        self.horizontalLayout_3.addWidget(self.course_student_search_comboBox)
-        self.course_student_search_lineEdit = QtWidgets.QLineEdit(parent=self.search)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_search_lineEdit.sizePolicy().hasHeightForWidth())
-        self.course_student_search_lineEdit.setSizePolicy(sizePolicy)
-        self.course_student_search_lineEdit.setMinimumSize(QtCore.QSize(260, 31))
-        self.course_student_search_lineEdit.setObjectName("course_student_search_lineEdit")
-        self.horizontalLayout_3.addWidget(self.course_student_search_lineEdit)
-        self.horizontalLayout_2.addWidget(self.search)
-        self.frame_5 = QtWidgets.QFrame(parent=self.option)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.frame_5.sizePolicy().hasHeightForWidth())
-        self.frame_5.setSizePolicy(sizePolicy)
-        self.frame_5.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
-        self.frame_5.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
-        self.frame_5.setObjectName("frame_5")
-        self.horizontalLayout_4 = QtWidgets.QHBoxLayout(self.frame_5)
-        self.horizontalLayout_4.setContentsMargins(-1, 11, -1, 0)
-        self.horizontalLayout_4.setObjectName("horizontalLayout_4")
-        self.course_student_filter = QtWidgets.QPushButton(parent=self.frame_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_filter.sizePolicy().hasHeightForWidth())
-        self.course_student_filter.setSizePolicy(sizePolicy)
-        self.course_student_filter.setMinimumSize(QtCore.QSize(70, 30))
-        self.course_student_filter.setObjectName("course_student_filter")
-        self.horizontalLayout_4.addWidget(self.course_student_filter)
-        self.course_student_create = QtWidgets.QPushButton(parent=self.frame_5)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_create.sizePolicy().hasHeightForWidth())
-        self.course_student_create.setSizePolicy(sizePolicy)
-        self.course_student_create.setMinimumSize(QtCore.QSize(82, 30))
-        self.course_student_create.setObjectName("course_student_create")
-        self.horizontalLayout_4.addWidget(self.course_student_create)
-        self.horizontalLayout_2.addWidget(self.frame_5)
-        self.verticalLayout_2.addWidget(self.option)
         self.frame_6 = QtWidgets.QFrame(parent=self.frame_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Expanding)
         sizePolicy.setHorizontalStretch(0)
@@ -409,23 +312,27 @@ class Ui_MainWindow(object):
         self.frame_6.setObjectName("frame_6")
         self.horizontalLayout_8 = QtWidgets.QHBoxLayout(self.frame_6)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
-        self.course_student_table = QtWidgets.QTableWidget(parent=self.frame_6)
-        self.course_student_table.setStyleSheet("color: black")
-        self.course_student_table.setObjectName("course_student_table")
-        self.course_student_table.setColumnCount(5)
-        self.course_student_table.setRowCount(0)
+        self.payment_table = QtWidgets.QTableWidget(parent=self.frame_6)
+        self.payment_table.setStyleSheet("color: black")
+        self.payment_table.setObjectName("payment_table")
+        self.payment_table.setColumnCount(7)
+        self.payment_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
-        self.course_student_table.setHorizontalHeaderItem(0, item)
+        self.payment_table.setHorizontalHeaderItem(0, item)
         item = QtWidgets.QTableWidgetItem()
-        self.course_student_table.setHorizontalHeaderItem(1, item)
+        self.payment_table.setHorizontalHeaderItem(1, item)
         item = QtWidgets.QTableWidgetItem()
-        self.course_student_table.setHorizontalHeaderItem(2, item)
+        self.payment_table.setHorizontalHeaderItem(2, item)
         item = QtWidgets.QTableWidgetItem()
-        self.course_student_table.setHorizontalHeaderItem(3, item)
+        self.payment_table.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
-        self.course_student_table.setHorizontalHeaderItem(4, item)
-        self.course_student_table.horizontalHeader().setDefaultSectionSize(140)
-        self.horizontalLayout_8.addWidget(self.course_student_table)
+        self.payment_table.setHorizontalHeaderItem(4, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.payment_table.setHorizontalHeaderItem(5, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.payment_table.setHorizontalHeaderItem(6, item)
+        self.payment_table.horizontalHeader().setDefaultSectionSize(150)
+        self.horizontalLayout_8.addWidget(self.payment_table)
         self.verticalLayout_2.addWidget(self.frame_6)
         self.frame_7 = QtWidgets.QFrame(parent=self.frame_3)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
@@ -439,106 +346,113 @@ class Ui_MainWindow(object):
         self.horizontalLayout_6 = QtWidgets.QHBoxLayout(self.frame_7)
         self.horizontalLayout_6.setContentsMargins(-1, 0, -1, 0)
         self.horizontalLayout_6.setObjectName("horizontalLayout_6")
-        spacerItem2 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem2)
-        self.course_student_previous = QtWidgets.QPushButton(parent=self.frame_7)
+        spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem1)
+        self.payment_previous = QtWidgets.QPushButton(parent=self.frame_7)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_previous.sizePolicy().hasHeightForWidth())
-        self.course_student_previous.setSizePolicy(sizePolicy)
-        self.course_student_previous.setObjectName("course_student_previous")
-        self.horizontalLayout_6.addWidget(self.course_student_previous)
-        spacerItem3 = QtWidgets.QSpacerItem(1, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem3)
-        self.course_student_page = QtWidgets.QWidget(parent=self.frame_7)
+        sizePolicy.setHeightForWidth(self.payment_previous.sizePolicy().hasHeightForWidth())
+        self.payment_previous.setSizePolicy(sizePolicy)
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/le-Photoroom.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.payment_previous.setIcon(icon5)
+        self.payment_previous.setObjectName("payment_previous")
+        self.horizontalLayout_6.addWidget(self.payment_previous)
+        spacerItem2 = QtWidgets.QSpacerItem(1, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem2)
+        self.payment_page = QtWidgets.QWidget(parent=self.frame_7)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Maximum, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(30)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_page.sizePolicy().hasHeightForWidth())
-        self.course_student_page.setSizePolicy(sizePolicy)
-        self.course_student_page.setMinimumSize(QtCore.QSize(350, 0))
-        self.course_student_page.setObjectName("course_student_page")
-        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.course_student_page)
+        sizePolicy.setHeightForWidth(self.payment_page.sizePolicy().hasHeightForWidth())
+        self.payment_page.setSizePolicy(sizePolicy)
+        self.payment_page.setMinimumSize(QtCore.QSize(350, 0))
+        self.payment_page.setObjectName("payment_page")
+        self.horizontalLayout_7 = QtWidgets.QHBoxLayout(self.payment_page)
         self.horizontalLayout_7.setContentsMargins(11, -1, 11, -1)
         self.horizontalLayout_7.setObjectName("horizontalLayout_7")
-        self.course_student_page_1 = QtWidgets.QPushButton(parent=self.course_student_page)
+        self.payment_page_1 = QtWidgets.QPushButton(parent=self.payment_page)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_page_1.sizePolicy().hasHeightForWidth())
-        self.course_student_page_1.setSizePolicy(sizePolicy)
-        self.course_student_page_1.setMinimumSize(QtCore.QSize(28, 0))
-        self.course_student_page_1.setObjectName("course_student_page_1")
-        self.horizontalLayout_7.addWidget(self.course_student_page_1)
-        self.course_student_page_2 = QtWidgets.QPushButton(parent=self.course_student_page)
+        sizePolicy.setHeightForWidth(self.payment_page_1.sizePolicy().hasHeightForWidth())
+        self.payment_page_1.setSizePolicy(sizePolicy)
+        self.payment_page_1.setMinimumSize(QtCore.QSize(28, 0))
+        self.payment_page_1.setObjectName("payment_page_1")
+        self.horizontalLayout_7.addWidget(self.payment_page_1)
+        self.payment_page_2 = QtWidgets.QPushButton(parent=self.payment_page)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_page_2.sizePolicy().hasHeightForWidth())
-        self.course_student_page_2.setSizePolicy(sizePolicy)
-        self.course_student_page_2.setMinimumSize(QtCore.QSize(28, 0))
-        self.course_student_page_2.setObjectName("course_student_page_2")
-        self.horizontalLayout_7.addWidget(self.course_student_page_2)
-        self.course_student_page_8 = QtWidgets.QPushButton(parent=self.course_student_page)
+        sizePolicy.setHeightForWidth(self.payment_page_2.sizePolicy().hasHeightForWidth())
+        self.payment_page_2.setSizePolicy(sizePolicy)
+        self.payment_page_2.setMinimumSize(QtCore.QSize(28, 0))
+        self.payment_page_2.setObjectName("payment_page_2")
+        self.horizontalLayout_7.addWidget(self.payment_page_2)
+        self.payment_page_8 = QtWidgets.QPushButton(parent=self.payment_page)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_page_8.sizePolicy().hasHeightForWidth())
-        self.course_student_page_8.setSizePolicy(sizePolicy)
-        self.course_student_page_8.setMinimumSize(QtCore.QSize(28, 0))
-        self.course_student_page_8.setObjectName("course_student_page_8")
-        self.horizontalLayout_7.addWidget(self.course_student_page_8)
-        self.course_student_space = QtWidgets.QLabel(parent=self.course_student_page)
+        sizePolicy.setHeightForWidth(self.payment_page_8.sizePolicy().hasHeightForWidth())
+        self.payment_page_8.setSizePolicy(sizePolicy)
+        self.payment_page_8.setMinimumSize(QtCore.QSize(28, 0))
+        self.payment_page_8.setObjectName("payment_page_8")
+        self.horizontalLayout_7.addWidget(self.payment_page_8)
+        self.payment_space = QtWidgets.QLabel(parent=self.payment_page)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_space.sizePolicy().hasHeightForWidth())
-        self.course_student_space.setSizePolicy(sizePolicy)
-        self.course_student_space.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
-        self.course_student_space.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
-        self.course_student_space.setObjectName("course_student_space")
-        self.horizontalLayout_7.addWidget(self.course_student_space)
-        self.course_student_page_10 = QtWidgets.QPushButton(parent=self.course_student_page)
+        sizePolicy.setHeightForWidth(self.payment_space.sizePolicy().hasHeightForWidth())
+        self.payment_space.setSizePolicy(sizePolicy)
+        self.payment_space.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
+        self.payment_space.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
+        self.payment_space.setObjectName("payment_space")
+        self.horizontalLayout_7.addWidget(self.payment_space)
+        self.payment_page_10 = QtWidgets.QPushButton(parent=self.payment_page)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_page_10.sizePolicy().hasHeightForWidth())
-        self.course_student_page_10.setSizePolicy(sizePolicy)
-        self.course_student_page_10.setMinimumSize(QtCore.QSize(28, 0))
-        self.course_student_page_10.setObjectName("course_student_page_10")
-        self.horizontalLayout_7.addWidget(self.course_student_page_10)
-        self.course_student_page_9 = QtWidgets.QPushButton(parent=self.course_student_page)
+        sizePolicy.setHeightForWidth(self.payment_page_10.sizePolicy().hasHeightForWidth())
+        self.payment_page_10.setSizePolicy(sizePolicy)
+        self.payment_page_10.setMinimumSize(QtCore.QSize(28, 0))
+        self.payment_page_10.setObjectName("payment_page_10")
+        self.horizontalLayout_7.addWidget(self.payment_page_10)
+        self.payment_page_9 = QtWidgets.QPushButton(parent=self.payment_page)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_page_9.sizePolicy().hasHeightForWidth())
-        self.course_student_page_9.setSizePolicy(sizePolicy)
-        self.course_student_page_9.setMinimumSize(QtCore.QSize(28, 0))
-        self.course_student_page_9.setObjectName("course_student_page_9")
-        self.horizontalLayout_7.addWidget(self.course_student_page_9)
-        self.course_student_page_3 = QtWidgets.QPushButton(parent=self.course_student_page)
+        sizePolicy.setHeightForWidth(self.payment_page_9.sizePolicy().hasHeightForWidth())
+        self.payment_page_9.setSizePolicy(sizePolicy)
+        self.payment_page_9.setMinimumSize(QtCore.QSize(28, 0))
+        self.payment_page_9.setObjectName("payment_page_9")
+        self.horizontalLayout_7.addWidget(self.payment_page_9)
+        self.payment_page_3 = QtWidgets.QPushButton(parent=self.payment_page)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Fixed, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_page_3.sizePolicy().hasHeightForWidth())
-        self.course_student_page_3.setSizePolicy(sizePolicy)
-        self.course_student_page_3.setMinimumSize(QtCore.QSize(28, 0))
-        self.course_student_page_3.setObjectName("course_student_page_3")
-        self.horizontalLayout_7.addWidget(self.course_student_page_3)
-        self.horizontalLayout_6.addWidget(self.course_student_page)
-        spacerItem4 = QtWidgets.QSpacerItem(4, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem4)
-        self.course_student_next = QtWidgets.QPushButton(parent=self.frame_7)
+        sizePolicy.setHeightForWidth(self.payment_page_3.sizePolicy().hasHeightForWidth())
+        self.payment_page_3.setSizePolicy(sizePolicy)
+        self.payment_page_3.setMinimumSize(QtCore.QSize(28, 0))
+        self.payment_page_3.setObjectName("payment_page_3")
+        self.horizontalLayout_7.addWidget(self.payment_page_3)
+        self.horizontalLayout_6.addWidget(self.payment_page)
+        spacerItem3 = QtWidgets.QSpacerItem(4, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem3)
+        self.payment_next = QtWidgets.QPushButton(parent=self.frame_7)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.course_student_next.sizePolicy().hasHeightForWidth())
-        self.course_student_next.setSizePolicy(sizePolicy)
-        self.course_student_next.setObjectName("course_student_next")
-        self.horizontalLayout_6.addWidget(self.course_student_next)
-        spacerItem5 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
-        self.horizontalLayout_6.addItem(spacerItem5)
+        sizePolicy.setHeightForWidth(self.payment_next.sizePolicy().hasHeightForWidth())
+        self.payment_next.setSizePolicy(sizePolicy)
+        self.payment_next.setLayoutDirection(QtCore.Qt.LayoutDirection.RightToLeft)
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/ri-Photoroom.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.payment_next.setIcon(icon6)
+        self.payment_next.setObjectName("payment_next")
+        self.horizontalLayout_6.addWidget(self.payment_next)
+        spacerItem4 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
+        self.horizontalLayout_6.addItem(spacerItem4)
         self.verticalLayout_2.addWidget(self.frame_7)
         self.horizontalLayout.addWidget(self.frame_3)
         self.horizontalLayout_5.addWidget(self.frame)
@@ -557,44 +471,36 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.brand.setText(_translate("MainWindow", "DUKI"))
         self.menu_course.setText(_translate("MainWindow", "Course"))
         self.menu_student.setText(_translate("MainWindow", "Student"))
         self.menu_analysis.setText(_translate("MainWindow", "Analysis"))
-        self.menu_payment.setText(_translate("MainWindow", "Payment"))
-        self.menu_setting.setText(_translate("MainWindow", "Setting"))
+        self.menu_payment.setText(_translate("MainWindow", "Payment*"))
+        self.menu_setting.setText(_translate("MainWindow", "Setting*"))
         self.menu_logout.setText(_translate("MainWindow", "Log out"))
-        self.header_result.setText(_translate("MainWindow", "Result"))
-        self.header_assessment.setText(_translate("MainWindow", "Assessment"))
-        self.header_student.setText(_translate("MainWindow", "Student"))
-        self.header_return.setText(_translate("MainWindow", "Return"))
-        self.course_student_search_comboBox.setItemText(0, _translate("MainWindow", "ID student"))
-        self.course_student_search_comboBox.setItemText(1, _translate("MainWindow", "Date Registration"))
-        self.course_student_search_comboBox.setItemText(2, _translate("MainWindow", "Date Unregistration"))
-        self.course_student_search_comboBox.setItemText(3, _translate("MainWindow", "ID Assessment"))
-        self.course_student_search_comboBox.setItemText(4, _translate("MainWindow", "Score"))
-        self.course_student_search_lineEdit.setPlaceholderText(_translate("MainWindow", "Search"))
-        self.course_student_filter.setText(_translate("MainWindow", "Filter"))
-        self.course_student_create.setText(_translate("MainWindow", "+ Create"))
-        item = self.course_student_table.horizontalHeaderItem(0)
+        self.header.setText(_translate("MainWindow", " Payment"))
+        item = self.payment_table.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "ID Invoice"))
+        item = self.payment_table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "ID Student"))
-        item = self.course_student_table.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "Date Registration"))
-        item = self.course_student_table.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "Date Unregistration"))
-        item = self.course_student_table.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "ID Assessment"))
-        item = self.course_student_table.horizontalHeaderItem(4)
-        item.setText(_translate("MainWindow", "Score"))
-        self.course_student_previous.setText(_translate("MainWindow", "<- Previous"))
-        self.course_student_page_1.setText(_translate("MainWindow", "1"))
-        self.course_student_page_2.setText(_translate("MainWindow", "2"))
-        self.course_student_page_8.setText(_translate("MainWindow", "3"))
-        self.course_student_space.setText(_translate("MainWindow", "..."))
-        self.course_student_page_10.setText(_translate("MainWindow", "8"))
-        self.course_student_page_9.setText(_translate("MainWindow", "9"))
-        self.course_student_page_3.setText(_translate("MainWindow", "10"))
-        self.course_student_next.setText(_translate("MainWindow", "   Next -> "))
+        item = self.payment_table.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Code Module"))
+        item = self.payment_table.horizontalHeaderItem(3)
+        item.setText(_translate("MainWindow", "Code Presentation"))
+        item = self.payment_table.horizontalHeaderItem(4)
+        item.setText(_translate("MainWindow", "Date"))
+        item = self.payment_table.horizontalHeaderItem(5)
+        item.setText(_translate("MainWindow", "Amount"))
+        item = self.payment_table.horizontalHeaderItem(6)
+        item.setText(_translate("MainWindow", "Status"))
+        self.payment_previous.setText(_translate("MainWindow", "Previous"))
+        self.payment_page_1.setText(_translate("MainWindow", "1"))
+        self.payment_page_2.setText(_translate("MainWindow", "2"))
+        self.payment_page_8.setText(_translate("MainWindow", "3"))
+        self.payment_space.setText(_translate("MainWindow", "..."))
+        self.payment_page_10.setText(_translate("MainWindow", "8"))
+        self.payment_page_9.setText(_translate("MainWindow", "9"))
+        self.payment_page_3.setText(_translate("MainWindow", "10"))
+        self.payment_next.setText(_translate("MainWindow", "   Next "))
 
 
 if __name__ == "__main__":
