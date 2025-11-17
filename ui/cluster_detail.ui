@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>ClusterDetailPageWidget</class>
+ <widget class="QWidget" name="ClusterDetailPageWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QWidget#ClusterDetailPageWidget {
+	background-color: #f6f6f6;
+}
+QTableWidget {
+	background-color: white;
+	border: 1px solid #e0e0e0;
+}
+QHeaderView::section {
+	background-color: #f9f9f9;
+	padding: 4px;
+	border-bottom: 1px solid #e0e0e0;
+	font-weight: bold;
+}
+QScrollArea {
+	border: 1px solid #e0e0e0;
+	background-color: white;
+}
+QLabel#recommendation_title_label {
+	font-size: 12pt;
+	font-weight: bold;
+	color: #333;
+	padding: 5px;
+	background-color: #f9f9f9;
+	border-bottom: 1px solid #e0e0e0;
+}
+QLabel.course_label {
+	font-size: 9pt;
+	padding: 4px 8px;
+	border-bottom: 1px solid #f0f0f0;
+}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QPushButton" name="back_button">
+     <property name="sizePolicy">
+      <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+       <horstretch>0</horstretch>
+       <verstretch>0</verstretch>
+      </sizepolicy>
+     </property>
+     <property name="text">
+      <string>&lt;- Back to Cluster List</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="title_label">
+     <property name="font">
+      <font>
+       <pointsize>16</pointsize>
+       <weight>75</weight>
+       <bold>true</bold>
+      </font>
+     </property>
+     <property name="text">
+      <string>Students in Cluster X</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="2,1">
+     <item>
+      <widget class="QTableWidget" name="student_table">
+       <property name="editTriggers">
+        <set>QAbstractItemView::NoEditTriggers</set>
+       </property>
+       <property name="selectionBehavior">
+        <enum>QAbstractItemView::SelectRows</enum>
+       </property>
+       <attribute name="horizontalHeaderStretchLastSection">
+        <bool>true</bool>
+       </attribute>
+       <attribute name="verticalHeaderVisible">
+        <bool>false</bool>
+       </attribute>
+       <column>
+        <property name="text">
+         <string>Student ID</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Student Name</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Study Method</string>
+        </property>
+       </column>
+       <column>
+        <property name="text">
+         <string>Cluster</string>
+        </property>
+       </column>
+      </widget>
+     </item>
+     <item>
+      <widget class="QScrollArea" name="recommendation_scroll_area">
+       <property name="widgetResizable">
+        <bool>true</bool>
+       </property>
+       <widget class="QWidget" name="scroll_content_widget">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>0</y>
+          <width>254</width>
+          <height>499</height>
+         </rect>
+        </property>
+        <layout class="QVBoxLayout" name="recommendation_layout">
+         <property name="spacing">
+          <number>0</number>
+         </property>
+         <property name="leftMargin">
+          <number>0</number>
+         </property>
+         <property name="topMargin">
+          <number>0</number>
+         </property>
+         <property name="rightMargin">
+          <number>0</number>
+         </property>
+         <property name="bottomMargin">
+          <number>0</number>
+         </property>
+         <item>
+          <widget class="QLabel" name="recommendation_title_label">
+           <property name="text">
+            <string>Recommendations</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <spacer name="verticalSpacer">
+           <property name="orientation">
+            <enum>Qt::Vertical</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>20</width>
+             <height>446</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+        </layout>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

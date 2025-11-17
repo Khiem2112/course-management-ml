@@ -29,16 +29,16 @@ class AnalysisVisualizer:
       df = pd.DataFrame.from_records(cluster_data)
 
       # 2. Check for required columns
-      if 'cluster_id' not in df.columns or 'total_student' not in df.columns:
-        logger.error("Data for pie chart is missing 'cluster_id' or 'total_student'.")
+      if 'cluster_id' not in df.columns or 'student_count' not in df.columns:
+        logger.error("Data for pie chart is missing 'cluster_id' or 'student_count'.")
         return PlotManager.clear(target_widget).set_title("Data Error")
       
       # 3. Set cluster_id as the index (for labels) and plot 'student_count'
-      plot_data = df.set_index('cluster_id')['total_student']
+      plot_data = df.set_index('cluster_id')['student_count']
       
       # 4. Get PlotManager and create the pie chart
       canvas = PlotManager._find_or_create_canvas(target_widget)
-      plot_manager = PlotManager(canvas.figure, canvas.axes)
+      plot_manager = PlotManager(canvas)
       ax = plot_manager.axes
 
       plot_data.plot(

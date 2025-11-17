@@ -30,6 +30,16 @@ class RecommendationManager:
     ENGAGEMENT_MEDIUM = 0
     ENGAGEMENT_HIGH = 1
     ENGAGEMENT_LOW = 2
+    
+    CLUSTER_NAME_MAP = {
+    0: "Resource-Based Learners",
+    1: "Balanced Achievers",
+    2: "High-Achieving Collaborators",
+    3: "Independent Explorers",
+    4: "Interactive Specialists",
+    5: "Offline Achievers", 
+    6: "Engaged Collaborators"
+  }
 
     # --- The Master 5x7 -> 5x3 Recommendation Map ---
     RECOMMENDATIONS_CONTENT = {
@@ -164,7 +174,8 @@ class RecommendationManager:
 
         # --- 1. Fetch Data (The "Fast" Query) ---
         # Use %s for parameter binding as per mysql.connector standard
-        query = "SELECT study_method_id, cluster_id FROM studentInfo WHERE id_student = %s"
+        query = "SELECT id_student, name_student, study_method_id, cluster_id FROM studentInfo WHERE id_student = %s"
+        
         params = (student_id,)
 
         student_data = None
@@ -179,13 +190,29 @@ class RecommendationManager:
             return {"status": "error", "message": f"Unexpected application error."}
 
         # --- 2. Handle "Not Found" ---
+        logger.info(f'Full data: {student_data}')
         if not student_data:
             logger.warning(f"No data found for student_id: {student_id}")
-            return {"status": "error", "message": "Student not found."}
+            return {"status": "error", "message": "Student not found."} 
 
         # --- 3. Process the Data ---
+        # --- 3. Process the Data & Handle Missing Values ---
         method_id = student_data.get('study_method_id')
         cluster_id = student_data.get('cluster_id')
+
+        # STRATEGY: Default Fallback
+        # If data is missing, assume "General" or "New" student profile.
+        is_generic_recommendation = False
+        
+        if method_id is None:
+            logger.warning(f"Student {student_id} missing study_method_id. Using default (0).")
+            method_id = 0 # Default to 'Collaborative' or your most common type
+            is_generic_recommendation = True
+            
+        if cluster_id is None:
+            logger.warning(f"Student {student_id} missing cluster_id. Using default (0).")
+            cluster_id = 0 # Default to Cluster 0
+            is_generic_recommendation = True
 
         # --- CRITICAL: Handle NULL/None Data ---
         # (As seen for student 30268 in your demo_tabe_student_info.csv)
@@ -211,5 +238,6 @@ class RecommendationManager:
         # --- 4. Get the recommendation ---
         # This is the final step, mapping the IDs to the content.
         result = self.get_recommendation(method_id, cluster_id)
-        return result
+        result['cluster_name'] = self.CLUSTER_NAME_MAP.get(cluster_id, "Unknown")
+        return result   
 
