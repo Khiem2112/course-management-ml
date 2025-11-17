@@ -122,8 +122,8 @@ class AppManager:
 if __name__ == "__main__":
     import sys
     app = QApplication(sys.argv)
-    # manager = AppManager()
-    # manager.login.show()
-    main_app = MainApp()
-    main_app.show()
+    manager = AppManager()
+    manager.login.show()
+    # main_app = MainApp()
+    # main_app.show()
     sys.exit(app.exec())

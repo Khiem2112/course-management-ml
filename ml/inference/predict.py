@@ -32,13 +32,13 @@ class RecommendationManager:
     ENGAGEMENT_LOW = 2
     
     CLUSTER_NAME_MAP = {
-    0: "Resource-Based Learners",
-    1: "Balanced Achievers",
-    2: "High-Achieving Collaborators",
-    3: "Independent Explorers",
-    4: "Interactive Specialists",
-    5: "Offline Achievers", 
-    6: "Engaged Collaborators"
+    0: "At-Risk Minimal Engagers",
+    1: "Consistent High Performers",
+    2: "Last-Minute Intensive Learners",
+    3: "Slow-but-Steady Learners",
+    4: "Broad Explorers",
+    5: "Declining-Engagement Learners",
+    6: "Low-Diversity Simple Engagers"
   }
 
     # --- The Master 5x7 -> 5x3 Recommendation Map ---
