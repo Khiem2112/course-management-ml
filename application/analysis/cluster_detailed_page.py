@@ -3,7 +3,7 @@ from PyQt6.QtWidgets import QWidget, QTableWidgetItem, QLabel
 from PyQt6.QtCore import Qt
 from ui.cluster_detail_ui import Ui_ClusterDetailPageWidget # From the .ui I provided
 from database.student.student_logic import StudentsLogic
-from inference.predict import RecommendationManager as RecommendationService #
+from ml.inference.predict import RecommendationManager as RecommendationService #
 from utils.table.table_manager import TableWidgetManager
 from utils.logger import get_class_logger
 

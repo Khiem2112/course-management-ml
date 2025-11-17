@@ -21,7 +21,7 @@ from application.analysis.cluster_detailed_page import ClusterDetailPage
 
 # Import the RecommendationService from your predict.py file
 # (Adjust path if predict.py is not in the root or a reachable module)
-from inference.predict import RecommendationManager as RecommendationService
+from  ml.inference.predict import RecommendationManager as RecommendationService
 
 import sys
 from functools import partial

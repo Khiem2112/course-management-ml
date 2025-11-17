@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'analysis.ui'
+# Form implementation generated from reading ui file 'C:\Users\phamn\Documents\course-management-ml\ui\analysis.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from media.resource_from_qt import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -163,18 +163,13 @@ class Ui_MainWindow(object):
         self.verticalLayout.setContentsMargins(0, 11, 0, 0)
         self.verticalLayout.setSpacing(11)
         self.verticalLayout.setObjectName("verticalLayout")
-        self.line_1 = QtWidgets.QFrame(parent=self.menu)
-        self.line_1.setFrameShape(QtWidgets.QFrame.Shape.HLine)
-        self.line_1.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
-        self.line_1.setObjectName("line_1")
-        self.verticalLayout.addWidget(self.line_1)
         self.brand_2 = QtWidgets.QLabel(parent=self.menu)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.brand_2.sizePolicy().hasHeightForWidth())
         self.brand_2.setSizePolicy(sizePolicy)
-        self.brand_2.setMaximumSize(QtCore.QSize(160, 90))
+        self.brand_2.setMaximumSize(QtCore.QSize(150, 60))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.brand_2.setFont(font)
@@ -185,6 +180,11 @@ class Ui_MainWindow(object):
         self.brand_2.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.brand_2.setObjectName("brand_2")
         self.verticalLayout.addWidget(self.brand_2)
+        self.line_1 = QtWidgets.QFrame(parent=self.menu)
+        self.line_1.setFrameShape(QtWidgets.QFrame.Shape.HLine)
+        self.line_1.setFrameShadow(QtWidgets.QFrame.Shadow.Sunken)
+        self.line_1.setObjectName("line_1")
+        self.verticalLayout.addWidget(self.line_1)
         self.frame_2 = QtWidgets.QFrame(parent=self.menu)
         self.frame_2.setFrameShape(QtWidgets.QFrame.Shape.StyledPanel)
         self.frame_2.setFrameShadow(QtWidgets.QFrame.Shadow.Raised)
@@ -200,6 +200,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_course.sizePolicy().hasHeightForWidth())
         self.menu_course.setSizePolicy(sizePolicy)
         self.menu_course.setStyleSheet("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Course.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_course.setIcon(icon)
         self.menu_course.setObjectName("menu_course")
         self.verticalLayout_3.addWidget(self.menu_course)
         self.menu_student = QtWidgets.QPushButton(parent=self.frame_2)
@@ -210,6 +213,9 @@ class Ui_MainWindow(object):
         self.menu_student.setSizePolicy(sizePolicy)
         self.menu_student.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.menu_student.setStyleSheet("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Student1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_student.setIcon(icon1)
         self.menu_student.setObjectName("menu_student")
         self.verticalLayout_3.addWidget(self.menu_student)
         self.menu_analysis = QtWidgets.QPushButton(parent=self.frame_2)
@@ -219,6 +225,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_analysis.sizePolicy().hasHeightForWidth())
         self.menu_analysis.setSizePolicy(sizePolicy)
         self.menu_analysis.setStyleSheet("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Analysis.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_analysis.setIcon(icon2)
         self.menu_analysis.setObjectName("menu_analysis")
         self.verticalLayout_3.addWidget(self.menu_analysis)
         self.menu_payment = QtWidgets.QPushButton(parent=self.frame_2)
@@ -229,6 +238,9 @@ class Ui_MainWindow(object):
         self.menu_payment.setSizePolicy(sizePolicy)
         self.menu_payment.setMinimumSize(QtCore.QSize(150, 28))
         self.menu_payment.setStyleSheet("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Payment.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_payment.setIcon(icon3)
         self.menu_payment.setObjectName("menu_payment")
         self.verticalLayout_3.addWidget(self.menu_payment)
         self.verticalLayout.addWidget(self.frame_2)
@@ -256,6 +268,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_logout.sizePolicy().hasHeightForWidth())
         self.menu_logout.setSizePolicy(sizePolicy)
         self.menu_logout.setStyleSheet("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Log_Out.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_logout.setIcon(icon4)
         self.menu_logout.setObjectName("menu_logout")
         self.verticalLayout.addWidget(self.menu_logout)
         self.horizontalLayout.addWidget(self.menu)
@@ -273,7 +288,7 @@ class Ui_MainWindow(object):
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.header = QtWidgets.QLabel(parent=self.central_page)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Maximum)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.header.sizePolicy().hasHeightForWidth())
@@ -299,10 +314,15 @@ class Ui_MainWindow(object):
         self.horizontalLayout_8.setContentsMargins(0, 0, 5, 0)
         self.horizontalLayout_8.setObjectName("horizontalLayout_8")
         self.scrollArea = QtWidgets.QScrollArea(parent=self.main_page)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Policy.Preferred, QtWidgets.QSizePolicy.Policy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy)
         self.scrollArea.setWidgetResizable(True)
         self.scrollArea.setObjectName("scrollArea")
         self.scrollAreaWidgetContents = QtWidgets.QWidget()
-        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 221, 478))
+        self.scrollAreaWidgetContents.setGeometry(QtCore.QRect(0, 0, 224, 485))
         self.scrollAreaWidgetContents.setObjectName("scrollAreaWidgetContents")
         self.verticalLayoutWidget = QtWidgets.QWidget(parent=self.scrollAreaWidgetContents)
         self.verticalLayoutWidget.setGeometry(QtCore.QRect(0, 10, 221, 451))
@@ -349,8 +369,8 @@ class Ui_MainWindow(object):
         self.menu_course.setText(_translate("MainWindow", "Course"))
         self.menu_student.setText(_translate("MainWindow", "Student"))
         self.menu_analysis.setText(_translate("MainWindow", "Analysis"))
-        self.menu_payment.setText(_translate("MainWindow", "Payment"))
-        self.menu_setting.setText(_translate("MainWindow", "Setting"))
+        self.menu_payment.setText(_translate("MainWindow", "Payment*"))
+        self.menu_setting.setText(_translate("MainWindow", "Setting*"))
         self.menu_logout.setText(_translate("MainWindow", "Log out"))
         self.header.setText(_translate("MainWindow", " Analysis"))
 

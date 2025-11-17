@@ -52,7 +52,7 @@ class CourseManagementEx():
         self.main_window.setCentralWidget(self.page_stack)
         self.page_stack.setCurrentWidget(self.course_list_page)
 
-        self.setup_icons()
+        # self.setup_icons()
         self.connect_signals()
         self.load_courses_from_db()
         self.display_courses()
@@ -242,7 +242,7 @@ class CourseManagementEx():
             else:
                 frame.hide()
 
-        self.update_pagination_buttons(total_pages)
+        # self.update_pagination_buttons(total_pages)
         self.ui.btn_previous.setEnabled(self.current_page > 1)
         self.ui.btn_next.setEnabled(self.current_page < total_pages)
 

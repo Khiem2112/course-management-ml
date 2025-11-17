@@ -201,13 +201,6 @@ QComboBox QAbstractItemView {
            <number>0</number>
           </property>
           <item>
-           <widget class="Line" name="line_1">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-           </widget>
-          </item>
-          <item>
            <widget class="QLabel" name="brand_2">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -217,8 +210,8 @@ QComboBox QAbstractItemView {
             </property>
             <property name="maximumSize">
              <size>
-              <width>160</width>
-              <height>90</height>
+              <width>150</width>
+              <height>60</height>
              </size>
             </property>
             <property name="font">
@@ -240,6 +233,13 @@ QComboBox QAbstractItemView {
             </property>
             <property name="alignment">
              <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="line_1">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
             </property>
            </widget>
           </item>
@@ -281,6 +281,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Course</string>
                </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Course.png</normaloff>:/Icons/images/icons/Course/Course.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -300,6 +304,10 @@ QComboBox QAbstractItemView {
                <property name="text">
                 <string>Student</string>
                </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Student1.png</normaloff>:/Icons/images/icons/Course/Student1.png</iconset>
+               </property>
               </widget>
              </item>
              <item>
@@ -315,6 +323,10 @@ QComboBox QAbstractItemView {
                </property>
                <property name="text">
                 <string>Analysis</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Analysis.png</normaloff>:/Icons/images/icons/Course/Analysis.png</iconset>
                </property>
               </widget>
              </item>
@@ -336,7 +348,11 @@ QComboBox QAbstractItemView {
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Payment</string>
+                <string>Payment*</string>
+               </property>
+               <property name="icon">
+                <iconset resource="../media/resource_from_qt.qrc">
+                 <normaloff>:/Icons/images/icons/Course/Payment.png</normaloff>:/Icons/images/icons/Course/Payment.png</iconset>
                </property>
               </widget>
              </item>
@@ -368,7 +384,7 @@ QComboBox QAbstractItemView {
              <string notr="true"/>
             </property>
             <property name="text">
-             <string>Setting</string>
+             <string>Setting*</string>
             </property>
            </widget>
           </item>
@@ -398,6 +414,10 @@ QComboBox QAbstractItemView {
             </property>
             <property name="text">
              <string>Log out</string>
+            </property>
+            <property name="icon">
+             <iconset resource="../media/resource_from_qt.qrc">
+              <normaloff>:/Icons/images/icons/Course/Log_Out.png</normaloff>:/Icons/images/icons/Course/Log_Out.png</iconset>
             </property>
            </widget>
           </item>
@@ -437,7 +457,7 @@ QComboBox QAbstractItemView {
           <item>
            <widget class="QLabel" name="header">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -494,6 +514,12 @@ QComboBox QAbstractItemView {
              </property>
              <item>
               <widget class="QScrollArea" name="scrollArea">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
                <property name="widgetResizable">
                 <bool>true</bool>
                </property>
@@ -502,8 +528,8 @@ QComboBox QAbstractItemView {
                  <rect>
                   <x>0</x>
                   <y>0</y>
-                  <width>221</width>
-                  <height>478</height>
+                  <width>224</width>
+                  <height>485</height>
                  </rect>
                 </property>
                 <widget class="QWidget" name="verticalLayoutWidget">
@@ -566,7 +592,6 @@ QComboBox QAbstractItemView {
  </widget>
  <resources>
   <include location="../media/resource_from_qt.qrc"/>
-  <include location="../../University/Education program/HK1 nam 3/ML thay Thanh/Project/CourseManagement/media/resource_from_qt.qrc"/>
  </resources>
  <connections/>
 </ui>

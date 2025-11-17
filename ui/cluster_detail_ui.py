@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'cluster_detail.ui'
+# Form implementation generated from reading ui file 'C:\Users\phamn\Documents\course-management-ml\ui\cluster_detail.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from media.resource_from_qt import *
 
 class Ui_ClusterDetailPageWidget(object):
     def setupUi(self, ClusterDetailPageWidget):
@@ -51,12 +51,14 @@ class Ui_ClusterDetailPageWidget(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.back_button.sizePolicy().hasHeightForWidth())
         self.back_button.setSizePolicy(sizePolicy)
+        self.back_button.setStyleSheet("color: red")
         self.back_button.setObjectName("back_button")
         self.verticalLayout.addWidget(self.back_button)
         self.title_label = QtWidgets.QLabel(parent=ClusterDetailPageWidget)
         font = QtGui.QFont()
         font.setPointSize(16)
         font.setBold(True)
+        font.setWeight(75)
         self.title_label.setFont(font)
         self.title_label.setObjectName("title_label")
         self.verticalLayout.addWidget(self.title_label)
@@ -83,7 +85,7 @@ class Ui_ClusterDetailPageWidget(object):
         self.recommendation_scroll_area.setWidgetResizable(True)
         self.recommendation_scroll_area.setObjectName("recommendation_scroll_area")
         self.scroll_content_widget = QtWidgets.QWidget()
-        self.scroll_content_widget.setGeometry(QtCore.QRect(0, 0, 257, 485))
+        self.scroll_content_widget.setGeometry(QtCore.QRect(0, 0, 254, 499))
         self.scroll_content_widget.setObjectName("scroll_content_widget")
         self.recommendation_layout = QtWidgets.QVBoxLayout(self.scroll_content_widget)
         self.recommendation_layout.setContentsMargins(0, 0, 0, 0)

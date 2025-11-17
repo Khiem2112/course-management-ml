@@ -1,4 +1,4 @@
-# Form implementation generated from reading ui file 'course_result.ui'
+# Form implementation generated from reading ui file 'C:\Users\phamn\Documents\course-management-ml\ui\course_result.ui'
 #
 # Created by: PyQt6 UI code generator 6.10.0
 #
@@ -7,7 +7,7 @@
 
 
 from PyQt6 import QtCore, QtGui, QtWidgets
-
+from media.resource_from_qt import *
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -199,10 +199,14 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.brand.sizePolicy().hasHeightForWidth())
         self.brand.setSizePolicy(sizePolicy)
+        self.brand.setMaximumSize(QtCore.QSize(150, 60))
         font = QtGui.QFont()
         font.setPointSize(20)
         self.brand.setFont(font)
         self.brand.setStyleSheet("")
+        self.brand.setText("")
+        self.brand.setPixmap(QtGui.QPixmap(":/Images/images/Logo DUKI.png"))
+        self.brand.setScaledContents(True)
         self.brand.setAlignment(QtCore.Qt.AlignmentFlag.AlignCenter)
         self.brand.setObjectName("brand")
         self.verticalLayout.addWidget(self.brand)
@@ -226,6 +230,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_course.sizePolicy().hasHeightForWidth())
         self.menu_course.setSizePolicy(sizePolicy)
         self.menu_course.setStyleSheet("")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Course.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_course.setIcon(icon)
         self.menu_course.setObjectName("menu_course")
         self.verticalLayout_3.addWidget(self.menu_course)
         self.menu_student = QtWidgets.QPushButton(parent=self.frame_2)
@@ -236,6 +243,9 @@ class Ui_MainWindow(object):
         self.menu_student.setSizePolicy(sizePolicy)
         self.menu_student.setLayoutDirection(QtCore.Qt.LayoutDirection.LeftToRight)
         self.menu_student.setStyleSheet("")
+        icon1 = QtGui.QIcon()
+        icon1.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Student1.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_student.setIcon(icon1)
         self.menu_student.setObjectName("menu_student")
         self.verticalLayout_3.addWidget(self.menu_student)
         self.menu_analysis = QtWidgets.QPushButton(parent=self.frame_2)
@@ -245,6 +255,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_analysis.sizePolicy().hasHeightForWidth())
         self.menu_analysis.setSizePolicy(sizePolicy)
         self.menu_analysis.setStyleSheet("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Analysis.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_analysis.setIcon(icon2)
         self.menu_analysis.setObjectName("menu_analysis")
         self.verticalLayout_3.addWidget(self.menu_analysis)
         self.menu_payment = QtWidgets.QPushButton(parent=self.frame_2)
@@ -255,6 +268,9 @@ class Ui_MainWindow(object):
         self.menu_payment.setSizePolicy(sizePolicy)
         self.menu_payment.setMinimumSize(QtCore.QSize(150, 28))
         self.menu_payment.setStyleSheet("")
+        icon3 = QtGui.QIcon()
+        icon3.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Payment.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_payment.setIcon(icon3)
         self.menu_payment.setObjectName("menu_payment")
         self.verticalLayout_3.addWidget(self.menu_payment)
         self.verticalLayout.addWidget(self.frame_2)
@@ -282,6 +298,9 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.menu_logout.sizePolicy().hasHeightForWidth())
         self.menu_logout.setSizePolicy(sizePolicy)
         self.menu_logout.setStyleSheet("")
+        icon4 = QtGui.QIcon()
+        icon4.addPixmap(QtGui.QPixmap(":/Icons/images/icons/Course/Log_Out.png"), QtGui.QIcon.Mode.Normal, QtGui.QIcon.State.Off)
+        self.menu_logout.setIcon(icon4)
         self.menu_logout.setObjectName("menu_logout")
         self.verticalLayout.addWidget(self.menu_logout)
         self.horizontalLayout.addWidget(self.menu)
@@ -306,13 +325,16 @@ class Ui_MainWindow(object):
         self.horizontalLayout_9.setSpacing(7)
         self.horizontalLayout_9.setObjectName("horizontalLayout_9")
         self.header_result = QtWidgets.QPushButton(parent=self.header)
-        self.header_result.setStyleSheet("backgroud:transparent;")
+        self.header_result.setStyleSheet("color: black\n"
+"")
         self.header_result.setObjectName("header_result")
         self.horizontalLayout_9.addWidget(self.header_result)
         self.header_assessment = QtWidgets.QPushButton(parent=self.header)
+        self.header_assessment.setStyleSheet("color: black")
         self.header_assessment.setObjectName("header_assessment")
         self.horizontalLayout_9.addWidget(self.header_assessment)
         self.header_student = QtWidgets.QPushButton(parent=self.header)
+        self.header_student.setStyleSheet("color: black")
         self.header_student.setObjectName("header_student")
         self.horizontalLayout_9.addWidget(self.header_student)
         spacerItem1 = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Policy.Expanding, QtWidgets.QSizePolicy.Policy.Minimum)
@@ -563,12 +585,11 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.brand.setText(_translate("MainWindow", "DUKI"))
         self.menu_course.setText(_translate("MainWindow", "Course"))
         self.menu_student.setText(_translate("MainWindow", "Student"))
         self.menu_analysis.setText(_translate("MainWindow", "Analysis"))
-        self.menu_payment.setText(_translate("MainWindow", "Payment"))
-        self.menu_setting.setText(_translate("MainWindow", "Setting"))
+        self.menu_payment.setText(_translate("MainWindow", "Payment*"))
+        self.menu_setting.setText(_translate("MainWindow", "Setting*"))
         self.menu_logout.setText(_translate("MainWindow", "Log out"))
         self.header_result.setText(_translate("MainWindow", "Result"))
         self.header_assessment.setText(_translate("MainWindow", "Assessment"))
