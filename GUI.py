@@ -11,6 +11,7 @@ from application.student.student_ex import StudentManagementEx
 from application.analysis.analysis_ex import AnalysisManagementEx
 from application.course.course_ex import CourseManagementEx
 from application.login_ex import LoginApp
+from media.resource_from_qt import *  
 from utils.logger import get_class_logger
 
 # ====== FRAME CHO MỖI UI ======
