@@ -500,7 +500,7 @@ QComboBox QAbstractItemView {
                    <x>0</x>
                    <y>10</y>
                    <width>221</width>
-                   <height>411</height>
+                   <height>451</height>
                   </rect>
                  </property>
                  <layout class="QVBoxLayout" name="cluster_layout"/>
